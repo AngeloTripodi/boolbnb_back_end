@@ -10,7 +10,7 @@ class Stat extends Model
     use HasFactory;
 
     protected $fillable = [
-        //! TODO: add apartment_id column
+        'apartment_id',
         'ip_address',
         'data_view'
     ];
