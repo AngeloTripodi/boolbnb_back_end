@@ -9,7 +9,13 @@ class Apartment extends Model
 {
     use HasFactory;
 
-    public function stats(){
-        return $this->belongsToMany(Stat::class);
+    public function stats()
+    {
+        return $this->hasMany(Stat::class);
+    }
+
+    public function message()
+    {
+        return $this->hasMany(Message::class);
     }
 }
