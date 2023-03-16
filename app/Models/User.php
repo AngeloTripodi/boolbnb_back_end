@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     //add relationship with apartments
     public function roles(){
-        return $this->belongsToMany(Apartment::class);
+        return $this->hasMany(Apartment::class);
     }
 }
