@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ApartmentSeeder::class,
             ApartmentServiceSeeder::class,
             ApartmentSponsorshipSeeder::class,
+            MessageSeeder::class,
         ]);
     }
 }
