@@ -16,7 +16,7 @@ class Apartment extends Model
         return $this->hasMany(Stat::class);
     }
 
-    public function message()
+    public function messages()
     {
         return $this->hasMany(Message::class);
     }
@@ -28,5 +28,9 @@ class Apartment extends Model
     public function sponsorships()
     {
         return $this->belongsToMany(Sponsorship::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
