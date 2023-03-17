@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sponsorship;
 use Illuminate\Http\Request;
 
 class SponsorshipController extends Controller
@@ -14,17 +15,8 @@ class SponsorshipController extends Controller
      */
     public function index()
     {
-        
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $sponsorships = Sponsorship::all();
+        dd($sponsorships);
+        return view('user.sponsorship.index', compact('sponsorships'));
     }
 }
