@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\SponsorshipController as SponsorshipController;
-
+use App\Http\Controllers\User\MessageController as MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,5 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/user/sponsorship', [SponsorshipController::class, 'index'])->name('user.sponsorship.index');
+
+Route::get('/user/message', [MessageController::class, 'index'])->name('user.message.index');
 
 require __DIR__.'/auth.php';
