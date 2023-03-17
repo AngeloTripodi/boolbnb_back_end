@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -14,7 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        
+        $messages = Message::all();
+        dd($messages);
+        return view('user.message.index', compact('messages'));
     }
-
 }
