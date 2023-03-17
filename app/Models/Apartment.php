@@ -9,6 +9,8 @@ class Apartment extends Model
 {
     use HasFactory;
 
+    protected $fillable = array('user_id', 'title', 'slug', 'description', 'image', 'latitude', 'longitude', 'address', 'n_beds', 'n_bathrooms', 'square_meters', 'is_visible');
+
     public function stats()
     {
         return $this->hasMany(Stat::class);
