@@ -89,7 +89,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        $request->validate($this->rules);
+        $data = $request->validate($this->rules);
 
         //delete image from db when change cover image
         if ($request->hasFile('preview')) {
