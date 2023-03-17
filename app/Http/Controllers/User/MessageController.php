@@ -19,4 +19,16 @@ class MessageController extends Controller
         dd($messages);
         return view('user.message.index', compact('messages'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Project $project
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Message $message)
+    {
+        dd($message);
+        return view('user.message.show', compact('message'));
+    }
 }
