@@ -23,6 +23,7 @@ return new class extends Migration
             $table->float('latitude', 10, 8);
             $table->float('longitude', 11, 8);
             $table->string('address');
+            $table->tinyInteger('n_rooms')->unsigned();
             $table->tinyInteger('n_beds')->unsigned();
             $table->tinyInteger('n_bathrooms')->unsigned();
             $table->smallInteger('square_meters')->unsigned();
