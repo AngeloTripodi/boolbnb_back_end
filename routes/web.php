@@ -32,5 +32,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/user/sponsorship', [SponsorshipController::class, 'index'])->name('user.sponsorship.index');
 
 Route::get('/user/message', [MessageController::class, 'index'])->name('user.message.index');
+Route::get('/user/message/{message}', [MessageController::class, 'show'])->name('user.message.show');
 
 require __DIR__.'/auth.php';
