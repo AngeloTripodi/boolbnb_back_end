@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Apartment;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -172,6 +173,7 @@ class ApartmentSeeder extends Seeder
 
             $newApartment = new Apartment();
             // $newApartment->user_id = FACCIAMOLO!
+            $newApartment->user_id = User::inRandomOrder()->first()->id;
             $newApartment->title = $apartment['title'];
             $newApartment->slug = Str::slug($newApartment->title);
             $newApartment->description = $apartment['description'];
