@@ -40,9 +40,9 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Apartment $apartment)
     {
-        return view('user.apartments.create', compact('project'), ['services' => Service::all()]);
+        return view('user.apartments.create', compact('apartment'), ['services' => Service::all()]);
     }
 
     /**
