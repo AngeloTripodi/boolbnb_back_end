@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        return view('/apartments', compact('apartments'));
+        $apartments = Apartment::all();
+        return view('user.apartments.index', compact('apartments'));
     }
 
     /**
@@ -66,7 +68,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('user.apartments.show', compact('apartments'));
+        return view('user.apartments.show', compact('apartment'));
     }
 
     /**
