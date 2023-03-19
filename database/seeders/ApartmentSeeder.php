@@ -26,6 +26,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '45.73162371',
                 'longitude' => '9.4999649',
                 'address' => 'Pontida, Lombardia, Italia',
+                'n_rooms' => 8,
                 'n_beds' => 12,
                 'n_bathrooms' => 4,
                 'square_meters' => 200,
@@ -38,6 +39,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '46.3274581',
                 'longitude' => '11.02588072',
                 'address' => "ville d'aunania, Trentino, Italia",
+                'n_rooms' => 4,
                 'n_beds' => 4,
                 'n_bathrooms' => 1,
                 'square_meters' => 75,
@@ -52,6 +54,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '46.219408',
                 'longitude' => '10.166880',
                 'address' => 'Via visoli, 16, Tirano',
+                'n_rooms' => 6,
                 'n_beds' => 9,
                 'n_bathrooms' => 2,
                 'square_meters' => 220,
@@ -67,6 +70,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '46.609165',
                 'longitude' => '11.569198',
                 'address' => 'Via Bergweg, 18, Laion',
+                'n_rooms' => 3,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
                 'square_meters' => 70,
@@ -80,6 +84,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '43.7762',
                 'longitude' => '11.2336',
                 'address' => 'Via di Monteloro, 19, Firenze, Toscana, Italia',
+                'n_rooms' => 2,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
                 'square_meters' => 30,
@@ -92,6 +97,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '45.7642',
                 'longitude' => '10.7408',
                 'address' => 'Piazza Guglielmo Marconi, 1, Tremosine sul Garda, Brescia, Italia',
+                'n_rooms' => 4,
                 'n_beds' => 4,
                 'n_bathrooms' => 2,
                 'square_meters' => 60,
@@ -106,6 +112,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '37.4368',
                 'longitude' => '14.0769',
                 'address' => 'Contrada Roccella, SS122, Roccella, Caltanissetta, Italia',
+                'n_rooms' => 5,
                 'n_beds' => 3,
                 'n_bathrooms' => 2,
                 'square_meters' => 80,
@@ -125,6 +132,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '45.4789',
                 'longitude' => '9.2254',
                 'address' => 'Via Verdi 12, Milano',
+                'n_rooms' => 5,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
                 'square_meters' => 100,
@@ -137,6 +145,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '46.0663',
                 'longitude' => '11.1166',
                 'address' => 'Via dei Tigli 22, Trento',
+                'n_rooms' => 6,
                 'n_beds' => 3,
                 'n_bathrooms' => 2,
                 'square_meters' => 150,
@@ -149,6 +158,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '41.9028',
                 'longitude' => '12.4964',
                 'address' => 'Via del Corso 10, Roma',
+                'n_rooms' => 2,
                 'n_beds' => 1,
                 'n_bathrooms' => 1,
                 'square_meters' => 30,
@@ -161,6 +171,7 @@ class ApartmentSeeder extends Seeder
                 'latitude' => '43.7384',
                 'longitude' => '10.4514',
                 'address' => 'Via della Spiaggia 8, Livorno',
+                'n_rooms' => 4,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
                 'square_meters' => 80,
@@ -181,6 +192,7 @@ class ApartmentSeeder extends Seeder
             $newApartment->latitude = $apartment['latitude'];
             $newApartment->longitude = $apartment['longitude'];
             $newApartment->address = $apartment['address'];
+            $newApartment->n_rooms = $apartment['n_rooms'];
             $newApartment->n_beds = $apartment['n_beds'];
             $newApartment->n_bathrooms = $apartment['n_bathrooms'];
             $newApartment->square_meters = $apartment['square_meters'];
