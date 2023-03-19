@@ -1,1 +1,14 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import '/resources/scss/partials/welcome';
+@import '/resources/scss/partials/sidebar';
+
+.my_dropdown-menu {
+    top: 100%;
+    left: -100px !important;
+    margin-top: var(--bs-dropdown-spacer);
+}
+
+.my-fa-solid {
+    color: white;
+}
