@@ -7,6 +7,7 @@ use App\Models\Apartment;
 use App\Models\Service;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
@@ -33,7 +34,7 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('user_id', Auth::user()->id)->get();
         return view('user.apartments.index', compact('apartments'));
     }
 
@@ -100,8 +101,10 @@ class ApartmentController extends Controller
         //delete image from db when change cover image
         if ($request->hasFile('preview')) {
             Storage::delete($apartment->image);
-            $data['image'] = Storage::put('imgs/', $data['image']);
         };
+
+        $data['image'] = Storage::put('imgs/', $data['image']);
+        
         $apartment->update($data);
         return redirect()->route('user.apartments.index', compact('apartment'));
     }
