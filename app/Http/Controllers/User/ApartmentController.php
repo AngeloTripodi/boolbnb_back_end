@@ -7,6 +7,7 @@ use App\Models\Apartment;
 use App\Models\Service;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
@@ -22,8 +23,8 @@ class ApartmentController extends Controller
         'latitude' => ['required', 'numeric'],
         'longitude' => ['required', 'numeric'],
         'image' => ['required', 'image', 'max:2048'],
-        'services' => ['distinct', 'exists:services,id'],
-        'is_visible' => ['boolean'],
+        'services' => ['required', 'exists:services,id'],
+        'is_visible' => ['required','boolean'],
         'description' => ['required']
     ];
     /**
@@ -33,7 +34,7 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('user_id', Auth::user()->id)->get();
         return view('user.apartments.index', compact('apartments'));
     }
 
@@ -58,10 +59,21 @@ class ApartmentController extends Controller
         $data = $request->validate($this->rules);
         $data['slug'] = Str::slug($data['title']);
         $data['image'] = Storage::put('imgs/', $data['image']);
+
+        $data['user_id'] = Auth::user()->id;
+        
         $newApartment = new Apartment();
         $newApartment->fill($data);
         $newApartment->save();
         return redirect()->route('user.apartments.index');
+
+        //controllo i valori della checkbox
+        if (!isset($request->is_visible)){
+            $data['is_visible'] = false;
+        }          
+            else {
+                $data['is_visible'] = true;
+            }   
     }
 
     /**
@@ -100,8 +112,10 @@ class ApartmentController extends Controller
         //delete image from db when change cover image
         if ($request->hasFile('preview')) {
             Storage::delete($apartment->image);
-            $data['image'] = Storage::put('imgs/', $data['image']);
         };
+
+        $data['image'] = Storage::put('imgs/', $data['image']);
+        
         $apartment->update($data);
         return redirect()->route('user.apartments.index', compact('apartment'));
     }
