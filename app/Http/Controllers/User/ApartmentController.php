@@ -24,7 +24,7 @@ class ApartmentController extends Controller
         'longitude' => ['required', 'numeric'],
         'image' => ['required', 'image', 'max:2048'],
         'services' => ['required', 'exists:services,id'],
-        'is_visible' => ['required','boolean'],
+        'is_visible' => ['required', 'boolean'],
         'description' => ['required']
     ];
     /**
@@ -58,22 +58,21 @@ class ApartmentController extends Controller
     {
         $data = $request->validate($this->rules);
         $data['slug'] = Str::slug($data['title']);
-        $data['image'] = Storage::put('imgs/', $data['image']);
+        $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $data['user_id'] = Auth::user()->id;
-        
+
         $newApartment = new Apartment();
         $newApartment->fill($data);
         $newApartment->save();
         return redirect()->route('user.apartments.index');
 
         //controllo i valori della checkbox
-        if (!isset($request->is_visible)){
+        if (!isset($request->is_visible)) {
             $data['is_visible'] = false;
-        }          
-            else {
-                $data['is_visible'] = true;
-            }   
+        } else {
+            $data['is_visible'] = true;
+        }
     }
 
     /**
@@ -114,8 +113,8 @@ class ApartmentController extends Controller
             Storage::delete($apartment->image);
         };
 
-        $data['image'] = Storage::put('imgs/', $data['image']);
-        
+        $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
+
         $apartment->update($data);
         return redirect()->route('user.apartments.index', compact('apartment'));
     }
