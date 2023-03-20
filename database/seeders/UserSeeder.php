@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->first_name = 'Angelo';
+        $user->name = 'Angelo';
         $user->last_name = 'Tripodi';
         $user->date_of_birth = '1994-05-07';
         $user->password = Hash::make('123456789');
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         $user->save();
 
         $userTwo = new User();
-        $userTwo->first_name = 'Tizio';
+        $userTwo->name = 'Tizio';
         $userTwo->last_name = 'Caio';
         $userTwo->date_of_birth = '1000-01-01';
         $userTwo->password = Hash::make('123456789');
