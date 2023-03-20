@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form class="form" method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="mb-4 row">
@@ -104,6 +104,9 @@
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
+                                <div id="psw-match">
+
+                                </div>
                             </div>
 
                             <div class="mb-4 row mb-0">
@@ -119,4 +122,34 @@
             </div>
         </div>
     </div>
+    <script>
+        function checkPassword() {
+            var pass1 = document.getElementById("password").value;
+            var pass2 = document.getElementById("password-confirm").value;
+            const pElement = document.getElementById('psw-match');
+            pElement.innerHTML += `<p>Passwords don't match</p>`
+
+            if (pass1 == pass2) {
+
+                return true;
+            } else {
+                console.log("Passwords do not match");
+                return false;
+            }
+        }
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            //Prevent default behaviour
+            e.preventDefault();
+            //Check passwords
+            if (checkPassword()) {
+                this.submit();
+            }
+        });
+    </script>
 @endsection
+
+{{-- 
+@section('script')
+    @vite('resources/js/client-validation.js')
+@endsection --}}
