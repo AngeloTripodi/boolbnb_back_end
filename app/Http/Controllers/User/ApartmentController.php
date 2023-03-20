@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,9 +21,10 @@ class ApartmentController extends Controller
         'address' => ['required', 'min:3', 'max:255'],
         'latitude' => ['required', 'numeric'],
         'longitude' => ['required', 'numeric'],
-        'image' => ['image', 'max:2048'],
+        'image' => ['required', 'image', 'max:2048'],
         'services' => ['distinct', 'exists:services,id'],
-        'is_visible' => ['boolean']
+        'is_visible' => ['boolean'],
+        'description' => ['required']
     ];
     /**
      * Display a listing of the resource.
@@ -54,6 +56,8 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate($this->rules);
+        $data['slug'] = Str::slug($data['title']);
+        $data['image'] = Storage::put('imgs/', $data['image']);
         $newApartment = new Apartment();
         $newApartment->fill($data);
         $newApartment->save();
@@ -96,9 +100,10 @@ class ApartmentController extends Controller
         //delete image from db when change cover image
         if ($request->hasFile('preview')) {
             Storage::delete($apartment->image);
-            $data['image'] =  Storage::put('img/uploads', $data['image']);
+            $data['image'] = Storage::put('imgs/', $data['image']);
         };
         $apartment->update($data);
+        return redirect()->route('user.apartments.index', compact('apartment'));
     }
 
     /**

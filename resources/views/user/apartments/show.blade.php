@@ -8,7 +8,7 @@
             </div>
             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <div class="card-image py-4">
-                    <img src="{{ $apartment->image }}" alt="{{ $apartment->title }}" class="img-fluid">
+                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }}" class="img-fluid">
                 </div>
                 <div class="pb-5">
                     @foreach ($apartment->services as $service)
@@ -18,7 +18,7 @@
                 <p class="card-text text-center fw-bold">{{ $apartment->description }}</p>
                 <ul class="list-unstyled text-center mb-4">
                     <li class="text-muted"> {{ $apartment->slug }}</li>
-                    <li class="text-muted">Type: {{ $apartment->user->first_name }} {{ $apartment->user->last_name }}</li>
+                    {{-- <li class="text-muted">Type: {{ $apartment->user->first_name }} {{ $apartment->user->last_name }}</li> --}}
                     <li class="text-muted">LONG: {{ $apartment->address }}</li>
                     <li class="text-muted">LAT: {{ $apartment->latitude }}</li>
                     <li class="text-muted">LONG: {{ $apartment->longitude }}</li>
