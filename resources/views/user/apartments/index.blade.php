@@ -20,8 +20,8 @@
                 <div class="col-6 d-flex">
                     <div class="card card-block p-3 align-items-stretch align-content-between">
                         {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
-                        <img class="img-fluid" src="{{ asset('storage/imgs/' . $apartment->image) }}"
-                            alt="{{ $apartment->image }}">
+                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->image) }}"
+                            alt="Image of {{ $apartment->title }}">
                         <h4 class="card-title-ap text-right pt-3">{{ $apartment->title }}</h4>
                         <p>{{ $apartment->address }}</p>
                         <div class="actions">
