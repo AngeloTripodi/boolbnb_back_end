@@ -11,7 +11,7 @@
         </div> --}}
 
 
-    <h1 class="py-3 text-center">{{ Auth::user()->first_name }} Uploaded Apartments:</h1>
+    <h1 class="py-3 text-center">{{ Auth::user()->name }} uploaded apartments:</h1>
 
     <div class="container mt-2 my-cards">
         <div class="row g-4">
