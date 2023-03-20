@@ -11,10 +11,11 @@
         </div> --}}
 
 
+    <h1 class="py-3 text-center">{{ Auth::user()->name }} uploaded apartments:</h1>
 
     <div class="container mt-2 my-cards">
         <div class="row g-4">
-            <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary"><i class="fa-solid fa-plus"></i></a>
+            <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary"><i class="fa-solid fa-plus me-2"></i>Add new apartment</a>
             @foreach ($apartments as $apartment)
                 <div class="col-6 d-flex">
                     <div class="card card-block p-3 align-items-stretch align-content-between">
