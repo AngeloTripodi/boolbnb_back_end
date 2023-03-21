@@ -34,7 +34,7 @@
                     <div class="secondary-actions">
                         <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn btn-warning"><i
                                 class="fa-solid fa-edit"></i></a>
-                        <form class="d-inline-block form-delete double-confirm"
+                        <form class="d-inline-block form-delete double-confirm delete"
                             action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
                             data-element-name="{{ $apartment->title }}">
                             @csrf
@@ -47,4 +47,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    @vite('resources/js/deleteHandler.js')
 @endsection
