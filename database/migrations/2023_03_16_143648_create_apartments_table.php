@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug');
             //! TODO: nel seeder fare lo slug univoco con titolo + ID
             $table->string('title', 150);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('image');
             $table->float('latitude', 10, 8);
             $table->float('longitude', 11, 8);
