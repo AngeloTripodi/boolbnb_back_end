@@ -21,7 +21,7 @@
 
         <div class="form-outline mb-3">
             <label for="description" class="form-label @error('description') is-invalid @enderror">Description</label>
-            <textarea required class="form-control" id="description" placeholder="Insert description" rows="10"
+            <textarea class="form-control" id="description" placeholder="Insert description" rows="10"
                 name="description">{{ old('description', $apartment->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback px-2">
