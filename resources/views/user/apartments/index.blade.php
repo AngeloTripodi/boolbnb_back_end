@@ -54,8 +54,9 @@
             @endforeach
         </div>
     </div>
+    @include('user.apartments.partials.popup')
 @endsection
-
+{{-- js delete handler on apartment delete --}}
 @section('script')
     @vite('resources/js/deleteHandler.js')
 @endsection
