@@ -12,17 +12,17 @@ function checkForm() {
         
     } else if (!validateEmail()){
         console.log("email a gallina");
-        emailElement.innerHTML += `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Email is invalid </p>`;
+        emailElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Email is invalid </p>`;
         return false;
 
     } else if (pass1.length < 7) {
         console.log("Password must be at least 8 characters");
-        passLenElement.innerHTML += `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Password must be at least 8 characters </p>`;
+        passLenElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Password must be at least 8 characters </p>`;
         return false;
     }
     else if (pass1 != pass2) {
         console.log("Passwords do not match");
-        passMatchElement.innerHTML += `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Passwords don't match </p>`
+        passMatchElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Passwords don't match </p>`
         return false;
     }
 }
