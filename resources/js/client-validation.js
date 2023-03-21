@@ -11,23 +11,23 @@ form.addEventListener('submit', (event) => {
 
   // Validazione email
   if (!emailInput.checkValidity()) {
-    emailErrorMessage.innerText = 'Email is invalid';
+    emailErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Email is invalid`;
   } else {
-    emailErrorMessage.innerText = '';
+    emailErrorMessage.innerHTML = '';
   }
 
   // Validazione password
-  if (passwordInput.value.length <= 8) {
-    passwordErrorMessage.innerText = 'Password must be at least 8 characters';
+  if (passwordInput.value.length < 8) {
+    passwordErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Password must be at least 8 characters`;
   } else {
-    passwordErrorMessage.innerText = '';
+    passwordErrorMessage.innerHTML = '';
   }
 
   // Comparazione password e conferma password
   if (passwordInput.value !== confirmPasswordInput.value) {
-    confirmPasswordErrorMessage.innerText = "Passwords don't match";
+    confirmPasswordErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Passwords don't match`;
   } else {
-    confirmPasswordErrorMessage.innerText = '';
+    confirmPasswordErrorMessage.innerHTML = '';
   }
 
   // Se tutte le validazioni sono corrette, invia il form
@@ -38,13 +38,13 @@ form.addEventListener('submit', (event) => {
 
 // Nascondi il messaggio di errore quando l'utente inizia a scrivere nell'input
 emailInput.addEventListener('input', () => {
-  emailErrorMessage.innerText = '';
+  emailErrorMessage.innerHTML = '';
 });
 
 passwordInput.addEventListener('input', () => {
-  passwordErrorMessage.innerText = '';
+  passwordErrorMessage.innerHTML = '';
 });
 
 confirmPasswordInput.addEventListener('input', () => {
-  confirmPasswordErrorMessage.innerText = '';
+  confirmPasswordErrorMessage.innerHTML = '';
 });
