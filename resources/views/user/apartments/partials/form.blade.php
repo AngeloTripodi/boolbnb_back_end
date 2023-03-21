@@ -131,7 +131,9 @@
                     <div>
                         <input type="checkbox" class="form-check-input" name="services[]"
                             value="{{ $service->id }}" {{-- Controllo se ci sono errori sulla validation, definisco i valori da mantenere checked --}}
-                            @if ($errors->any()) @checked(in_array($service->id, old('service',[]))) @endif>
+                            @if ($errors->any()) @checked(in_array($service->id, old('service',[]))) 
+                            @else
+                            @checked($apartment->services->contains($service->id)) @endif>
 
                         <label class="form-check-label ms-2 me-5" for="services">{{ $service->name }}</label>
                     </div>

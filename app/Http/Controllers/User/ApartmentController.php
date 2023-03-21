@@ -65,6 +65,7 @@ class ApartmentController extends Controller
         $newApartment = new Apartment();
         $newApartment->fill($data);
         $newApartment->save();
+        $newApartment->services()->sync($data['services'] ?? []);
         return redirect()->route('user.apartments.index');
 
         //controllo i valori della checkbox
@@ -116,6 +117,7 @@ class ApartmentController extends Controller
         $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $apartment->update($data);
+        $apartment->services()->sync($data['services'] ?? []);
         return redirect()->route('user.apartments.index', compact('apartment'));
     }
 
@@ -127,6 +129,7 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
+        $apartment->services()->sync([]);
         $apartment->delete();
         return redirect()->route('user.apartments.index');
     }
