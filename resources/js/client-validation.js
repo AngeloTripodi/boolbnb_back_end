@@ -5,9 +5,27 @@ const confirmPasswordInput = document.getElementById('password-confirm');
 const emailErrorMessage = document.getElementById('email-error-message');
 const passwordErrorMessage = document.getElementById('password-error-message');
 const confirmPasswordErrorMessage = document.getElementById('confirm-password-error-message');
+const nameInput = document.getElementById('name');
+const lastNameInput = document.getElementById('last_name');
+const nameErrorMessage = document.getElementById('name-error-message');
+const lastNameErrorMessage = document.getElementById('last-name-error-message');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  // Validazione nome
+  if (nameInput.value.length < 2) {
+    nameErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Name must be at least 2 characters`;
+  } else {
+    nameErrorMessage.innerHTML = '';
+  }
+
+  // Validazione cognome
+  if (lastNameInput.value.length < 2) {
+    lastNameErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Last name must be at least 2 characters`;
+  } else {
+    lastNameErrorMessage.innerHTML = '';
+  }
 
   // Validazione email
   if (!emailInput.checkValidity()) {
@@ -48,3 +66,12 @@ passwordInput.addEventListener('input', () => {
 confirmPasswordInput.addEventListener('input', () => {
   confirmPasswordErrorMessage.innerHTML = '';
 });
+
+nameInput.addEventListener('input', () => {
+  nameErrorMessage.innerHTML = '';
+});
+
+lastNameInput.addEventListener('input', () => {
+  lastNameErrorMessage.innerHTML = '';
+});
+
