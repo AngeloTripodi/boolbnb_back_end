@@ -70,7 +70,7 @@
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email">
-                                        <div id="validate-email"></div>
+                                        <div class="text-danger" id="email-error-message"></div>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
-                                        <div id="psw-length"></div>
+                                        <div class="text-danger" id="password-error-message"></div>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
-                                    <div id="psw-match"></div>
+                                    <div class="text-danger" id="confirm-password-error-message"></div>
                                 </div>
 
                             </div>
