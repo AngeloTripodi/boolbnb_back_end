@@ -45,6 +45,7 @@ class ApartmentController extends Controller
      */
     public function create(Apartment $apartment)
     {
+        $apartment->is_visible = 1;
         return view('user.apartments.create', compact('apartment'), ['services' => Service::all()]);
     }
 
