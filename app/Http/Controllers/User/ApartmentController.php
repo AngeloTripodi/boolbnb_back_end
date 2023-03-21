@@ -112,7 +112,7 @@ class ApartmentController extends Controller
         $data = $request->validate($this->rules);
 
         //delete image from db when change cover image
-        if ($request->hasFile('preview')) {
+        if ($request->hasFile('image')) {
             Storage::delete($apartment->image);
         };
 
@@ -132,6 +132,8 @@ class ApartmentController extends Controller
     public function destroy(Apartment $apartment)
     {
         $apartment->services()->sync([]);
+        // delete image from db
+        Storage::delete($apartment->image);
         $apartment->delete();
         // apartment deleted message
         $message = "{$apartment->title} has been deleted";
