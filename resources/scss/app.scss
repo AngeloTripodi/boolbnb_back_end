@@ -71,3 +71,15 @@
     padding: 7px 10px;
     font-weight: 500;
 }
+
+//form error style
+.text-danger {
+    padding: 0 0.5rem;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+
+    i {
+        padding-right: 0.25rem;
+        font-weight: 900;
+    }
+}

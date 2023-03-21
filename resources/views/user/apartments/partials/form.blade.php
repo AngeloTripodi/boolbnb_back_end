@@ -126,22 +126,24 @@
         {{-- Aggiungo una checkbox per i servizi dell'appartamento --}}
         <div class="card p-3 shadow-none">
             <p class="fw-bold">Services</p>
-
             <div class="d-flex flex-wrap">
-
                 @foreach ($services as $service)
                     <div>
                         <input type="checkbox" class="form-check-input" name="services[]"
-                            value="{{ $service->id }}" required {{-- Controllo se ci sono errori sulla validation, definisco i valori da mantenere checked --}}
-                            @if ($errors->any()) @checked(in_array($service->id, old('services',[]))) 
-                            @else
-                            @checked($apartment->services->contains($service->id)) @endif>
-
+                            value="{{ $service->id }}"
+                            @if ($errors->any()) @checked(in_array($service->id, old('services', [])))
+                    @else
+                        @checked($apartment->services->contains($service->id)) @endif>
                         <label class="form-check-label ms-2 me-5" for="services">{{ $service->name }}</label>
                     </div>
                 @endforeach
             </div>
         </div>
+        @if ($errors->has('services'))
+            <div class="text-danger my-error mb-3">
+                <i class="fa-solid fa-circle-exclamation pe-1"></i>Select at least one service
+            </div>
+        @endif
 
         <div class="mb-3">
             <input class="form-check-input" type="checkbox" value="1"
