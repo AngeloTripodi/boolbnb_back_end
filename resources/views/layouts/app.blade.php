@@ -91,7 +91,7 @@
         </main>
         @include('layouts.partials.sidebar')
     </div>
-
+    @yield('script')
 </body>
 
 </html>
