@@ -24,8 +24,7 @@ class ApartmentController extends Controller
         'longitude' => ['required', 'numeric'],
         'image' => ['required', 'image', 'max:2048'],
         'services' => ['required', 'exists:services,id'],
-        'is_visible' => ['required', 'boolean'],
-        'description' => ['required']
+        'is_visible' => ['required', 'boolean']
     ];
     /**
      * Display a listing of the resource.
