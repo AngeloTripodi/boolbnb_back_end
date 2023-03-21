@@ -53,7 +53,7 @@
                                     <input id="date_of_birth" type="date"
                                         class="form-control @error('date_of_birth') is-invalid @enderror"
                                         name="date_of_birth" value="{{ old('date_of_birth') }}">
-
+                                        <div class="text-danger" id="dob-error-message"></div>
                                     @error('date_of_birth')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
