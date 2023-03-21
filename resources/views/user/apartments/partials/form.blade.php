@@ -22,8 +22,7 @@
 
         <div class="form-outline mb-3">
             <label for="description" class="form-label @error('description') is-invalid @enderror">Description</label>
-            <textarea class="form-control" id="description" placeholder="Insert description" rows="10"
-                name="description">{{ old('description', $apartment->description) }}</textarea>
+            <textarea class="form-control" id="description" placeholder="Insert description" rows="10" name="description">{{ old('description', $apartment->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback px-2">
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
@@ -56,7 +55,7 @@
 
 
 
-        {{-- <div class="form-outline w-50 mb-3">
+        <div class="form-outline w-50 mb-3">
             <label for="latitude" class="form-label @error('latitude') is-invalid @enderror">Latitude</label>
             <input type="text" class="form-control" id="latitude" placeholder="Insert latitude" name="latitude"
                 value="{{ old('latitude', $apartment->latitude) }}" required>
@@ -76,7 +75,7 @@
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
                 </div>
             @enderror
-        </div> --}}
+        </div>
 
         <div class="form-outline w-50 mb-3">
             <label for="n_rooms" class="form-label @error('n_rooms') is-invalid @enderror">Number of Rooms</label>
@@ -118,8 +117,9 @@
         <div class="form-outline w-50 mb-3">
             <label for="square_meters" class="form-label @error('square_meters') is-invalid @enderror">Square
                 Meters</label>
-            <input type="number" class="form-control" id="square_meters" placeholder="Insert number of square meters"
-                name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required>
+            <input type="number" class="form-control" id="square_meters"
+                placeholder="Insert number of square meters" name="square_meters"
+                value="{{ old('square_meters', $apartment->square_meters) }}" required>
             <div class="text-danger" id="mq-error-message"></div>
             @error('square_meters')
                 <div class="invalid-feedback px-2">
