@@ -145,11 +145,22 @@
             </div>
         @endif
 
-        <div class="mb-3">
-            <input class="form-check-input" type="checkbox" value="1"
-                {{ old('is_visible', $apartment->is_visible) ? 'checked' : '' }} name="is_visible" id="is_visible"
-                required>
-            <label class="form-check-label" for="is_visible">Visible</label>
+        <div class="my-3 d-flex">
+            <label for="is_visible">Visibility:</label>
+            <div class="form-check mx-3">
+                <input class="form-check-input" type="radio" name="is_visible" id="is_visible_yes" value="1"
+                    {{ old('is_visible', $apartment->is_visible) == 1 ? 'checked' : '' }}>
+                <label class="form-check-label" for="is_visible_yes">
+                    Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_visible" id="is_visible_no" value="0"
+                    {{ old('is_visible', $apartment->is_visible) == 0 ? 'checked' : '' }}>
+                <label class="form-check-label" for="is_visible_no">
+                    No
+                </label>
+            </div>
         </div>
     </div>
 
