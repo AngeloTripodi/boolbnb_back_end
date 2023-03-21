@@ -17,7 +17,7 @@ class ApartmentController extends Controller
         'title' => ['required', 'min:2', 'max:150'],
         'n_rooms' => ['required', 'numeric', 'min:1', 'max:20'],
         'n_beds' => ['required', 'numeric', 'min:1', 'max:30'],
-        'n_bathrooms' => ['required', 'numeric', 'max:25'],
+        'n_bathrooms' => ['required', 'numeric', 'min:0', 'max:25'],
         'square_meters' => ['required', 'numeric', 'min:10', 'max:2000'],
         'address' => ['required', 'min:3', 'max:255'],
         'latitude' => ['required', 'numeric'],
@@ -65,7 +65,9 @@ class ApartmentController extends Controller
         $newApartment = new Apartment();
         $newApartment->fill($data);
         $newApartment->save();
-        return redirect()->route('user.apartments.index');
+        $message = "{$newApartment->title} has been created";
+
+        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
 
         //controllo i valori della checkbox
         if (!isset($request->is_visible)) {
@@ -116,7 +118,9 @@ class ApartmentController extends Controller
         $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $apartment->update($data);
-        return redirect()->route('user.apartments.index', compact('apartment'));
+        // apartment modification message
+        $message = "{$apartment->title} has been modified";
+        return redirect()->route('user.apartments.index', compact('apartment'))->with('message', $message)->with('alert-type', 'alert-warning');
     }
 
     /**
@@ -128,6 +132,8 @@ class ApartmentController extends Controller
     public function destroy(Apartment $apartment)
     {
         $apartment->delete();
-        return redirect()->route('user.apartments.index');
+        // apartment deleted message
+        $message = "{$apartment->title} has been deleted";
+        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-danger');
     }
 }
