@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('register') }}">
+                        <form class="form needs-validation" novalidate method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="mb-4 row">
