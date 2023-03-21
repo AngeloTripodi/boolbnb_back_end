@@ -137,6 +137,6 @@ class ApartmentController extends Controller
         $apartment->delete();
         // apartment deleted message
         $message = "{$apartment->title} has been deleted";
-        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-danger');
+        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
     }
 }

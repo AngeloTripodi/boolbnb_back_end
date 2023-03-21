@@ -10,6 +10,8 @@
             @endif
         </div> --}}
         
+        @include('user.apartments.partials.popup')
+
         <h1 class="py-3 ">{{ Auth::user()->name }} uploaded apartments:</h1>
         @section('messages')
             <div class="container-fluid">
@@ -55,7 +57,7 @@
         </div>
     </div>
 @endsection
-
+{{-- js delete handler on apartment delete --}}
 @section('script')
     @vite('resources/js/deleteHandler.js')
 @endsection
