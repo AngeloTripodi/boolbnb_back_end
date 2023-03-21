@@ -1,45 +1,50 @@
+const form = document.querySelector('form');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('password-confirm');
+const emailErrorMessage = document.getElementById('email-error-message');
+const passwordErrorMessage = document.getElementById('password-error-message');
+const confirmPasswordErrorMessage = document.getElementById('confirm-password-error-message');
 
-function checkForm() {
-    let pass1 = document.getElementById("password").value;
-    let pass2 = document.getElementById("password-confirm").value;
-    const passMatchElement = document.getElementById('psw-match');
-    const passLenElement = document.getElementById('psw-length');
-    const emailElement = document.getElementById('validate-email');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-
-    if ((pass1.length > 7) && (pass1 == pass2) && validateEmail()) {
-        return true;
-        
-    } else if (!validateEmail()){
-        console.log("email a gallina");
-        emailElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Email is invalid </p>`;
-        return false;
-
-    } else if (pass1.length < 7) {
-        console.log("Password must be at least 8 characters");
-        passLenElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Password must be at least 8 characters </p>`;
-        return false;
-    }
-    else if (pass1 != pass2) {
-        console.log("Passwords do not match");
-        passMatchElement.outerHTML = `<p class="text-danger pt-1"><i class="fa-solid fa-circle-exclamation pe-1"></i> Passwords don't match </p>`
-        return false;
-    }
-}
-
-
-function validateEmail() {
-    let email = document.getElementById("email").value;
-    const res = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return res.test(String(email).toLowerCase());
+  // Validazione email
+  if (!emailInput.checkValidity()) {
+    emailErrorMessage.innerText = 'Email is invalid';
+  } else {
+    emailErrorMessage.innerText = '';
   }
 
+  // Validazione password
+  if (passwordInput.value.length <= 8) {
+    passwordErrorMessage.innerText = 'Password must be at least 8 characters';
+  } else {
+    passwordErrorMessage.innerText = '';
+  }
 
-document.querySelector('form').addEventListener('submit', function (e) {
-    //Prevent default behaviour
-    e.preventDefault();
-    //Check passwords
-    if (checkForm()) {
-        this.submit();
-    }
+  // Comparazione password e conferma password
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    confirmPasswordErrorMessage.innerText = "Passwords don't match";
+  } else {
+    confirmPasswordErrorMessage.innerText = '';
+  }
+
+  // Se tutte le validazioni sono corrette, invia il form
+  if (emailInput.checkValidity() && passwordInput.value.length >= 8 && passwordInput.value === confirmPasswordInput.value) {
+    form.submit();
+  }
+});
+
+// Nascondi il messaggio di errore quando l'utente inizia a scrivere nell'input
+emailInput.addEventListener('input', () => {
+  emailErrorMessage.innerText = '';
+});
+
+passwordInput.addEventListener('input', () => {
+  passwordErrorMessage.innerText = '';
+});
+
+confirmPasswordInput.addEventListener('input', () => {
+  confirmPasswordErrorMessage.innerText = '';
 });
