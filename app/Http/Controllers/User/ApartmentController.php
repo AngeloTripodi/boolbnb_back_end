@@ -119,7 +119,8 @@ class ApartmentController extends Controller
         $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $apartment->update($data);
-        return redirect()->route('user.apartments.index', compact('apartment'));
+        $message = "{$apartment->title} has been modified";
+        return redirect()->route('user.apartments.index', compact('apartment'))->with('message', $message)->with('alert-type', 'alert-warning');
     }
 
     /**
