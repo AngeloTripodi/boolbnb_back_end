@@ -9,6 +9,10 @@ const nameInput = document.getElementById('name');
 const lastNameInput = document.getElementById('last_name');
 const nameErrorMessage = document.getElementById('name-error-message');
 const lastNameErrorMessage = document.getElementById('last-name-error-message');
+const dobInput = document.getElementById('date_of_birth');
+const dobErrorMessage = document.getElementById('dob-error-message');
+const dobMinDate = new Date('1990-01-01');
+const dobMaxDate = new Date();
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -25,6 +29,14 @@ form.addEventListener('submit', (event) => {
     lastNameErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Last name must be at least 2 characters`;
   } else {
     lastNameErrorMessage.innerHTML = '';
+  }
+
+  // Validazione data di nascita
+  const dobDate = new Date(dobInput.value);
+  if (dobDate < dobMinDate || dobDate > dobMaxDate) {
+    dobErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Date of birth must be between ${dobMinDate.toLocaleDateString()} and ${dobMaxDate.toLocaleDateString()}`;
+  } else {
+    dobErrorMessage.innerHTML = '';
   }
 
   // Validazione email
@@ -75,3 +87,6 @@ lastNameInput.addEventListener('input', () => {
   lastNameErrorMessage.innerHTML = '';
 });
 
+dobInput.addEventListener('input', () => {
+  dobErrorMessage.innerHTML = '';
+});
