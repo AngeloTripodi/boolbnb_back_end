@@ -4,7 +4,7 @@ if (popup) {
     Swal.fire({
         toast: true,
         animation: false,
-        icon: popup.dataset.type,
+        icon: 'success',
         title: popup.dataset.message,
         type: popup.dataset.type,
         position: 'top-right',
