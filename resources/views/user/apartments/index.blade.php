@@ -1,18 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div class="container">
-        {{-- <div class="col-12 mt-3 text-end">
-            @if ($trashed)
-                <a class="btn btn-danger me-3" href="{{ route('user.apartments.trashed') }}"><b>{{ $trashed }}</b>
-                    item/s in
-                    recycled bin</a>
+{{-- <div class="container">
+    {{-- <div class="col-12 mt-3 text-end">
+        @if ($trashed)
+        <a class="btn btn-danger me-3" href="{{ route('user.apartments.trashed') }}"><b>{{ $trashed }}</b>
+            item/s in
+            recycled bin</a>
             @endif
         </div> --}}
-
-
-    <h1 class="py-3 text-center">{{ Auth::user()->name }} uploaded apartments:</h1>
-
+        
+        <h1 class="py-3 ">{{ Auth::user()->name }} uploaded apartments:</h1>
+        @section('messages')
+            <div class="container-fluid">
+                <div class="row d-flex mt-2">
+                    <div class="col-12 p-0">
+                        <div class="controllers w-100 d-flex gap-2">
+                            @if (session('message'))
+                            <div class="my-alert message alert text-center flex-grow-1 {{session('alert-type')}}">
+                                <span >{{session('message')}}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endsection
     <div class="container mt-2 my-cards">
         <div class="row g-4">
             <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary"><i class="fa-solid fa-plus me-2"></i>Add new apartment</a>
