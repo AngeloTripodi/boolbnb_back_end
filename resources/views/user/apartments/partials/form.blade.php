@@ -35,6 +35,7 @@
             <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                 value="{{ old('address', $apartment->address) }}" required>
             <div class="text-danger" id="address-error-message"></div>
+            <ul id="autocomplete-list"></ul>
             @error('address')
                 <div class="invalid-feedback px-2">
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
@@ -54,7 +55,7 @@
         </div>
 
 
-
+        {{-- 
         <div class="form-outline w-50 mb-3">
             <label for="latitude" class="form-label @error('latitude') is-invalid @enderror">Latitude</label>
             <input type="text" class="form-control" id="latitude" placeholder="Insert latitude" name="latitude"
@@ -75,7 +76,7 @@
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
                 </div>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="form-outline w-50 mb-3">
             <label for="n_rooms" class="form-label @error('n_rooms') is-invalid @enderror">Number of Rooms</label>
@@ -117,9 +118,8 @@
         <div class="form-outline w-50 mb-3">
             <label for="square_meters" class="form-label @error('square_meters') is-invalid @enderror">Square
                 Meters</label>
-            <input type="number" class="form-control" id="square_meters"
-                placeholder="Insert number of square meters" name="square_meters"
-                value="{{ old('square_meters', $apartment->square_meters) }}" required>
+            <input type="number" class="form-control" id="square_meters" placeholder="Insert number of square meters"
+                name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required>
             <div class="text-danger" id="mq-error-message"></div>
             @error('square_meters')
                 <div class="invalid-feedback px-2">
@@ -178,6 +178,34 @@
     </div>
 
 </form>
+
+{{-- <script>
+    let input = document.querySelector('input[name="address"]');
+    let list = document.querySelector('#autocomplete-list');
+
+    input.addEventListener('input', function() {
+        let value = this.value.trim();
+        if (value.length >= 3) {
+            axios.get('/autocomplete', {
+                    params: {
+                        address: value
+                    }
+                })
+                .then(function(response) {
+                    let html = '';
+                    for (let i = 0; i < response.data.length; i++) {
+                        html += '<li>' + response.data[i] + '</li>';
+                    }
+                    list.innerHTML = html;
+                })
+                .catch(function(error) {
+                    console.error(error);
+                });
+        } else {
+            list.innerHTML = '';
+        }
+    });
+</script> --}}
 
 
 
