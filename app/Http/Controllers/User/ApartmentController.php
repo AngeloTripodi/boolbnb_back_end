@@ -105,9 +105,10 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         //error 403 when user is not correct
-        if (!Auth::user()->apartment) {
+        if ($apartment->user_id !== Auth::user()->id) {
             abort(403);
         }
+
         return view('user.apartments.edit', compact('apartment'), ['services' => Service::all()]);
     }
 
