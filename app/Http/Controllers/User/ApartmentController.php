@@ -144,7 +144,7 @@ class ApartmentController extends Controller
 
         $apartment->update($data);
         $message = "{$apartment->title} has been modified";
-        return redirect()->route('user.apartments.index', compact('apartment'))->with('message', $message)->with('alert-type', 'alert-warning');
+        return redirect()->route('user.apartments.index', compact('apartment'))->with('message', $message);
     }
 
     /**
@@ -160,9 +160,9 @@ class ApartmentController extends Controller
         Storage::delete($apartment->image);
         $apartment->delete();
         // apartment deleted message
-        // $message = "{$apartment->title} has been deleted";
-        return redirect()->route('user.apartments.index');
-        // ->with('message', $message)->with('alert-type', 'alert-success');
+        $message = "{$apartment->title} has been deleted";
+        return redirect()->route('user.apartments.index')->with('message', $message);
+        // ->with('alert-type', 'alert-success');
     }
 
     // public function autocomplete(Request $request)
