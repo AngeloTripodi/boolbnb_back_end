@@ -88,8 +88,8 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        // error 403 when user is not correct
-        if (!Auth::user()->apartment) {
+        //error 403 when user is not correct
+        if ($apartment->user_id !== Auth::user()->id) {
             abort(403);
         }
         $apartments = Apartment::where('user_id', Auth::user()->id)->get();
