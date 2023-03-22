@@ -22,7 +22,7 @@ form.addEventListener('submit', (event) => {
 
     // Validazione titolo
     if (titleInput.value.length < 2 || titleInput.value.length > 150) {
-        titleErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Name must be between 2 and 150 characters`;
+        titleErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Title must be between 2 and 150 characters`;
     } else {
         titleErrorMessage.innerHTML = '';
     }
@@ -43,21 +43,21 @@ form.addEventListener('submit', (event) => {
 
     // Validazione letti
     if (bedsInput.value < 1 || bedsInput.value > 30) {
-        bedsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of rooms must be between 1 and 30`;
+        bedsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of beds must be between 1 and 30`;
     } else {
         bedsErrorMessage.innerHTML = '';
     }
 
     // Validazione bagni
     if (bathroomsInput.value < 0 || bathroomsInput.value > 25) {
-        bathroomsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of beds must be between 0 and 25`;
+        bathroomsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of bathrooms must be between 0 and 25`;
     } else {
         bathroomsErrorMessage.innerHTML = '';
     }
 
     // Validazione mq
     if (mqInput.value < 10 || mqInput.value > 2000) {
-        mqErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of beds must be between 10 and 2000`;
+        mqErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Square meters must be between 10 and 2000`;
     } else {
         mqErrorMessage.innerHTML = '';
     }
