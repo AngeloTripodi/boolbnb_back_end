@@ -143,6 +143,23 @@ class ApartmentController extends Controller
         $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $apartment->update($data);
+        
+        // Effettua la chiamata all'API di TomTom
+        $address = $data['address'];
+        $url = 'https://api.tomtom.com/search/2/geocode/' . urlencode($address) . '.json?key=RXZp1eMMbMPK1bi0VTiW9y75pW4mVOkk';
+        $response = file_get_contents($url);
+
+        // Analizza la risposta JSON
+        $json = json_decode($response);
+        $latitude = $json->results[0]->position->lat;
+        $longitude = $json->results[0]->position->lon;
+
+        // Salva la longitudine e la latitudine nel database
+        $apartment->update([
+            'latitude' => $latitude,
+            'longitude' => $longitude,
+        ]);
+
         $message = "{$apartment->title} has been modified";
         return redirect()->route('user.apartments.index', compact('apartment'))->with('message', $message);
     }
