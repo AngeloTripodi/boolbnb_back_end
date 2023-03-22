@@ -17,11 +17,10 @@
                 </div>
                 <p class="card-text text-center fw-bold">{{ $apartment->description }}</p>
                 <ul class="list-unstyled text-center mb-4">
-                    <li class="text-muted"> {{ $apartment->slug }}</li>
                     {{-- <li class="text-muted">Type: {{ $apartment->user->first_name }} {{ $apartment->user->last_name }}</li> --}}
-                    <li class="text-muted">LONG: {{ $apartment->address }}</li>
-                    <li class="text-muted">LAT: {{ $apartment->latitude }}</li>
-                    <li class="text-muted">LONG: {{ $apartment->longitude }}</li>
+                    <li class="text-muted">Address: {{ $apartment->address }}</li>
+                    <li class="text-muted">Latitude: {{ $apartment->latitude }}</li>
+                    <li class="text-muted">Longitude: {{ $apartment->longitude }}</li>
                     <li class="text-muted">Beds: {{ $apartment->n_beds }}</li>
                     <li class="text-muted">Bathrooms: {{ $apartment->n_bathrooms }}</li>
                     <li class="text-muted">Square meters: {{ $apartment->square_meters }}</li>

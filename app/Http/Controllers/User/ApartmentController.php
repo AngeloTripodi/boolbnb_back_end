@@ -20,8 +20,8 @@ class ApartmentController extends Controller
         'n_bathrooms' => ['required', 'numeric', 'min:0', 'max:25'],
         'square_meters' => ['required', 'numeric', 'min:10', 'max:2000'],
         'address' => ['required', 'min:3', 'max:255'],
-        'latitude' => ['required', 'numeric'],
-        'longitude' => ['required', 'numeric'],
+        // 'latitude' => ['required', 'numeric'],
+        // 'longitude' => ['required', 'numeric'],
         'image' => ['required', 'image', 'max:2048'],
         'services' => ['required', 'exists:services,id'],
         'is_visible' => ['required', 'boolean']
@@ -66,18 +66,32 @@ class ApartmentController extends Controller
 
         $newApartment = new Apartment();
         $newApartment->fill($data);
+
         $newApartment->save();
         $message = "{$newApartment->title} has been created";
-
         $newApartment->services()->sync($data['services'] ?? []);
-        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
 
-        //controllo i valori della checkbox
-        if (!isset($request->is_visible)) {
-            $data['is_visible'] = false;
-        } else {
-            $data['is_visible'] = true;
-        }
+        // Effettua la chiamata all'API di TomTom
+        $address = $data['address'];
+        $url = 'https://api.tomtom.com/search/2/geocode/' . urlencode($address) . '.json?key=RXZp1eMMbMPK1bi0VTiW9y75pW4mVOkk';
+        $response = file_get_contents($url);
+
+        // Analizza la risposta JSON
+        $json = json_decode($response);
+        $latitude = $json->results[0]->position->lat;
+        $longitude = $json->results[0]->position->lon;
+
+        // Salva la longitudine e la latitudine nel database
+        $newApartment->update([
+            'latitude' => $latitude,
+            'longitude' => $longitude,
+        ]);
+
+
+
+
+        // Restituisci una risposta di successo
+        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
     }
 
     /**
@@ -152,4 +166,15 @@ class ApartmentController extends Controller
         return redirect()->route('user.apartments.index');
         // ->with('message', $message)->with('alert-type', 'alert-success');
     }
+
+    // public function autocomplete(Request $request)
+    // {
+    //     $address = $request->input('address');
+    //     $url = 'https://api.tomtom.com/search/2/autocomplete/' . urlencode($address) . '.json?key=RXZp1eMMbMPK1bi0VTiW9y75pW4mVOkk&countrySet=IT&language=it-IT';
+    //     $response = file_get_contents($url);
+    //     $json = json_decode($response);
+
+    //     // Restituisci l'intera risposta JSON dell'API di TomTom
+    //     return response()->json($json);
+    // }
 }

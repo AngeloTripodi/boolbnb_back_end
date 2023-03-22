@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('title', 150);
             $table->text('description')->nullable();
             $table->text('image');
-            $table->float('latitude', 10, 8);
-            $table->float('longitude', 11, 8);
+            $table->float('latitude', 10, 8)->default('0.0');
+            $table->float('longitude', 11, 8)->default('0.0');
             $table->string('address');
             $table->tinyInteger('n_rooms')->unsigned();
             $table->tinyInteger('n_beds')->unsigned();
