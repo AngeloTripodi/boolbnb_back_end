@@ -13,7 +13,7 @@
         @include('user.apartments.partials.popup')
 
         <h1 class="py-3 ">{{ Auth::user()->name }} uploaded apartments:</h1>
-        @section('messages')
+        {{-- @section('messages')
             <div class="container-fluid">
                 <div class="row d-flex mt-2">
                     <div class="col-12 p-0">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-        @endsection
+        @endsection --}}
     <div class="container mt-2 my-cards">
         <div class="row g-4">
             <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary"><i class="fa-solid fa-plus me-2"></i>Add new apartment</a>
