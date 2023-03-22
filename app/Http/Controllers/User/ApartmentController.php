@@ -88,10 +88,8 @@ class ApartmentController extends Controller
         ]);
 
 
-
-
         // Restituisci una risposta di successo
-        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
+        return redirect()->route('user.apartments.index')->with('message', $message);
     }
 
     /**
