@@ -33,6 +33,7 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
+
         $apartments = Apartment::where('user_id', Auth::user()->id)->get();
         return view('user.apartments.index', compact('apartments'));
     }
@@ -44,6 +45,7 @@ class ApartmentController extends Controller
      */
     public function create(Apartment $apartment)
     {
+
         $apartment->is_visible = 1;
         return view('user.apartments.create', compact('apartment'), ['services' => Service::all()]);
     }
@@ -86,6 +88,11 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        // error 403 when user is not correct
+        if (!Auth::user()->apartment) {
+            abort(403);
+        }
+        $apartments = Apartment::where('user_id', Auth::user()->id)->get();
         return view('user.apartments.show', compact('apartment'));
     }
 
@@ -97,6 +104,10 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
+        //error 403 when user is not correct
+        if (!Auth::user()->apartment) {
+            abort(403);
+        }
         return view('user.apartments.edit', compact('apartment'), ['services' => Service::all()]);
     }
 
@@ -136,7 +147,8 @@ class ApartmentController extends Controller
         Storage::delete($apartment->image);
         $apartment->delete();
         // apartment deleted message
-        $message = "{$apartment->title} has been deleted";
-        return redirect()->route('user.apartments.index')->with('message', $message)->with('alert-type', 'alert-success');
+        // $message = "{$apartment->title} has been deleted";
+        return redirect()->route('user.apartments.index');
+        // ->with('message', $message)->with('alert-type', 'alert-success');
     }
 }
