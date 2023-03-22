@@ -18,14 +18,14 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   // Validazione nome
-  if (nameInput.value.length < 2) {
+  if (nameInput.value.length > 0 && nameInput.value.length < 2) {
     nameErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Name must be at least 2 characters`;
   } else {
     nameErrorMessage.innerHTML = '';
   }
 
   // Validazione cognome
-  if (lastNameInput.value.length < 2) {
+  if (lastNameInput.value.length > 0 && lastNameInput.value.length < 2) {
     lastNameErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Last name must be at least 2 characters`;
   } else {
     lastNameErrorMessage.innerHTML = '';
