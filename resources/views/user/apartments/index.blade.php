@@ -43,7 +43,7 @@
 
                 @foreach ($apartments as $apartment)
                     <div class="col-6 d-flex">
-                        <div class="card card-block p-3 rounded-0 align-items-stretch align-content-between">
+                        <div class="card card-block rounded-3 p-3 align-items-stretch align-content-between">
 
 
                             <div class="dropdown dropdown-index position-absolute btn-group">
@@ -70,7 +70,7 @@
 
                             {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
                             <div class="index-img mb-3 position-relative">
-                                <img class="img-fluid" src="{{ asset('storage/' . $apartment->image) }}"
+                                <img class="img-fluid rounded-3" src="{{ asset('storage/' . $apartment->image) }}"
                                     alt="Image of {{ $apartment->title }}">
                             </div>
                             <div class="row">
