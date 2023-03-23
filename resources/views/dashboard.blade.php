@@ -34,7 +34,7 @@
                 <h1 class="display-5 fw-bold">Your Apartment:</h1>
                 <p class="col-md-8 fs-4">Here you can view your published apartments, manage them, and add new ones. </br>
                     You can also sponsor them to attract more customers.</p>
-                <a class="btn btn-sm" href="{{ route('user.apartments.index') }}">
+                <a class="btn btn-sm dash_btn" href="{{ route('user.apartments.index') }}">
                     Check your apartments
                 </a>
             </div>
@@ -43,7 +43,7 @@
             <div class="container-fluid d-flex justify-content-between align-items-center">
                 <h1 class="display-5 fw-bold">Add New Apartment</h1>
                 <div>
-                    <a class="btn btn-sm" href="{{ route('user.apartments.create') }}">
+                    <a class="btn btn-sm dash_btn" href="{{ route('user.apartments.create') }}">
                         Add new apartment
                     </a>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="h-100 p-5 text-bg-dark rounded-3">
                     <h2>Messages</h2>
                     <p>Check immediately the requests received from users regarding your homes published on our site.</p>
-                    <a class="btn btn-sm" href="{{ route('user.message.index') }}">
+                    <a class="btn btn-sm dash_btn" href="{{ route('user.message.index') }}">
                         Check your messagges
                     </a>
                 </div>
@@ -64,9 +64,9 @@
                 <div class="h-100 p-5 text-bg-dark border rounded-3">
                     <h2>Statistics</h2>
                     <p>Check the statistics related to the sponsorships of your apartments</p>
-                    <button class="btn btn-sm" href="{{ route('user.sponsorship.index') }}">
+                    <a class="btn btn-sm dash_btn" href="{{ route('user.sponsorship.index') }}">
                         Check your statistics
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
