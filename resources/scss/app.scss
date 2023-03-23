@@ -3,6 +3,13 @@
 @import '/resources/scss/partials/welcome';
 @import '/resources/scss/partials/sidebar';
 
+header{
+    nav{
+        // background-color: rgb(0, 79, 121);
+        // background-color: #FF5A60;
+        background-color: #212529;
+    }
+}
 
 .my_dropdown-menu {
     top: 100%;
