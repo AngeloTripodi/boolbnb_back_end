@@ -1,7 +1,7 @@
 {{-- Creo un unico form per edit e create || creo una variabile per la rotta --}}
 
-<form id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST" enctype="multipart/form-data"
-    class="py-3 needs-validation" novalidate>
+<form autocomplete="off" id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST"
+    enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
     @csrf
     {{-- Inserisco la variabile creata in edit e create blade // per vedere rotte -> route:list --}}
     @method($method)
@@ -211,6 +211,3 @@
     @vite('resources/js/apartment-form-validation.js')
     @vite('resources/js/apiCall.js')
 @endsection
-
-
-
