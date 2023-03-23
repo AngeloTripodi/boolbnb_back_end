@@ -207,8 +207,10 @@
     });
 </script> --}}
 
-
-
 @section('script')
     @vite('resources/js/apartment-form-validation.js')
+    @vite('resources/js/apiCall.js')
 @endsection
+
+
+
