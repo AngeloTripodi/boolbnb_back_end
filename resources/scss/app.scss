@@ -11,6 +11,8 @@ header {
     }
 }
 
+@import '/resources/scss/partials/login';
+
 .my_dropdown-menu {
     top: 100%;
     left: -100px !important;
@@ -89,49 +91,4 @@ form .card {
         padding-right: 0.25rem;
         font-weight: 900;
     }
-}
-
-//index apartment style
-.index-img {
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
-
-    img {
-        width: 100%;
-        object-fit: cover;
-    }
-}
-
-.show-cards {
-    ul li {
-        list-style-type: none;
-    }
-}
-
-.dropdown-index {
-    background-color: white;
-    top: 40px;
-    right: 40px;
-    z-index: 1;
-
-    .btn-custom-index {
-        width: 100%;
-    }
-}
-
-
-///// SIDEBAR ////
-/// hover color -> 
-
-#sidebarMenu {
-
-    a:hover {
-        color: #fe595f;
-    }
-
-    .sidebar.nav-link.active {
-        color: #fe595f !important;
-    }
-
 }
