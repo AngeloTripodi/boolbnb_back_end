@@ -9,7 +9,7 @@
     <div class="card px-5 py-3 mb-3">
 
         <div class="form-outline w-100 mb-3">
-            <label for="title" class="form-label @error('title') is-invalid @enderror">Title</label>
+            <label for="title" class="form-label @error('title') is-invalid @enderror">Title*</label>
             <input type="text" class="form-control" id="title" placeholder="Insert title" name="title"
                 value="{{ old('title', $apartment->title) }}" required>
             <div class="text-danger" id="title-error-message"></div>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-outline w-100 mb-3">
-            <label for="address" class="form-label @error('address') is-invalid @enderror">Address</label>
+            <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
             <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                 value="{{ old('address', $apartment->address) }}" required>
             <div class="text-danger" id="address-error-message"></div>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-outline w-25 pt-4 mb-3">
-            <label for="image" class="form-label @error('image') is-invalid @enderror">Select image:</label>
+            <label for="image" class="form-label @error('image') is-invalid @enderror">Select image:*</label>
             <input type="file" class="form-control" id="image" name="image"
                 value="{{ old('image', $apartment->image) }}" required>
             @error('image')
@@ -79,7 +79,7 @@
         </div> --}}
 
         <div class="form-outline w-50 mb-3">
-            <label for="n_rooms" class="form-label @error('n_rooms') is-invalid @enderror">Number of Rooms</label>
+            <label for="n_rooms" class="form-label @error('n_rooms') is-invalid @enderror">Number of Rooms*</label>
             <input type="number" class="form-control" id="n_rooms" placeholder="Insert number of rooms"
                 name="n_rooms" value="{{ old('n_rooms', $apartment->n_rooms) }}" required>
             <div class="text-danger" id="rooms-error-message"></div>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="form-outline w-50 mb-3">
-            <label for="n_beds" class="form-label @error('n_beds') is-invalid @enderror">Number of Beds</label>
+            <label for="n_beds" class="form-label @error('n_beds') is-invalid @enderror">Number of Beds*</label>
             <input type="number" class="form-control" id="n_beds" placeholder="Insert number of beds" name="n_beds"
                 value="{{ old('n_beds', $apartment->n_beds) }}" required>
             <div class="text-danger" id="beds-error-message"></div>
@@ -104,7 +104,7 @@
 
         <div class="form-outline w-50 mb-3">
             <label for="n_bathrooms" class="form-label @error('n_bathrooms') is-invalid @enderror">Number of
-                Bathrooms</label>
+                Bathrooms*</label>
             <input type="number" class="form-control" id="n_bathrooms" placeholder="Insert number of bathrooms"
                 name="n_bathrooms" value="{{ old('n_bathrooms', $apartment->n_bathrooms) }}" required>
             <div class="text-danger" id="bathrooms-error-message"></div>
@@ -117,7 +117,7 @@
 
         <div class="form-outline w-50 mb-3">
             <label for="square_meters" class="form-label @error('square_meters') is-invalid @enderror">Square
-                Meters</label>
+                Meters*</label>
             <input type="number" class="form-control" id="square_meters" placeholder="Insert number of square meters"
                 name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required>
             <div class="text-danger" id="mq-error-message"></div>
@@ -130,7 +130,7 @@
 
         {{-- Aggiungo una checkbox per i servizi dell'appartamento --}}
         <div class="card p-3 shadow-none">
-            <p class="fw-bold">Services</p>
+            <p class="fw-bold">Services*</p>
             <div class="d-flex flex-wrap">
                 @foreach ($services as $service)
                     <div>
@@ -152,7 +152,7 @@
         @endif
 
         <div class="my-3 d-flex">
-            <label for="is_visible">Visibility:</label>
+            <label for="is_visible">Visibility:*</label>
             <div class="form-check mx-3">
                 <input class="form-check-input" type="radio" name="is_visible" id="is_visible_yes" value="1"
                     {{ old('is_visible', $apartment->is_visible) == 1 ? 'checked' : '' }}>
