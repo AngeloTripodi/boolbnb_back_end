@@ -43,9 +43,33 @@
 
                 @foreach ($apartments as $apartment)
                     <div class="col-6 d-flex">
-                        <div class="card card-block p-3 align-items-stretch align-content-between">
+                        <div class="card card-block p-3 rounded-0 align-items-stretch align-content-between">
+
+
+                            <div class="dropdown dropdown-index position-absolute btn-group">
+                                <button class="btn btn-custom-index dropdown-toggle rounded-0" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('user.apartments.show', $apartment->id) }}">Visualizza</a></li>
+                                    <li> <a class="dropdown-item"
+                                            href="{{ route('user.apartments.edit', $apartment->id) }}">Modifica</a></li>
+                                    <li>
+                                        <form action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
+                                            class=" delete double-confirm">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="dropdown-item btn btn-link">Cancella</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+
+
                             {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
-                            <div class="index-img mb-3">
+                            <div class="index-img mb-3 position-relative">
                                 <img class="img-fluid" src="{{ asset('storage/' . $apartment->image) }}"
                                     alt="Image of {{ $apartment->title }}">
                             </div>
@@ -55,20 +79,14 @@
                                     <h6>{{ $apartment->address }}</h6>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end">
-                                    <div class="actions pe-3">
-                                        <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn"><i
-                                                class="fa-solid fa-edit"></i></a>
-                                        <form class="d-inline-block form-delete double-confirm delete"
-                                            action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
-                                            data-element-name="{{ $apartment->title }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" title="Delete" class="btn"><i
-                                                    class="fa-solid fa-trash"></i></button>
-                                        </form>
-                                    </div>
+                                    <form action="{{ route('user.toggle', $apartment->id) }}" method="POST">
+                                        @method('PATCH')
+                                        @csrf
+                                        <button type="submit"
+                                            title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
+                                            class="btn btn-outline"><i
+                                                class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i></button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
