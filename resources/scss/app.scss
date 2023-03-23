@@ -3,6 +3,12 @@
 @import '/resources/scss/partials/welcome';
 @import '/resources/scss/partials/sidebar';
 
+header{
+    nav{
+        background-color: coral;
+    }
+}
+
 .my_dropdown-menu {
     top: 100%;
     left: -100px !important;
