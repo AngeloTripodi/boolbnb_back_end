@@ -141,22 +141,22 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        
+
         $data = $request->validate($this->rules);
         //delete image from db when change cover image
         if ($request->hasFile('image')) {
             Storage::delete($apartment->image);
         };
 
-        
+
         //// verifico se è stata caricata una nuova immagine e l'aggiorno, altrimenti non faccio nulla e resta settata l'immagine precedente /////
         // @dump($data);
-        if (isset($data['image'])){
-          $data['image'] = Storage::put('uploads/images/apartment', $data['image']);  
+        if (isset($data['image'])) {
+            $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
         }
 
         $apartment->update($data);
-        
+
         // Effettua la chiamata all'API di TomTom
         $address = $data['address'];
         $url = 'https://api.tomtom.com/search/2/geocode/' . urlencode($address) . '.json?key=RXZp1eMMbMPK1bi0VTiW9y75pW4mVOkk';
@@ -205,4 +205,13 @@ class ApartmentController extends Controller
     //     // Restituisci l'intera risposta JSON dell'API di TomTom
     //     return response()->json($json);
     // }
+
+    public function enableToggle(Apartment $apartment)
+    {
+        $apartment->is_visible = !$apartment->is_visible;
+        $apartment->save();
+
+        $message = ($apartment->is_visible) ? "visible" : "not visible";
+        return redirect()->back()->with('alert-type', 'success')->with('alert-message', "$apartment->title:&nbsp;<b>$message</b>");
+    }
 }

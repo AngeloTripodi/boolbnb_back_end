@@ -26,6 +26,7 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
+    Route::patch('/apartment/{apartment}/toggle', [ApartmentController::class, 'enableToggle'])->name('toggle');
     Route::resource('/apartments', ApartmentController::class);
 })->name('user.apartments.index');
 
