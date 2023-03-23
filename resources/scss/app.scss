@@ -3,6 +3,7 @@
 @import '/resources/scss/partials/welcome';
 @import '/resources/scss/partials/sidebar';
 
+
 .my_dropdown-menu {
     top: 100%;
     left: -100px !important;
@@ -11,8 +12,7 @@
 
 .my-fa-solid {
     color: white;
-
-    //Importo FontAwesome
+}
 
 
     // EDIT CREATE FORM STYLE
@@ -64,7 +64,7 @@
             opacity: 1;
         }
     }
-}
+
 
 // alert messages
 .my-alert {
@@ -100,4 +100,20 @@
     ul li {
         list-style-type: none;
     }
+}
+
+
+///// SIDEBAR ////
+/// hover color -> 
+
+#sidebarMenu {
+
+    a:hover {
+        color: #fe595f;
+    }
+
+    .sidebar.nav-link.active {
+        color: #fe595f!important;
+    }
+
 }
