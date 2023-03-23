@@ -10,8 +10,16 @@
                 </div>
                 <div class="col-6 d-flex justify-content-end">
                     <div class="actions pe-3">
+
                         <a href="{{ route('user.apartments.index') }}" class="btn"><i
                                 class="fa-solid fa-arrow-left"></i></a>
+                        <form action="{{ route('user.toggle', $apartment->id) }}" method="POST" class="d-inline">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
+                                class="btn btn-outline"><i
+                                    class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i></button>
+                        </form>
                         <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn"><i
                                 class="fa-solid fa-edit"></i></a>
                         <form class="d-inline-block form-delete double-confirm delete"
@@ -21,6 +29,7 @@
                             @method('DELETE')
                             <button type="submit" title="Delete" class="btn"><i class="fa-solid fa-trash"></i></button>
                         </form>
+
                     </div>
                 </div>
                 <div class="card-image py-4">
@@ -47,6 +56,7 @@
                             </li>
                         @endforeach
                     </ul>
+
                 </div>
             </div>
 

@@ -92,12 +92,23 @@
 
     img {
         width: 100%;
-        object-fit: none;
+        object-fit: cover;
     }
 }
 
 .show-cards {
     ul li {
         list-style-type: none;
+    }
+}
+
+.dropdown-index {
+    background-color: white;
+    top: 40px;
+    right: 40px;
+    z-index: 1;
+
+    .btn-custom-index {
+        width: 100%;
     }
 }
