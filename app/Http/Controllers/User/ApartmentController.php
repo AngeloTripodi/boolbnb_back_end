@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,9 +13,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
-    // ==== validation rules ====
+    // ==== validation rules ==== // nelle rules vanno tutti i campi che devono essere aggiornati nel DB, anche se non obbligatori //
     protected $rules = [
         'title' => ['required', 'min:2', 'max:150'],
+        'description' => ['nullable'],
         'n_rooms' => ['required', 'numeric', 'min:1', 'max:20'],
         'n_beds' => ['required', 'numeric', 'min:1', 'max:30'],
         'n_bathrooms' => ['required', 'numeric', 'min:0', 'max:25'],
@@ -22,7 +24,7 @@ class ApartmentController extends Controller
         'address' => ['required', 'min:3', 'max:255'],
         // 'latitude' => ['required', 'numeric'],
         // 'longitude' => ['required', 'numeric'],
-        'image' => ['required', 'image', 'max:2048'],
+        'image' => ['nullable'],
         'services' => ['required', 'exists:services,id'],
         'is_visible' => ['required', 'boolean']
     ];
@@ -58,8 +60,14 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate($this->rules);
+        $newRules = $this->rules;
+
+        //// aggiungo una nuova regola alle validation dicendo che qui l'immagine è required ////
+        $newRules['image'] = ['required'];
+        $data = $request->validate($newRules);
+
         $data['slug'] = Str::slug($data['title']);
+
         $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
 
         $data['user_id'] = Auth::user()->id;
@@ -133,14 +141,19 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+        
         $data = $request->validate($this->rules);
-
         //delete image from db when change cover image
         if ($request->hasFile('image')) {
             Storage::delete($apartment->image);
         };
 
-        $data['image'] = Storage::put('uploads/images/apartment', $data['image']);
+        
+        //// verifico se è stata caricata una nuova immagine e l'aggiorno, altrimenti non faccio nulla e resta settata l'immagine precedente /////
+        // @dump($data);
+        if (isset($data['image'])){
+          $data['image'] = Storage::put('uploads/images/apartment', $data['image']);  
+        }
 
         $apartment->update($data);
         
