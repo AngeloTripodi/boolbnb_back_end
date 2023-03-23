@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Boolbnb login</title>
     @vite(['resources/scss/app.scss']);
-
     
 </head>
 <body>
@@ -17,8 +16,8 @@
                 <div class="col col-xl-10">
                     <div class="card my-shadow" style="border-radius: 1rem;">
                         <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="https://images.unsplash.com/photo-1622632434843-ae4727340fff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80"
+                            <div class="col-md-6 col-lg-5 d-none d-md-block ">
+                                <img src="{{ asset('img/' . 'bg-house.jpg') }}"
                                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -68,7 +67,7 @@
                                             </label>
                                         </div>
                                         <div class="pt-1 mb-4 w-100">
-                                            <button class="btn btn-lg w-100 text-white" type="button" style="background-color: #fe8376">{{ __('Login') }}</button>
+                                            <button class="btn btn-lg w-100 text-white" type="submit" style="background-color: #fe8376">{{ __('Login') }}</button>
                                         </div>
                                         
                                         {{-- forgot password --}}
@@ -79,15 +78,14 @@
                                             <span class="pb-lg-2">Don't have an account? <a href="{{ route('register') }}" class="text-decoration-none" style="color: #fe8376;">{{ __('Register here') }}</a></span>
                                         </div>
                                     </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </section>
     
 </body>
 </html>
