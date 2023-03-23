@@ -5,6 +5,9 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column text-white">
+                        <div class="my-logo mx-2">
+                            <img class="w-100" src="{{ asset('img/Logo.png') }}" alt="">
+                        </div>
 
                         @guest
                             <li class="nav-item">
