@@ -30,7 +30,6 @@ form .card {
     border-radius: 30px 30px;
     border: none;
 
-
     a,
     button {
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -39,40 +38,37 @@ form .card {
 
 
 // ANIMATION CLASSES
-.focus-in-contract {
-    -webkit-animation: focus-in-contract 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: focus-in-contract 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-@-webkit-keyframes focus-in-contract {
+
+ @-webkit-keyframes text-focus-in {
     0% {
-        letter-spacing: 1em;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
     }
-
     100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
     }
-}
-
-@keyframes focus-in-contract {
+  }
+  @keyframes text-focus-in {
     0% {
-        letter-spacing: 1em;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
     }
-
     100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
     }
-}
+  }
+  
 
 
 // alert messages

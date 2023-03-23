@@ -131,7 +131,7 @@
         {{-- Aggiungo una checkbox per i servizi dell'appartamento --}}
         <div class="card p-3 shadow-none">
             <p class="fw-bold">Services*</p>
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap border rounded-3 p-2">
                 @foreach ($services as $service)
                     <div>
                         <input id="{{ $service->id }}" type="checkbox" class="form-check-input" name="services[]"
