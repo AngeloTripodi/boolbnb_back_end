@@ -27,10 +27,8 @@
 
 <body>
     <div id="app">
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-            <nav class="navbar my-navbar rounded-2 navbar-expand-md navbar-dark bg-dark shadow-sm mb-2">
+        <header class="col-md-9 ms-sm-auto col-lg-10">
+            <nav class="navbar my-navbar navbar-expand-md navbar-dark bg-dark shadow-sm mb-2">
                 <div class="container">
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
 
@@ -91,6 +89,11 @@
                     </div>
                 </div>
             </nav>
+
+        </header>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+
+
             <section id="messages" class="">
                 @yield('messages')
             </section>
