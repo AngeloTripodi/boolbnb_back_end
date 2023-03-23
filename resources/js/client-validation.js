@@ -11,7 +11,7 @@ const nameErrorMessage = document.getElementById('name-error-message');
 const lastNameErrorMessage = document.getElementById('last-name-error-message');
 const dobInput = document.getElementById('date_of_birth');
 const dobErrorMessage = document.getElementById('dob-error-message');
-const dobMinDate = new Date('1990-01-01');
+const dobMinDate = new Date('1900-01-01');
 const dobMaxDate = new Date();
 
 form.addEventListener('submit', (event) => {

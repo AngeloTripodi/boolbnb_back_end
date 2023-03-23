@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <div class="container">
+    {{-- <div class="container">
     {{-- <div class="col-12 mt-3 text-end">
         @if ($trashed)
         <a class="btn btn-danger me-3" href="{{ route('user.apartments.trashed') }}"><b>{{ $trashed }}</b>
@@ -9,10 +9,20 @@
             recycled bin</a>
             @endif
         </div> --}}
-        
-        @include('user.apartments.partials.popup')
 
-        <h1 class="py-3 ">{{ Auth::user()->name }} uploaded apartments:</h1>
+    @include('user.apartments.partials.popup')
+    <div class="container pb-5">
+        <div class="row justify-content-between align-items-center py-4">
+            <div class="col-6">
+                <h4 class="text-uppercase">Your apartments</h4>
+                <h6>From here you can edit, view, or delete your apartments</h6>
+            </div>
+            <div class="col-2">
+                <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary bg-transparent text-dark "><i
+                        class="fa-solid fa-plus me-2"></i>Add
+                    new apartment</a>
+            </div>
+        </div>
         {{-- @section('messages')
             <div class="container-fluid">
                 <div class="row d-flex mt-2">
@@ -28,32 +38,43 @@
                 </div>
             </div>
         @endsection --}}
-    <div class="container mt-2 my-cards">
-        <div class="row g-4">
-            <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary"><i class="fa-solid fa-plus me-2"></i>Add new apartment</a>
-            @foreach ($apartments as $apartment)
-                <div class="col-6 d-flex">
-                    <div class="card card-block p-3 align-items-stretch align-content-between">
-                        {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
-                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->image) }}"
-                            alt="Image of {{ $apartment->title }}">
-                        <h4 class="card-title-ap text-right pt-3">{{ $apartment->title }}</h4>
-                        <p>{{ $apartment->address }}</p>
-                        <div class="actions">
-                            <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn btn-sm btn-primary"><i
-                                    class="fa-solid fa-eye"></i></a>
-                            <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn btn-sm btn-success"><i
-                                    class="fa-solid fa-pen-to-square"></i></a>
-                            <form action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
-                                class="d-inline-block delete double-confirm">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                            </form>
+        <div class="mt-2 my-cards-index">
+            <div class="row g-4">
+
+                @foreach ($apartments as $apartment)
+                    <div class="col-6 d-flex">
+                        <div class="card card-block p-3 align-items-stretch align-content-between">
+                            {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
+                            <div class="index-img mb-3">
+                                <img class="img-fluid" src="{{ asset('storage/' . $apartment->image) }}"
+                                    alt="Image of {{ $apartment->title }}">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="card-title">{{ $apartment->title }}</h4>
+                                    <h6>{{ $apartment->address }}</h6>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <div class="actions pe-3">
+                                        <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn"><i
+                                                class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn"><i
+                                                class="fa-solid fa-edit"></i></a>
+                                        <form class="d-inline-block form-delete double-confirm delete"
+                                            action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
+                                            data-element-name="{{ $apartment->title }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" title="Delete" class="btn"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

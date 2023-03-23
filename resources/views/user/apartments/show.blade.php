@@ -1,50 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="card mb-3 mt-5 shadow-lg">
-            <div class="card-header text-center">
-                <h3 class="card-title">{{ $apartment->title }}</h3>
-            </div>
-            <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                <div class="card-image py-4">
-                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }}" class="img-fluid">
+    <div class="container py-5">
+        <div class="show-cards">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h2 class="card-title pb-2">{{ $apartment->title }}</h2>
+                    <h6>{{ $apartment->address }}</h6>
                 </div>
-                <div class="pb-5">
-                    @foreach ($apartment->services as $service)
-                        #{{ $service->name }}
-                    @endforeach
-                </div>
-                <p class="card-text text-center fw-bold">{{ $apartment->description }}</p>
-                <ul class="list-unstyled text-center mb-4">
-                    {{-- <li class="text-muted">Type: {{ $apartment->user->first_name }} {{ $apartment->user->last_name }}</li> --}}
-                    <li class="text-muted">Address: {{ $apartment->address }}</li>
-                    <li class="text-muted">Latitude: {{ $apartment->latitude }}</li>
-                    <li class="text-muted">Longitude: {{ $apartment->longitude }}</li>
-                    <li class="text-muted">Beds: {{ $apartment->n_beds }}</li>
-                    <li class="text-muted">Bathrooms: {{ $apartment->n_bathrooms }}</li>
-                    <li class="text-muted">Square meters: {{ $apartment->square_meters }}</li>
-                </ul>
-                <div class="actions d-flex justify-content-between w-100">
-                    <div class="main-actions">
-                        <a href="{{ route('user.apartments.index') }}" class="btn btn-success"><i
+                <div class="col-6 d-flex justify-content-end">
+                    <div class="actions pe-3">
+                        <a href="{{ route('user.apartments.index') }}" class="btn"><i
                                 class="fa-solid fa-arrow-left"></i></a>
-                    </div>
-                    <div class="secondary-actions">
-                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn btn-warning"><i
+                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn"><i
                                 class="fa-solid fa-edit"></i></a>
                         <form class="d-inline-block form-delete double-confirm delete"
                             action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
                             data-element-name="{{ $apartment->title }}">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" title="Delete" class="btn btn-danger"><i
-                                    class="fa-solid fa-trash"></i></button>
+                            <button type="submit" title="Delete" class="btn"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </div>
                 </div>
+                <div class="card-image py-4">
+                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }}" class="img-fluid">
+                </div>
+                <h3>
+                    Host: {{ Auth::user()->name }}
+                </h3>
+                <h6>
+                    Rooms: {{ $apartment->n_rooms }} - Beds: {{ $apartment->n_beds }} - Bathrooms:
+                    {{ $apartment->n_bathrooms }} - Mq: {{ $apartment->square_meters }}
+                </h6>
+                <p>
+                    {{ $apartment->description }}
+                </p>
+                <div class="apartment-info">
+                    <h5>
+                        Services:
+                    </h5>
+                    <ul class="ps-0">
+                        @foreach ($apartment->services as $service)
+                            <li>
+                                <i class="fa-solid fa-check"></i> {{ $service->name }}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
+
         </div>
+
+    </div>
     </div>
 @endsection
 
