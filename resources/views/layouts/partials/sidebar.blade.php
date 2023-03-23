@@ -6,7 +6,7 @@
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column text-white">
                         <div class="my-logo mx-2">
-                            <img class="w-100" src="{{ asset('img/Logo.png') }}" alt="">
+                            <img class="w-100" src="{{ asset('img/Logo.png') }}" alt="boolbnb logo">
                         </div>
 
                         @guest
