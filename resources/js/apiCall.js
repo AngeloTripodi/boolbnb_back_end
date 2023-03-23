@@ -1,0 +1,1 @@
+const addressInput = document.getElementById('address')
