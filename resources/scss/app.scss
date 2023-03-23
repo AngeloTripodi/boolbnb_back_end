@@ -2,6 +2,7 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import '/resources/scss/partials/welcome';
 @import '/resources/scss/partials/sidebar';
+@import '/resources/scss/partials/login';
 
 .my_dropdown-menu {
     top: 100%;
@@ -82,4 +83,18 @@
         padding-right: 0.25rem;
         font-weight: 900;
     }
+}
+
+// log in page
+.my-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.form-check-input:checked {
+    background-color: #fe8376;
+    border-color: #fd3a0d;
+}
+
+.register {
+    font-size: 1.1rem;
 }
