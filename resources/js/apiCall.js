@@ -66,3 +66,10 @@ var options = {
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options)
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML()
 autocompleteList.append(searchBoxHTML)
+
+const elementSearch = document.querySelector('input.tt-search-box-input');
+elementSearch.classList.add('form-control')
+elementSearch.setAttribute('id', 'address')
+elementSearch.setAttribute('placeholder', 'inserisci un indirizzo')
+elementSearch.setAttribute('type', 'text')
+elementSearch.setAttribute('name', 'address')

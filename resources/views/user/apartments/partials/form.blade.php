@@ -31,10 +31,10 @@
         </div>
 
         <div class="form-outline w-100 mb-3" id="autocomplete-list">
-            <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
+            {{-- <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
             <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                 value="{{ old('address', $apartment->address) }}" required>
-            <div class="text-danger" id="address-error-message"></div>
+            <div class="text-danger" id="address-error-message"></div> --}}
             @error('address')
                 <div class="invalid-feedback px-2">
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
@@ -207,6 +207,6 @@
 </script> --}}
 
 @section('script')
-    @vite('resources/js/apartment-form-validation.js')
     @vite('resources/js/apiCall.js')
+    @vite('resources/js/apartment-form-validation.js')
 @endsection

@@ -167,7 +167,6 @@ a.dash_btn {
 // }
 
 // #autocomplete-list {
-//     display: none;
 //     background-color: white;
 //     position: absolute;
 //     z-index: 1;
@@ -180,12 +179,12 @@ a.dash_btn {
 //     position: relative;
 // }
 
-// .form-control:focus {
-//     position: relative;
-//     z-index: 3;
-//     border-color: #fe8376;
-//     box-shadow: 0 0 0 0.25rem #fe847654;
-// }
+.form-control:focus {
+    position: relative;
+    z-index: 3;
+    border-color: #fe8376;
+    box-shadow: 0 0 0 0.25rem #fe847654;
+}
 
 // .list-group-item-action:hover,
 // .list-group-item-action:focus {
