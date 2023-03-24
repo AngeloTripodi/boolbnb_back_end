@@ -65,5 +65,5 @@ var options = {
 }
 var ttSearchBox = new tt.plugins.SearchBox(tt.services, options)
 var searchBoxHTML = ttSearchBox.getSearchBoxHTML()
-autocompleteList.append(searchBoxHTML)
+autocompleteList.append(searchBoxHTML);
 
