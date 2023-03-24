@@ -2,6 +2,7 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import '/resources/scss/partials/welcome';
 @import '/resources/scss/partials/sidebar';
+@import '/resources/scss/partials/variables';
 
 //index apartment style
 .index-img {
@@ -34,13 +35,13 @@
 }
 
 .my-btn {
-    background-color: #fe8376;
+    background-color: $main-color;
     color: white;
 
     &:hover {
         background-color: white;
-        color: #fd3a0d;
-        border: 1px solid #fe8376;
+        color: $main-color;
+        border: 1px solid $secondary-color;
         ;
     }
 }
@@ -50,7 +51,7 @@ header {
     nav {
         // background-color: rgb(0, 79, 121);
         // background-color: #FF5A60;
-        background-color: #212529;
+        background-color: white;
     }
 }
 
@@ -141,8 +142,8 @@ form .card {
 }
 
 .form-check-input:checked {
-    background-color: #fe8376;
-    border-color: #fd3a0d;
+    background-color: $main-color;
+    border-color: $secondary-color;
 }
 
 .register {
@@ -152,11 +153,11 @@ form .card {
 //! button style into dashboard
 
 a.dash_btn {
-    background-color: #fe595f;
+    background-color: $secondary-color;
     color: white;
 
     &:hover {
-        background-color: #fe8376;
+        background-color: $main-color;
     }
 }
 
@@ -172,7 +173,7 @@ a.dash_btn {
 //     z-index: 1;
 //     width: 100%;
 //     top: -3px;
-//     border-color: #fe8376;
+//     border-color: $main-color;
 // }
 
 // #image-upload {
@@ -182,7 +183,7 @@ a.dash_btn {
 .form-control:focus {
     position: relative;
     z-index: 3;
-    border-color: #fe8376;
+    border-color: $main-color;
     box-shadow: 0 0 0 0.25rem #fe847654;
 }
 
