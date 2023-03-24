@@ -20,7 +20,7 @@
             <div class="col-2">
                 <a href="{{ route('user.apartments.create') }}" class="btn my-btn fw-bold">
                     <i class="fa-solid fa-plus me-2"></i>
-                        New apartment
+                    New apartment
                 </a>
             </div>
         </div>
@@ -44,7 +44,8 @@
 
                 @forelse ($apartments as $apartment)
                     <div class="col-6 d-flex">
-                        <div class="card card-block rounded-3 p-3 align-items-stretch align-content-between">
+                        <div
+                            class="card card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
 
 
                             {{-- <div class="dropdown dropdown-index position-absolute btn-group">
@@ -86,12 +87,14 @@
                                         <button type="submit"
                                             title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
                                             class="btn btn-outline">
-                                            <i class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i>
+                                            <i
+                                                class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
                                         </button>
                                     </form>
                                 </div>
                                 <div class="text-end">
-                                    <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn card_btn" >
+                                    <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn card_btn">
+                                        <i class="fa-regular fa-eye"></i>
                                         Show
                                     </a>
                                     <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
@@ -112,9 +115,10 @@
                             </div>
                         </div>
                     </div>
-                    @empty
+                @empty
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="https://i.pinimg.com/564x/41/33/fc/4133fc74007d45c442cb41f0aeb6d919.jpg" alt="paceholde image" class="w-25 pt-5">
+                        <img src="https://i.pinimg.com/564x/41/33/fc/4133fc74007d45c442cb41f0aeb6d919.jpg"
+                            alt="paceholde image" class="w-25 pt-5">
                     </div>
                 @endforelse
             </div>

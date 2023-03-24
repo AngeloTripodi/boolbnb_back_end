@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="py-3 text-focus-in">
+        <h1 class="py-3">
             Add new Apartment:
         </h1>
 

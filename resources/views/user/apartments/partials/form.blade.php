@@ -31,8 +31,8 @@
         </div>
 
         <div class="form-outline w-100 mb-3" id="autocomplete-list">
-            {{-- <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
-            <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
+            <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
+            {{-- <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                 value="{{ old('address', $apartment->address) }}" required>
             <div class="text-danger" id="address-error-message"></div> --}}
             @error('address')
@@ -171,9 +171,8 @@
 
     {{-- Aggiungo una rotta per tornare all'index degli appartamenti --}}
     <div class="card-footer text-end py-4 d-flex justify-content-between">
-        <a href="{{ route('user.apartments.index') }}" class="btn btn-dark rounded-circle"><i
-                class="fa-solid fa-angles-left"></i></a>
-        <button type="submit" class="btn btn-success rounded-circle"><i class="fa-solid fa-plus"></i></button>
+        <a href="{{ route('user.apartments.index') }}" class="btn card_btn"><i class="fa-solid fa-angles-left pe-1"></i>Go Back To Apartments</a>
+        <button type="submit" class="btn card_btn"><i class="fa-solid fa-plus pe-1"></i>Add New Apartment</button>
     </div>
 
 </form>
