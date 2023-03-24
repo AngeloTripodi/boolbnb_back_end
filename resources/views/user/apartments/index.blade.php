@@ -47,7 +47,7 @@
                         <div class="card card-block rounded-3 p-3 align-items-stretch align-content-between">
 
 
-                            <div class="dropdown dropdown-index position-absolute btn-group">
+                            {{-- <div class="dropdown dropdown-index position-absolute btn-group">
                                 <button class="btn btn-custom-index dropdown-toggle rounded-0" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Actions
@@ -66,7 +66,7 @@
                                         </form>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
 
 
                             {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
@@ -85,8 +85,28 @@
                                         @csrf
                                         <button type="submit"
                                             title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
-                                            class="btn btn-outline"><i
-                                                class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i></button>
+                                            class="btn btn-outline">
+                                            <i class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="text-end">
+                                    <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn card_btn" >
+                                        Show
+                                    </a>
+                                    <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
+                                        <i class="fa-solid fa-edit"></i>
+                                        Edit
+                                    </a>
+                                    <form class="d-inline-block form-delete double-confirm delete"
+                                        action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
+                                        data-element-name="{{ $apartment->title }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" title="Delete" class="btn card_btn">
+                                            <i class="fa-solid fa-trash"></i>
+                                            Delete
+                                        </button>
                                     </form>
                                 </div>
                             </div>

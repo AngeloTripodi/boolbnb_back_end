@@ -4,6 +4,15 @@
 @import '/resources/scss/partials/sidebar';
 @import '/resources/scss/partials/variables';
 
+//! header bg-colour
+header {
+    nav {
+        // background-color: rgb(0, 79, 121);
+        // background-color: #FF5A60;
+        background-color: white;
+    }
+}
+
 //index apartment style
 .index-img {
     width: 100%;
@@ -17,22 +26,22 @@
     }
 }
 
-.show-cards {
-    ul li {
-        list-style-type: none;
-    }
-}
+// .show-cards {
+//     ul li {
+//         list-style-type: none;
+//     }
+// }
 
-.dropdown-index {
-    background-color: white;
-    top: 40px;
-    right: 40px;
-    z-index: 1;
+// .dropdown-index {
+//     background-color: white;
+//     top: 40px;
+//     right: 40px;
+//     z-index: 1;
 
-    .btn-custom-index {
-        width: 100%;
-    }
-}
+//     .btn-custom-index {
+//         width: 100%;
+//     }
+// }
 
 .my-btn {
     background-color: $main-color;
@@ -46,12 +55,13 @@
     }
 }
 
-//! header bg-colour
-header {
-    nav {
-        // background-color: rgb(0, 79, 121);
-        // background-color: #FF5A60;
-        background-color: white;
+.card_btn{
+    margin-right: .25rem;
+    background-color: white;
+    
+    &:hover{
+        background-color: $main-color;
+        color: white;
     }
 }
 
