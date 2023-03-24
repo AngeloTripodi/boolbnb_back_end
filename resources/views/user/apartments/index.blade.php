@@ -18,9 +18,10 @@
                 <h6>From here you can edit, view, or delete your apartments</h6>
             </div>
             <div class="col-2">
-                <a href="{{ route('user.apartments.create') }}" class="btn btn-secondary bg-transparent text-dark "><i
-                        class="fa-solid fa-plus me-2"></i>Add
-                    new apartment</a>
+                <a href="{{ route('user.apartments.create') }}" class="btn my-btn fw-bold">
+                    <i class="fa-solid fa-plus me-2"></i>
+                        Add new apartment
+                </a>
             </div>
         </div>
         {{-- @section('messages')
@@ -41,7 +42,7 @@
         <div class="mt-2 my-cards-index">
             <div class="row g-4">
 
-                @foreach ($apartments as $apartment)
+                @forelse ($apartments as $apartment)
                     <div class="col-6 d-flex">
                         <div class="card card-block rounded-3 p-3 align-items-stretch align-content-between">
 
@@ -91,7 +92,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @empty
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="https://i.pinimg.com/564x/41/33/fc/4133fc74007d45c442cb41f0aeb6d919.jpg" alt="paceholde image" class="w-25 pt-5">
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>
