@@ -1,6 +1,6 @@
 {{-- Creo un unico form per edit e create || creo una variabile per la rotta --}}
 
-<form id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST" enctype="multipart/form-data"
+<form autocomplete="off" id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST" enctype="multipart/form-data"
     class="py-3 needs-validation" novalidate>
     @csrf
     {{-- Inserisco la variabile creata in edit e create blade // per vedere rotte -> route:list --}}
@@ -32,10 +32,20 @@
 
         <div class="form-outline w-100 mb-3">
             <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
-            <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
-                value="{{ old('address', $apartment->address) }}" required>
+            <div class="position-relative">
+
+                <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
+                    value="{{ old('address', $apartment->address) }}" required>
+                    <span id="" class="clear-input"><i id="clear-input" class="d-none fa-solid fa-xmark"></i></span>
+            </div>
             <div class="text-danger" id="address-error-message"></div>
-            <ul id="autocomplete-list"></ul>
+            <div class="auto-list">
+                <ul id="autocomplete-list" class="list-unstyled list-group border rounded">
+                    <li class="py-2 list-group-item list-group-item-action">prova</li>
+                    <li class="py-2 list-group-item list-group-item-action">Prova 2</li>
+                    <li class="py-2 list-group-item list-group-item-action">Testo 3</li>
+                </ul>
+            </div>
             @error('address')
                 <div class="invalid-feedback px-2">
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
@@ -43,7 +53,7 @@
             @enderror
         </div>
 
-        <div class="form-outline w-25 pt-4 mb-3">
+        <div class="form-outline w-50 pt-4 mb-3">
             <label for="image" class="form-label @error('image') is-invalid @enderror">Select image:*</label>
             <input type="file" class="form-control" id="image" name="image"
                 value="{{ old('image', $apartment->image) }}" required>
