@@ -30,17 +30,17 @@
             @enderror
         </div>
 
-        <div class="form-outline w-100 mb-3" id="autocomplete-list">
-            <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
+        <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
+        <div class="form-outline w-100" id="autocomplete-list">
             {{-- <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
-                value="{{ old('address', $apartment->address) }}" required>
-            <div class="text-danger" id="address-error-message"></div> --}}
-            @error('address')
-                <div class="invalid-feedback px-2">
-                    <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
-                </div>
-            @enderror
+                value="{{ old('address', $apartment->address) }}" required> --}}
         </div>
+        <div class="text-danger" id="address-error-message"></div>
+        @error('address')
+            <div class="invalid-feedback px-2">
+                <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
+            </div>
+        @enderror
 
         <div class="form-outline w-50 pt-4 mb-3">
             <label for="image" class="form-label @error('image') is-invalid @enderror">Select image:*</label>
