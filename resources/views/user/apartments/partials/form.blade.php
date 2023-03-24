@@ -30,7 +30,7 @@
             @enderror
         </div>
 
-        <div class="form-outline w-100 mb-3" id="address">
+        <div class="form-outline w-100 mb-3" id="autocomplete-list">
             <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
             <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                 value="{{ old('address', $apartment->address) }}" required>

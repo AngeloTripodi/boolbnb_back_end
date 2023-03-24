@@ -50,7 +50,7 @@
 
 // });
 
-const autocompleteList = document.getElementById('address');
+const autocompleteList = document.getElementById('autocomplete-list');
 
 var options = {
     searchOptions: {
