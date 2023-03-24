@@ -30,15 +30,10 @@
             @enderror
         </div>
 
-        <div class="form-outline w-100 mb-3" id="autocomplete-list">
+        <div class="form-outline w-100 mb-3" id="address">
             <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
-            <div class="position-relative">
-
-                <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
-                    value="{{ old('address', $apartment->address) }}" required>
-                <span id="" class="clear-input"><i id="clear-input"
-                        class="d-none fa-solid fa-xmark"></i></span>
-            </div>
+            <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
+                value="{{ old('address', $apartment->address) }}" required>
             <div class="text-danger" id="address-error-message"></div>
             @error('address')
                 <div class="invalid-feedback px-2">
@@ -122,9 +117,8 @@
         <div class="form-outline w-50 mb-3">
             <label for="square_meters" class="form-label @error('square_meters') is-invalid @enderror">Square
                 Meters*</label>
-            <input type="number" class="form-control" id="square_meters"
-                placeholder="Insert number of square meters" name="square_meters"
-                value="{{ old('square_meters', $apartment->square_meters) }}" required>
+            <input type="number" class="form-control" id="square_meters" placeholder="Insert number of square meters"
+                name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required>
             <div class="text-danger" id="mq-error-message"></div>
             @error('square_meters')
                 <div class="invalid-feedback px-2">
