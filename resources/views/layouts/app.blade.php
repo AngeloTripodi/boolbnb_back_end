@@ -71,7 +71,8 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->email }}
+                                        {{-- Show name if available, else show email --}}
+                                        {{ Auth::user()->name ?? Auth::user()->email }}
                                     </a>
 
                                     <div class="dropdown-menu my_dropdown-menu dropdown-menu-right"
