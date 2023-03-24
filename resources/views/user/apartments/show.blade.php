@@ -11,17 +11,11 @@
                 <div class="col-6 d-flex justify-content-end">
                     <div class="actions pe-3">
 
-                        <a href="{{ route('user.apartments.index') }}" class="btn card_btn">    
+                        <a href="{{ route('user.apartments.index') }}" class="btn card_btn">
                             <i class="fa-solid fa-arrow-left"></i>
                             Go back to the apartments
                         </a>
-                        <form action="{{ route('user.toggle', $apartment->id) }}" method="POST" class="d-inline">
-                            @method('PATCH')
-                            @csrf
-                            <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}" class="btn btn-outline">
-                                <i class="fa-regular {{ $apartment->is_visible ? 'fa-eye visibility-icon' : 'fa-eye-slash visibility-icon' }}"></i>
-                            </button>
-                        </form>
+
                         <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
                             <i class="fa-solid fa-edit"></i>
                             Edit
@@ -36,11 +30,21 @@
                                 Delete
                             </button>
                         </form>
+                        <form action="{{ route('user.toggle', $apartment->id) }}" method="POST" class="d-inline">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
+                                class="btn btn-outline">
+                                <i
+                                    class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
+                            </button>
+                        </form>
 
                     </div>
                 </div>
                 <div class="card-image py-4">
-                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }}" class="img-fluid">
+                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }} "
+                        class="img-fluid {{ $apartment->is_visible ? '' : 'opacity-50' }}">
                 </div>
                 <h3>
                     Host: {{ Auth::user()->name }}
