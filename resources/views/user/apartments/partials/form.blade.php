@@ -1,7 +1,7 @@
 {{-- Creo un unico form per edit e create || creo una variabile per la rotta --}}
 
-<form autocomplete="off" id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST" enctype="multipart/form-data"
-    class="py-3 needs-validation" novalidate>
+<form autocomplete="off" id="validate-form" action="{{ route($routeName, $apartment) }}" method="POST"
+    enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
     @csrf
     {{-- Inserisco la variabile creata in edit e create blade // per vedere rotte -> route:list --}}
     @method($method)
@@ -30,22 +30,16 @@
             @enderror
         </div>
 
-        <div class="form-outline w-100 mb-3">
+        <div class="form-outline w-100 mb-3" id="autocomplete-list">
             <label for="address" class="form-label @error('address') is-invalid @enderror">Address*</label>
             <div class="position-relative">
 
                 <input type="text" class="form-control" id="address" placeholder="Insert address" name="address"
                     value="{{ old('address', $apartment->address) }}" required>
-                    <span id="" class="clear-input"><i id="clear-input" class="d-none fa-solid fa-xmark"></i></span>
+                <span id="" class="clear-input"><i id="clear-input"
+                        class="d-none fa-solid fa-xmark"></i></span>
             </div>
             <div class="text-danger" id="address-error-message"></div>
-            <div class="auto-list">
-                <ul id="autocomplete-list" class="list-unstyled list-group border rounded">
-                    <li class="py-2 list-group-item list-group-item-action">prova</li>
-                    <li class="py-2 list-group-item list-group-item-action">Prova 2</li>
-                    <li class="py-2 list-group-item list-group-item-action">Testo 3</li>
-                </ul>
-            </div>
             @error('address')
                 <div class="invalid-feedback px-2">
                     <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
@@ -128,8 +122,9 @@
         <div class="form-outline w-50 mb-3">
             <label for="square_meters" class="form-label @error('square_meters') is-invalid @enderror">Square
                 Meters*</label>
-            <input type="number" class="form-control" id="square_meters" placeholder="Insert number of square meters"
-                name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required>
+            <input type="number" class="form-control" id="square_meters"
+                placeholder="Insert number of square meters" name="square_meters"
+                value="{{ old('square_meters', $apartment->square_meters) }}" required>
             <div class="text-danger" id="mq-error-message"></div>
             @error('square_meters')
                 <div class="invalid-feedback px-2">
