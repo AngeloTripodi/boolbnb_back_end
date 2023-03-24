@@ -20,7 +20,7 @@
             <div class="col-2">
                 <a href="{{ route('user.apartments.create') }}" class="btn my-btn fw-bold">
                     <i class="fa-solid fa-plus me-2"></i>
-                        Add new apartment
+                        New apartment
                 </a>
             </div>
         </div>
