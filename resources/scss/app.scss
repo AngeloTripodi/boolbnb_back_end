@@ -33,6 +33,17 @@
     }
 }
 
+.my-btn {
+    background-color: #fe8376;
+    color: white;
+
+    &:hover {
+        background-color: white;
+        color: #fd3a0d;
+        border: 1px solid #fe8376;;
+    }
+}
+
 //! header bg-colour
 header {
     nav {
