@@ -21,7 +21,7 @@ class ApartmentController extends Controller
         'n_beds' => ['required', 'numeric', 'min:1', 'max:30'],
         'n_bathrooms' => ['required', 'numeric', 'min:0', 'max:25'],
         'square_meters' => ['required', 'numeric', 'min:10', 'max:2000'],
-        'address' => ['required', 'min:3', 'max:255'],
+        'address' => ['min:3', 'max:255'],
         // 'latitude' => ['required', 'numeric'],
         // 'longitude' => ['required', 'numeric'],
         'image' => ['nullable'],
