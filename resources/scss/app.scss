@@ -193,13 +193,23 @@ form .card {
 //! button style into dashboard
 
 a.dash_btn {
-    background-color: $secondary-color;
-    color: white;
+    border: 1px solid $secondary-color;
 
     &:hover {
         background-color: $main-color;
+        color: white;
     }
 }
+
+// .card_btn{
+//     margin-right: .25rem;
+//     background-color: white;
+    
+//     &:hover{
+//         background-color: $main-color;
+//         color: white;
+//     }
+// }
 
 // autocomplete address list
 // .auto-list {

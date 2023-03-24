@@ -29,7 +29,7 @@
 @section('content')
     <div class="container-fluid py-4">
 
-        <div class="p-5 mb-4 text-bg-dark rounded-3">
+        <div class="p-5 mb-4 border rounded-3">
             <div class="container-fluid py-3">
                 <h1 class="display-5 fw-bold">Your Apartment:</h1>
                 <p class="col-md-8 fs-4">Here you can view your published apartments, manage them, and add new ones. </br>
@@ -39,7 +39,7 @@
                 </a>
             </div>
         </div>
-        <div class="p-5 mb-4 text-bg-dark rounded-3">
+        <div class="p-5 mb-4 border rounded-3">
             <div class="container-fluid d-flex justify-content-between align-items-center">
                 <h1 class="display-5 fw-bold">Add New Apartment</h1>
                 <div>
@@ -52,7 +52,7 @@
 
         <div class="row align-items-md-stretch">
             <div class="col-md-6">
-                <div class="h-100 p-5 text-bg-dark rounded-3">
+                <div class="h-100 p-5 border rounded-3">
                     <h2>Messages</h2>
                     <p>Check immediately the requests received from users regarding your homes published on our site.</p>
                     <a class="btn btn-sm dash_btn" href="{{ route('user.message.index') }}">
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="h-100 p-5 text-bg-dark border rounded-3">
+                <div class="h-100 p-5 border rounded-3">
                     <h2>Statistics</h2>
                     <p>Check the statistics related to the sponsorships of your apartments</p>
                     <a class="btn btn-sm dash_btn" href="{{ route('user.sponsorship.index') }}">
