@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Boolbnb login</title>
-    @vite(['resources/scss/app.scss']);
+    @vite(['resources/scss/app.scss'])
     
 </head>
 <body>
@@ -14,11 +14,11 @@
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
-                    <div class="card my-shadow" style="border-radius: 1rem;">
+                    <div class="card my-shadow" style="border-radius: 1rem">
                         <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block ">
+                            <div class="col-md-6 col-lg-5 d-none d-md-block">
                                 <img src="{{ asset('img/' . 'bg-house.jpg') }}"
-                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
@@ -36,7 +36,7 @@
                                         
                                         {{-- Email --}}
                                         <div class="form-outline mb-4">
-                                            <label class="form-label m-0" for="form2Example17">{{ __('E-Mail Address')}}</label>
+                                            <label class="form-label m-1" for="email">{{ __('E-Mail Address')}}</label>
                                             <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror"
                                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                                             @error('email')
@@ -48,7 +48,7 @@
                                         
                                         {{-- Password --}}
                                         <div class="form-outline mb-4">
-                                            <label for="password" class="form-label m-0">{{ __('Password')}}</label>
+                                            <label for="password" class="form-label m-1">{{ __('Password')}}</label>
                                             <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">

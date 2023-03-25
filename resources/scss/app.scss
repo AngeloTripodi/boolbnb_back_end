@@ -256,3 +256,12 @@ div.tt-search-box-input-container{
 //     cursor: pointer;
 //     z-index: 4;
 // }
+
+.form-control:focus-visible {
+    outline: #fe8376;
+    border-color: #fe8376;
+}
+
+.form-control.focus-visible {
+    border-color: #fe8376;
+}
