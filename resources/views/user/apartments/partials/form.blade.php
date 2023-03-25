@@ -171,8 +171,21 @@
 
     {{-- Aggiungo una rotta per tornare all'index degli appartamenti --}}
     <div class="card-footer text-end py-4 d-flex justify-content-between">
-        <a href="{{ route('user.apartments.index') }}" class="btn card_btn"><i class="fa-solid fa-angles-left pe-1"></i>Go Back To Apartments</a>
-        <button type="submit" class="btn card_btn"><i class="fa-solid fa-plus pe-1"></i>Add New Apartment</button>
+        <a href="{{ route('user.apartments.index') }}" class="btn card_btn">
+            <i class="fa-solid fa-angles-left pe-1"></i>
+            Go Back To Apartments
+        </a>
+        @if($routeName == 'user.apartments.store')
+        <button type="submit" class="btn card_btn">
+            <i class="fa-solid fa-plus pe-1"></i>
+            Add New Apartment
+        </button>
+        @else
+        <button type="submit" class="btn card_btn">
+            <i class="fa-solid fa-edit"></i>
+            Edit Apartment
+        </button>
+        @endif
     </div>
 
 </form>
