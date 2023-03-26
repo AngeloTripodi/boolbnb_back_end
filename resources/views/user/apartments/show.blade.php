@@ -42,9 +42,17 @@
 
                     </div>
                 </div>
-                <div class="card-image py-4">
-                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }} "
-                        class="img-fluid {{ $apartment->is_visible ? '' : 'opacity-50' }}">
+                <div class="card-image py-4">                         
+                    {{--Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate--}}
+                    <div class="mb-3 position-relative">
+                        @if (str_starts_with($apartment->image, 'uploads'))
+                        <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}" src="{{ asset('storage/' . $apartment->image) }}"
+                        alt="Image of {{ $apartment->title }}">
+                    @else
+                        <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}" src="{{ asset('img/' . $apartment->image) }}"
+                        alt="Image of {{ $apartment->title }}">
+                    @endif
+                    
                 </div>
                 <h3>
                     Host: {{ Auth::user()->name }}

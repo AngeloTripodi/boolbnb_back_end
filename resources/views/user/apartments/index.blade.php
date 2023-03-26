@@ -70,10 +70,15 @@
                             </div> --}}
 
 
-                            {{-- <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->image }}"> --}}
-                            <div class="index-img mb-3 position-relative">
-                                <img class="img-fluid rounded-3" src="{{ asset('storage/' . $apartment->image) }}"
+                            {{--Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate--}}
+                                <div class="index-img mb-3 position-relative">
+                                    @if (str_starts_with($apartment->image, 'uploads'))
+                                    <img class="img-fluid rounded-3" src="{{ asset('storage/' . $apartment->image) }}"
                                     alt="Image of {{ $apartment->title }}">
+                                @else
+                                    <img class="img-fluid rounded-3" src="{{ asset('img/' . $apartment->image) }}"
+                                    alt="Image of {{ $apartment->title }}">
+                                @endif
                             </div>
                             <div class="row">
                                 <div class="col-6">
