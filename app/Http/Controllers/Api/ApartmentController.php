@@ -23,6 +23,14 @@ class ApartmentController extends Controller
                     });
                 }
             })
+            ->when($request->input('n_beds'), function ($query, $n_beds) {
+                $query->where('n_beds', '>=', $n_beds);
+            })
+
+            ->when($request->input('n_rooms'), function ($query, $n_rooms) {
+                $query->where('n_rooms', '>=', $n_rooms);
+            })
+
             // TODO orderBy title for now
             ->orderBy('title', 'asc')
             ->get();
