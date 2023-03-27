@@ -40,9 +40,9 @@
             </div>
         </div>
         <div class="p-5 mb-4 border rounded-3">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
-                <h1 class="display-5 fw-bold">Add New Apartment</h1>
-                <div>
+            <div class="container-fluid d-sm-flex justify-content-between align-items-center">
+                <h1 class="display-5 col-12 col-sm-6 fw-bold">Add New Apartment</h1>
+                <div class="">
                     <a class="btn btn-sm dash_btn" href="{{ route('user.apartments.create') }}">
                         Add new apartment
                     </a>
@@ -56,7 +56,7 @@
                     <h2>Messages</h2>
                     <p>Check immediately the requests received from users regarding your homes published on our site.</p>
                     <a class="btn btn-sm dash_btn" href="{{ route('user.message.index') }}">
-                        Check your messagges
+                        Messagges
                     </a>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     <h2>Statistics</h2>
                     <p>Check the statistics related to the sponsorships of your apartments</p>
                     <a class="btn btn-sm dash_btn" href="{{ route('user.sponsorship.index') }}">
-                        Check your statistics
+                        Statistics
                     </a>
                 </div>
             </div>

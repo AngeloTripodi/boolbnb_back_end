@@ -80,7 +80,9 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
             </div> --}}
             
             <div class="form-outline mb-3 col-md-4 col-12">
-                <label for="n_rooms" class="form-label mb-1 @error('n_rooms') is-invalid @enderror">Number of Rooms*</label>
+                <label for="n_rooms" class="form-label mb-1 @error('n_rooms') is-invalid @enderror">
+                    Rooms*
+                </label>
                 <input type="number" class="form-control" id="n_rooms" placeholder="Insert number of rooms"
                 name="n_rooms" value="{{ old('n_rooms', $apartment->n_rooms) }}" required>
                 <div class="text-danger" id="rooms-error-message"></div>
@@ -92,7 +94,9 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
             </div>
             
             <div class="form-outline mb-3 col-md-4 col-12">
-                <label for="n_beds" class="form-label mb-1 @error('n_beds') is-invalid @enderror">Number of Beds*</label>
+                <label for="n_beds" class="form-label mb-1 @error('n_beds') is-invalid @enderror">
+                    Beds*
+                </label>
                 <input type="number" class="form-control" id="n_beds" placeholder="Insert number of beds" name="n_beds"
                 value="{{ old('n_beds', $apartment->n_beds) }}" required>
                 <div class="text-danger" id="beds-error-message"></div>
@@ -104,8 +108,9 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
             </div>
             
             <div class="form-outline mb-3 col-md-4 col-12">
-                <label for="n_bathrooms" class="form-label mb-1 @error('n_bathrooms') is-invalid @enderror">Number of
-                    Bathrooms*</label>
+                <label for="n_bathrooms" class="form-label mb-1 @error('n_bathrooms') is-invalid @enderror">
+                    Bathrooms*
+                </label>
                     <input type="number" class="form-control" id="n_bathrooms" placeholder="Insert number of bathrooms"
                     name="n_bathrooms" value="{{ old('n_bathrooms', $apartment->n_bathrooms) }}" required>
                     <div class="text-danger" id="bathrooms-error-message"></div>
@@ -153,7 +158,7 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
                     @endif
                     
                     <div class="my-3 d-flex">
-                        <label for="is_visible">Visibility:*</label>
+                        <label for="is_visible">Visibility*</label>
                         <div class="form-check mx-3">
                             <input class="form-check-input" type="radio" name="is_visible" id="is_visible_yes" value="1"
                             {{ old('is_visible', $apartment->is_visible) == 1 ? 'checked' : '' }}>
