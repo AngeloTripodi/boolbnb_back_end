@@ -4,16 +4,16 @@
     <div class="container py-5">
         <div class="show-cards">
             <div class="row align-items-center">
-                <div class="col-6">
+                <div class="col-12 col-lg-6">
                     <h2 class="card-title pb-2">{{ $apartment->title }}</h2>
                     <h6>{{ $apartment->address }}</h6>
                 </div>
-                <div class="col-6 d-flex justify-content-end">
+                <div class="col-12 col-lg-6 d-flex justify-content-end">
                     <div class="actions pe-3">
 
                         <a href="{{ route('user.apartments.index') }}" class="btn card_btn">
-                            <i class="fa-solid fa-arrow-left"></i>
-                            Go back to the apartments
+                            <i class="fa-solid fa-angles-left pe-1"></i>
+                            Go back
                         </a>
 
                         <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
@@ -36,7 +36,8 @@
                             <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
                                 class="btn btn-outline">
                                 <i
-                                    class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
+                                    class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}">
+                                </i>
                             </button>
                         </form>
 
