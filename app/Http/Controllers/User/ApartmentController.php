@@ -155,6 +155,7 @@ class ApartmentController extends Controller
         }
 
         $apartment->update($data);
+        $apartment->services()->sync($data['services'] ?? []);
 
         // Effettua la chiamata all'API di TomTom
         $address = $data['address'];
