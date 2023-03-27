@@ -30,10 +30,10 @@ class ServiceSeeder extends Seeder
             'air conditioning',
             'refrigerator',
             'cooking basics',
-            'lockbok'
+            'lockbox'
         ];
 
-        foreach($services as $service){
+        foreach ($services as $service) {
             $newService = new Service();
             $newService->name = $service;
             $newService->slug = Str::slug($newService->name);

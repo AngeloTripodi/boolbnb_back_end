@@ -68,10 +68,14 @@ var searchBoxHTML = ttSearchBox.getSearchBoxHTML()
 autocompleteList.append(searchBoxHTML)
 
 const elementSearch = document.querySelector('input.tt-search-box-input');
-elementSearch.setAttribute('id', 'address')
-elementSearch.setAttribute('placeholder', 'Insert an address')
+const oldAddressValue = document.getElementById('old-value').innerHTML;
+elementSearch.value = oldAddressValue;
+elementSearch.setAttribute('id', 'address', 'placeholder', 'Insert address')
+// elementSearch.setAttribute('placeholder', 'Insert address')
 elementSearch.setAttribute('type', 'text')
 elementSearch.setAttribute('name', 'address')
 elementSearch.setAttribute('required', 'required')
+elementSearch.setAttribute('value', 'oldAddressValue')
+
 
 
