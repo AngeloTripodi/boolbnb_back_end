@@ -13,13 +13,16 @@
     @include('user.apartments.partials.popup')
     <div class="container pb-5">
         <div class="row justify-content-between align-items-center py-4">
-            <div class="col-6">
-                <h4 class="text-uppercase">Your apartments</h4>
-                <h6>From here you can edit, view, or delete your apartments</h6>
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <h4 class="text-uppercase">
+                    Your apartments
+                </h4>
+                <h6>
+                    From here you can edit, view, or delete your apartments
+                </h6>
             </div>
-            <div class="col-2">
+            <div class="col-12 col-md-4 text-end">
                 <a href="{{ route('user.apartments.create') }}" class="btn my-btn fw-bold">
-                    <i class="fa-solid fa-plus me-2"></i>
                     New apartment
                 </a>
             </div>
