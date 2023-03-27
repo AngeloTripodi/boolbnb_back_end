@@ -125,7 +125,7 @@ mqInput.addEventListener('input', () => {
 
 });
 
-// servicesInput.addEventListener('input[type="checkbox"]', () => {
-//     servicesErrorMessage.innerHTML = '';
+servicesInput.addEventListener('input[type="checkbox"]', () => {
+    servicesErrorMessage.innerHTML = '';
 
-// });
+});
