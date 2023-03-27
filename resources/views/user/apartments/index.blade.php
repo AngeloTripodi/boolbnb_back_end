@@ -43,7 +43,7 @@
             <div class="row g-4">
 
                 @forelse ($apartments as $apartment)
-                    <div class="col-6 d-flex">
+                    <div class="col-12 col-lg-6 d-flex">
                         <div
                             class="card card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
 
