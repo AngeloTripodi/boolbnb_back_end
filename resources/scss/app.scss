@@ -29,11 +29,11 @@ header {
     }
 }
 
-.card_btn{
+.card_btn {
     margin-right: .25rem;
     background-color: white;
-    
-    &:hover{
+
+    &:hover {
         background-color: $main-color;
         color: white;
     }
@@ -108,27 +108,27 @@ form .card {
 }
 
 //? address style
-div.tt-search-box{
+div.tt-search-box {
     margin-top: 0;
 }
 
-div.tt-search-box-input-container{
+div.tt-search-box-input-container {
     border-radius: 0.375rem;
     padding: 0 10px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-    &:focus{
+    &:focus {
         position: relative;
         z-index: 3;
         border-color: $main-color;
         box-shadow: 0 0 0 0.25rem #fe847654;
     }
 
-    div svg{
+    div svg {
         margin: 0.375rem 0;
     }
 
-    input#address{
+    input#address {
         border: none;
         font-size: 1rem;
         font-weight: 400;
@@ -161,22 +161,6 @@ div.tt-search-box-input-container{
     border-color: $main-color;
     box-shadow: 0 0 0 0.25rem #fe847654;
 }
-
-
-// login page style
-.my-shadow {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-
-.form-check-input:checked {
-    background-color: $main-color;
-    border-color: $secondary-color;
-}
-
-.register {
-    font-size: 1.1rem;
-}
-
 
 // animation classes style 
 .text-focus-in {
@@ -215,7 +199,7 @@ div.tt-search-box-input-container{
 // .card_btn{
 //     margin-right: .25rem;
 //     background-color: white;
-    
+
 //     &:hover{
 //         background-color: $main-color;
 //         color: white;
@@ -264,4 +248,101 @@ div.tt-search-box-input-container{
 
 .form-control.focus-visible {
     border-color: #fe8376;
+}
+
+.tt-search-box-input-container.-focused {
+    outline: #fe8376;
+    border-color: #fe8376;
+    box-shadow: 0 0 0 0.25rem rgba(254, 132, 118, 0.33);
+}
+
+.tt-search-box-result-list-container {
+    box-shadow: 0 0 0 0.25rem rgba(254, 132, 118, 0.33);
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+.tt-search-box-result-list:hover {
+    background-color: $main-color;
+}
+
+.tt-search-box-result-list-container {
+    border-top: 0;
+    overflow-y: scroll;
+    /* Add the ability to scroll */
+}
+
+// hide scrollbar
+.tt-search-box-result-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.tt-search-box-result-list-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.form-check-input:focus {
+    border-color: $main-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(254, 132, 118, 0.33);
+}
+
+.tt-search-box-input-container {
+    height: 38px;
+    padding-top: 3px !important;
+
+    div:first-child {
+        display: none;
+    }
+}
+
+#address {
+    font-size: .9rem !important;
+}
+
+
+// login register style
+.my-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.form-check-input:checked {
+    background-color: $main-color;
+    border-color: $secondary-color;
+}
+
+.register {
+    font-size: 1.1rem;
+}
+
+.bg-main-color {
+    background-color: $main-color;
+}
+
+.main-color {
+    color: $main-color;
+}
+
+.b-radius-left-1 {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.b-radius-right-1 {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.b-radius-1 {
+    border-radius: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .b-radius-m {
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
 }
