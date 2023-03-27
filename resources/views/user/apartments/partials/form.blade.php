@@ -153,7 +153,7 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
                     @endif
                     
                     <div class="my-3 d-flex">
-                        <label for="is_visible">Visibility:*</label>
+                        <label for="is_visible">Visibility*</label>
                         <div class="form-check mx-3">
                             <input class="form-check-input" type="radio" name="is_visible" id="is_visible_yes" value="1"
                             {{ old('is_visible', $apartment->is_visible) == 1 ? 'checked' : '' }}>
