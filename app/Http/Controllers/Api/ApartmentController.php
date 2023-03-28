@@ -11,12 +11,24 @@ class ApartmentController extends Controller
     //
     public function index(Request $request)
     {
-        $query = Apartment::query();
-
-        // Filtra per indirizzo o città
-        if ($request->has('address')) {
-            $query->where('address', 'like', '%' . $request->input('address') . '%');
-        }
+        //Join services table
+        $apartments = Apartment::with('services')
+            // condition when(boolean, callback function) to filter services only if requested
+            ->when($request->input('services'), function ($query, $services) {
+                // foreach service build the query with whereHas method to define additional query constraints
+                foreach ($services as $service) {
+                    $query->whereHas('services', function ($query) use ($service) {
+                        // TODO use slug for now
+                        $query->where('slug', $service);
+                    });
+                }
+            })
+            ->when($request->has('address'), function ($query) use ($request) {
+                $query->where('address', 'like', '%' . $request->input('address') . '%');
+            })
+            ->when($request->input('n_beds'), function ($query, $n_beds) {
+                $query->where('n_beds', '>=', $n_beds);
+            })
 
         // Altri filtri qui ...
 
