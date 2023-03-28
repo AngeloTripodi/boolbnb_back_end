@@ -30,44 +30,49 @@ class ApartmentController extends Controller
                 $query->where('n_beds', '>=', $n_beds);
             })
 
-        // Altri filtri qui ...
+            ->when($request->input('n_rooms'), function ($query, $n_rooms) {
+                $query->where('n_rooms', '>=', $n_rooms);
+            })
 
-        $apartments = $query->get();
+            // TODO orderBy title for now
+            ->orderBy('title', 'asc')
+            ->get();
 
         return response()->json([
             'success' => true,
             'results' => $apartments
         ]);
-
-        //Join services table
-        // $apartments = Apartment::with('services')
-        //     // condition when(boolean, callback function) to filter services only if requested
-        //     ->when($request->input('services'), function ($query, $services) {
-        //         // foreach service build the query with whereHas method to define additional query constraints
-        //         foreach ($services as $service) {
-        //             $query->whereHas('services', function ($query) use ($service) {
-        //                 // TODO use slug for now
-        //                 $query->where('slug', $service);
-        //             });
-        //         }
-        //     })
-        //     ->when($request->input('n_beds'), function ($query, $n_beds) {
-        //         $query->where('n_beds', '>=', $n_beds);
-        //     })
-
-        //     ->when($request->input('n_rooms'), function ($query, $n_rooms) {
-        //         $query->where('n_rooms', '>=', $n_rooms);
-        //     })
-
-        //     // TODO orderBy title for now
-        //     ->orderBy('title', 'asc')
-        //     ->get();
-
-        // return response()->json([
-        //     'success' => true,
-        //     'results' => $apartments
-        // ]);
     }
+
+    //Join services table
+    // $apartments = Apartment::with('services')
+    //     // condition when(boolean, callback function) to filter services only if requested
+    //     ->when($request->input('services'), function ($query, $services) {
+    //         // foreach service build the query with whereHas method to define additional query constraints
+    //         foreach ($services as $service) {
+    //             $query->whereHas('services', function ($query) use ($service) {
+    //                 // TODO use slug for now
+    //                 $query->where('slug', $service);
+    //             });
+    //         }
+    //     })
+    //     ->when($request->input('n_beds'), function ($query, $n_beds) {
+    //         $query->where('n_beds', '>=', $n_beds);
+    //     })
+
+    //     ->when($request->input('n_rooms'), function ($query, $n_rooms) {
+    //         $query->where('n_rooms', '>=', $n_rooms);
+    //     })
+
+    //     // TODO orderBy title for now
+    //     ->orderBy('title', 'asc')
+    //     ->get();
+
+    // return response()->json([
+    //     'success' => true,
+    //     'results' => $apartments
+    // ]);
+
 
 
 
