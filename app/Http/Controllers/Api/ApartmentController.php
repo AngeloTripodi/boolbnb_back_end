@@ -44,6 +44,39 @@ class ApartmentController extends Controller
             'results' => $apartments,
         ]);
     }
+    
+    public function getDistance(Request $request, Apartment $apartment)
+    {
+        $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
+        $address = $request->input('address');
+
+        $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
+            'key' => $apiKey,
+            'query' => $address,
+        ]);
+
+        $coordinates = $response->json()['results'][0]['position'];
+        $latitude = $coordinates['lat'];
+        $longitude = $coordinates['lon'];
+
+        $lat1 = $latitude;
+        $lon1 = $longitude;
+        $apartments = Apartment::all();
+
+        foreach($apartments as $apartment){
+            $lat2 = $apartment->latitude;
+            $lon2 = $apartment->longitude;
+        }
+
+        $distance = 6371 * acos(
+            cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
+        );
+        
+        // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate nel tuo database
+        // Restituisci la distanza calcolata come risposta alla richiesta HTTP
+        return response()->json(['distance' => $distance]);
+    }
+
 
     //Join services table
     // $apartments = Apartment::with('services')
