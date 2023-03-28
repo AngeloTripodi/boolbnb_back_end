@@ -31,6 +31,7 @@ class ApartmentController extends Controller
             ->when($request->input('n_rooms'), function ($query, $n_rooms) {
                 $query->where('n_rooms', '>=', $n_rooms);
             })
+            ->where('is_visible', true)
 
             // TODO orderBy title for now
             ->orderBy('title', 'asc')
