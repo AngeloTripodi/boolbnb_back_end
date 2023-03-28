@@ -23,6 +23,9 @@ class ApartmentController extends Controller
                     });
                 }
             })
+            ->when($request->has('address'), function ($query) use ($request) {
+                $query->where('address', 'like', '%' . $request->input('address') . '%');
+            })
             ->when($request->input('n_beds'), function ($query, $n_beds) {
                 $query->where('n_beds', '>=', $n_beds);
             })
