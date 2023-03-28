@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ApartmentController extends Controller
 {
@@ -37,6 +38,18 @@ class ApartmentController extends Controller
             // TODO orderBy title for now
             ->orderBy('title', 'asc')
             ->get();
+
+            $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
+            $address = $request->input('address');
+
+            $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
+                'key' => $apiKey,
+                'query' => $address,
+            ]);
+
+            $coordinates = $response->json()['results'][0]['position'];
+            $latitude = $coordinates['latitude'];
+            $longitude = $coordinates['longitude']; 
 
         return response()->json([
             'success' => true,
