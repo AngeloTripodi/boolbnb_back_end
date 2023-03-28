@@ -38,22 +38,10 @@ class ApartmentController extends Controller
             // TODO orderBy title for now
             ->orderBy('title', 'asc')
             ->get();
-
-            $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
-            $address = $request->input('address');
-
-            $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
-                'key' => $apiKey,
-                'query' => $address,
-            ]);
-
-            $coordinates = $response->json()['results'][0]['position'];
-            $latitude = $coordinates['latitude'];
-            $longitude = $coordinates['longitude']; 
-
+            
         return response()->json([
             'success' => true,
-            'results' => $apartments
+            'results' => $apartments,
         ]);
     }
 
