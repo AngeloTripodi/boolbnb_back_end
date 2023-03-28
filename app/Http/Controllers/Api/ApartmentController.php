@@ -78,9 +78,10 @@ class ApartmentController extends Controller
 
 
     //find or fail da fare 404 con Header? Forse...
-    public function show(Apartment $apartment)
+    public function show($slug)
     {
-        $apartment = Apartment::with('services')->findOrFail($apartment->id);
+        // show apartment by slug, findOrFail method works only  with ID
+        $apartment = Apartment::where('slug', $slug)->with('services')->firstOrFail();
         return response()->json([
             'success' => true,
             'results' => $apartment
