@@ -55,7 +55,7 @@
                 <div class="h-100 p-5 border rounded-3">
                     <h2>Messages</h2>
                     <p>Check immediately the requests received from users regarding your homes published on our site.</p>
-                    <a class="btn btn-sm dash_btn" href="{{ route('user.message.index') }}">
+                    <a class="btn btn-sm dash_btn" href="{{ route('user.messages.index') }}">
                         Messagges
                     </a>
                 </div>
