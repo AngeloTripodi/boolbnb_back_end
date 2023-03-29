@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Http;
 
 class ApartmentController extends Controller
 {
-    //
+    
+    public $distances = [];
+
     public function index(Request $request)
     {
         //Join services table
@@ -30,9 +32,13 @@ class ApartmentController extends Controller
             ->when($request->input('n_beds'), function ($query, $n_beds) {
                 $query->where('n_beds', '>=', $n_beds);
             })
-
             ->when($request->input('n_rooms'), function ($query, $n_rooms) {
                 $query->where('n_rooms', '>=', $n_rooms);
+            })
+            ->when($request->input('distance'), function($query, $userInputDistance){
+                foreach ($this->distances as $distance) {
+                    $query->where('distance', '<=', $distance);
+                }
             })
 
             // TODO orderBy title for now
@@ -58,12 +64,12 @@ class ApartmentController extends Controller
         $coordinates = $response->json()['results'][0]['position'];
         $latitude = $coordinates['lat'];
         $longitude = $coordinates['lon'];
-
-        $distances = [];
+        
         $lat1 = $latitude;
         $lon1 = $longitude;
         $apartments = Apartment::all();
-
+        
+        // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate di ogni appartmento nel database
         foreach($apartments as $apartment){
             $lat2 = $apartment->latitude;
             $lon2 = $apartment->longitude;
@@ -71,12 +77,12 @@ class ApartmentController extends Controller
             $distance = 6371 * acos(
                 cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
             );
-            array_push($distances, $distance);
+            array_push($this->distances, $distance);
         }
 
-        // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate nel tuo database
         // Restituisci la distanza calcolata come risposta alla richiesta HTTP
-        return response()->json(['distances' => $distances]);
+        // ! potrebbe essere sbagliato
+        return response()->json($this->distances);
     }
 
 
