@@ -5,44 +5,42 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 class ApartmentController extends Controller
 {
     
-    public $distances = [];
+    // public $distances = [];
 
-    public function index(Request $request, Apartment $apartment)
+    public function index(Request $request)
     {
+        // ! possibile soluzione ma non funzina ancora
+        // if($request->input('address') != null){
+
+        //     $lat = $request->input('latitude'); // latitudine della città di ricerca
+        //     $lng =  $request->input('longitude'); // longitudine della città di ricerca
+        //     $radius = 20; // raggio in km
+            
+        //     $apartments = DB::table('apartments')
+        //         ->select(DB::raw("( 6371 acos( cos( radians(?) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin( radians( latitude ) ) ) ) AS distance"))
+        //         ->having("distance", "<", $radius)
+        //         ->orderBy("distance")
+        //         ->setBindings([$lat, $lng, $lat])
+        //         ->get();
+        // }
+
+        // $apartments = Apartment::all();
         
-        $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
-        if($request->input('address') != null){
-            $address = $request->input('address');
+        // // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate di ogni appartmento nel database
+        // foreach($apartments as $apartment){
+        //     $lat2 = $apartment->latitude;
+        //     $lon2 = $apartment->longitude;
 
-            $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
-                'key' => $apiKey,
-                'query' => $address,
-            ]);
-            
-            $coordinates = $response->json()['results'][0]['position'];
-            $latitude = $coordinates['lat'];
-            $longitude = $coordinates['lon'];
-            
-            $lat1 = $latitude;
-            $lon1 = $longitude;
-            $apartments = Apartment::all();
-            
-            // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate di ogni appartmento nel database
-            foreach($apartments as $apartment){
-                $lat2 = $apartment->latitude;
-                $lon2 = $apartment->longitude;
-    
-                $distance = 6371 * acos( cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
-                );
-                array_push($this->distances, $distance);
-            }
-        }
-
+        //     $distance = 6371 * acos( cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
+        //     );
+        //     array_push($this->distances, $distance);
+        // }
         
         
         //Join services table
