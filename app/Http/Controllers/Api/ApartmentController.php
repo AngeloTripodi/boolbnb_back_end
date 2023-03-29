@@ -12,8 +12,39 @@ class ApartmentController extends Controller
     
     public $distances = [];
 
-    public function index(Request $request)
+    public function index(Request $request, Apartment $apartment)
     {
+        
+        $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
+        if($request->input('address') != null){
+            $address = $request->input('address');
+
+            $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
+                'key' => $apiKey,
+                'query' => $address,
+            ]);
+            
+            $coordinates = $response->json()['results'][0]['position'];
+            $latitude = $coordinates['lat'];
+            $longitude = $coordinates['lon'];
+            
+            $lat1 = $latitude;
+            $lon1 = $longitude;
+            $apartments = Apartment::all();
+            
+            // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate di ogni appartmento nel database
+            foreach($apartments as $apartment){
+                $lat2 = $apartment->latitude;
+                $lon2 = $apartment->longitude;
+    
+                $distance = 6371 * acos( cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
+                );
+                array_push($this->distances, $distance);
+            }
+        }
+
+        
+        
         //Join services table
         $apartments = Apartment::with('services')
             // condition when(boolean, callback function) to filter services only if requested
@@ -35,11 +66,11 @@ class ApartmentController extends Controller
             ->when($request->input('n_rooms'), function ($query, $n_rooms) {
                 $query->where('n_rooms', '>=', $n_rooms);
             })
-            ->when($request->input('distance'), function($query, $userInputDistance){
-                foreach ($this->distances as $distance) {
-                    $query->where('distance', '<=', $distance);
-                }
-            })
+            // ->when($request->input('distance'), function($query, $userInputDistance){
+            //     foreach ($this->distances as $distance) {
+            //         $query->where('distance', '<=', $distance);
+            //     }
+            // })
 
             // TODO orderBy title for now
             ->orderBy('title', 'asc')
@@ -51,39 +82,14 @@ class ApartmentController extends Controller
         ]);
     }
     
-    public function getDistance(Request $request, Apartment $apartment)
-    {
-        $apiKey = 'l22YSe5gZiJE598IOyCxIX93kwokqfqn';
-        $address = $request->input('address');
-
-        $response = Http::get('https://api.tomtom.com/search/2/geocode/{address}.json', [
-            'key' => $apiKey,
-            'query' => $address,
-        ]);
-
-        $coordinates = $response->json()['results'][0]['position'];
-        $latitude = $coordinates['lat'];
-        $longitude = $coordinates['lon'];
+    // public function getDistance(Request $request, Apartment $apartment)
+    // {
         
-        $lat1 = $latitude;
-        $lon1 = $longitude;
-        $apartments = Apartment::all();
-        
-        // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate di ogni appartmento nel database
-        foreach($apartments as $apartment){
-            $lat2 = $apartment->latitude;
-            $lon2 = $apartment->longitude;
 
-            $distance = 6371 * acos(
-                cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
-            );
-            array_push($this->distances, $distance);
-        }
-
-        // Restituisci la distanza calcolata come risposta alla richiesta HTTP
-        // ! potrebbe essere sbagliato
-        return response()->json($this->distances);
-    }
+    //     // Restituisci la distanza calcolata come risposta alla richiesta HTTP
+    //     // ! potrebbe essere sbagliato
+    //     return response()->json($this->distances);
+    // }
 
 
     //Join services table
@@ -114,9 +120,6 @@ class ApartmentController extends Controller
     //     'success' => true,
     //     'results' => $apartments
     // ]);
-
-
-
 
 
     //find or fail da fare 404 con Header? Forse...
