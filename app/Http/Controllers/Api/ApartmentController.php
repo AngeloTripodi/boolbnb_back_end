@@ -59,6 +59,7 @@ class ApartmentController extends Controller
         $latitude = $coordinates['lat'];
         $longitude = $coordinates['lon'];
 
+        $distances = [];
         $lat1 = $latitude;
         $lon1 = $longitude;
         $apartments = Apartment::all();
@@ -70,13 +71,12 @@ class ApartmentController extends Controller
             $distance = 6371 * acos(
                 cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon2) - deg2rad($lon1)) + sin(deg2rad($lat1)) * sin(deg2rad($lat2))
             );
-            // cosi salva solo l'ultimo la distanza dell'ultimo appartamento 
-            // TODO: trovare il modo di sistemare il tutto!!!
+            array_push($distances, $distance);
         }
 
         // Esegui il calcolo della distanza tra le coordinate dell'indirizzo inserito dall'utente e le coordinate nel tuo database
         // Restituisci la distanza calcolata come risposta alla richiesta HTTP
-        return response()->json(['distance' => $distance]);
+        return response()->json(['distances' => $distances]);
     }
 
 
