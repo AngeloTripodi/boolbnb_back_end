@@ -11,7 +11,7 @@
                    <h2>{{$message->email}}</h2>
                    <h5>{{$message->phone_number}}</h5>
                    <p>{{$message->message}}</p>
-                   <a class="btn btn-primary" :href="mailto:{{$message->email}}">
+                   <a class="btn btn-primary" href="mailto:{{$message->email}}?subject=Apartment Reservation from {{$message->name}}">
                         Reply 
                    </a>
                 @endforeach
