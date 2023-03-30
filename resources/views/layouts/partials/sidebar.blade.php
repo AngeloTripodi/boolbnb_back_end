@@ -43,14 +43,14 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::current()->getName() == 'messages.index' ? 'active' : '' }}"
+                                <a class="nav-link {{ Route::current()->getName() == 'user.messages.index' ? 'active' : '' }}"
                                     href="{{ route('user.messages.index') }}">
                                     <i class="fa-solid fa-envelope"></i>
                                     Messages
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::current()->getName() == 'reports.index' ? 'active' : '' }}"
+                                <a class="nav-link {{ Route::current()->getName() == 'user.reports.index' ? 'active' : '' }}"
                                     href="#">
                                     <i class="fa-solid fa-chart-simple"></i>
                                     Reports
