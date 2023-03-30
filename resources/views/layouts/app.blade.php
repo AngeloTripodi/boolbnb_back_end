@@ -80,6 +80,8 @@
                                         <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
                                         <a class="dropdown-item"
                                             href="{{ route('user.apartments.index') }}">{{ __('Apartments') }}</a>
+                                            <a class="dropdown-item"
+                                            href="{{ route('user.messages.index') }}">{{ __('Messages') }}</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
