@@ -29,7 +29,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == '' ? 'active' : '' }}"
-                                    aria-current="page" href="{{ url('/') }}">
+                                    aria-current="page" href="http://localhost:5174/">
                                     <i class="fa-solid my-fa-solid fa-house"></i>
                                     Homepage
                                 </a>
