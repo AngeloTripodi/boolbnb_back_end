@@ -51,7 +51,7 @@
         </div>
 
         <div class="row align-items-md-stretch">
-            <div class="col-md-6 mb-4">
+            <div class="col-lg-6 mb-4">
                 <div class="h-100 p-5 border rounded-3">
                     <h2>Messages</h2>
                     <p>Check immediately the requests received from users regarding your homes published on our site.</p>
@@ -60,7 +60,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 mb-4">
                 <div class="h-100 p-5 border rounded-3">
                     <h2>Statistics</h2>
                     <p>Check the statistics related to the sponsorships of your apartments</p>
