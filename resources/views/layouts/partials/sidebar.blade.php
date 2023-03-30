@@ -25,7 +25,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown pt-4">
 
                             <li class="nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == '' ? 'active' : '' }}"
