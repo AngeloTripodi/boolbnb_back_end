@@ -16,7 +16,14 @@ class SponsorshipController extends Controller
     public function index()
     {
         $sponsorships = Sponsorship::all();
-        dd($sponsorships);
-        return view('user.sponsorship.index', compact('sponsorships'));
+        //dd($sponsorships);
+        return view('user.sponsorships.index', compact('sponsorships'));
+    }
+
+    public function checkout()
+    {
+        $sponsorships = Sponsorship::all();
+        //dd($sponsorships);
+        return view('user.sponsorships.checkout', compact('sponsorships'));
     }
 }

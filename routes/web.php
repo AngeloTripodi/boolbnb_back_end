@@ -30,7 +30,8 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
     Route::resource('/apartments', ApartmentController::class);
 })->name('user.apartments.index');
 
-Route::get('/user/sponsorship', [SponsorshipController::class, 'index'])->name('user.sponsorship.index');
+Route::get('/user/sponsorships', [SponsorshipController::class, 'index'])->name('user.sponsorships.index');
+Route::get('/user/sponsorships/checkout', [SponsorshipController::class, 'checkout'])->name('user.sponsorships.checkout');
 
 Route::get('/user/messages', [MessageController::class, 'index'])->name('user.messages.index');
 Route::get('/user/messages/{message}', [MessageController::class, 'show'])->name('user.messages.show');

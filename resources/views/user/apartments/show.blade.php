@@ -76,14 +76,15 @@
                             </li>
                         @endforeach
                     </ul>
-
                 </div>
-            </div>
 
-        </div>
-
+                <div class="d-flex justify-content-center">
+                    <a class="btn my-btn fw-bold" href="{{ route('user.sponsorships.index') }}">
+                        Sponsor your apartment!
+                    </a>
+                </div>
     </div>
-    </div>
+    
 @endsection
 
 @section('script')

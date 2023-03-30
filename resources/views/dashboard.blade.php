@@ -64,7 +64,7 @@
                 <div class="h-100 p-5 border rounded-3">
                     <h2>Statistics</h2>
                     <p>Check the statistics related to the sponsorships of your apartments</p>
-                    <a class="btn btn-sm dash_btn" href="{{ route('user.sponsorship.index') }}">
+                    <a class="btn btn-sm dash_btn" href="">
                         Statistics
                     </a>
                 </div>
