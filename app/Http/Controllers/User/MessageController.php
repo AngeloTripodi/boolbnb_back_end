@@ -21,7 +21,8 @@ class MessageController extends Controller
         $userId = Auth::id();
         $messages = Message::whereHas('apartment', function ($query) use ($userId) {
             $query->where('user_id', $userId);
-        })->get();
+        })->orderBy('created_at', 'desc')->get();
+
 
         //dd($messages);
         return view('user.messages.index', compact('messages'));
