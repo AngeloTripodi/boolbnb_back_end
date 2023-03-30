@@ -96,8 +96,8 @@
             
                                         {{-- Password confirm --}}
                                         <div class="form-outline mb-3">
-                                            <label class="form-label m-0" for="password-confirm">{{ __('Confirm Password*') }}</label>
-                                            <input id="password-confirm" type="password" class="form-control  name="password_confirmation" required autocomplete="new-password" autofocus />
+                                            <label class="form-label m-0" for="password-confirm">{{ __('Confirm Password') }}*</label>
+                                            <input id="password-confirm" type="password" class="form-control"  name="password_confirmation" required autocomplete="new-password" autofocus />
                                             <div class="text-danger" id="confirm-password-error-message"></div>
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
