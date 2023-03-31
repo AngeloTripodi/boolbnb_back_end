@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-12">
 
-                <h1 class="pt-5">Messages:</h1>
-                <hr>
-
-                <table class="table table-dark table-striped table-bordered table-hover mt-1">
-                    <thead>
+                <h1 class="py-5">Messages:</h1>
+                
+                <div class="table-responsive"></div>
+                <table class="table table-hover mt-1">
+                    <thead class="text-white fw-bolds">
                         <tr>
                             <th scope="col">Email</th>
                             <th scope="col">Name</th>
@@ -29,7 +29,7 @@
                                 <td> {{ $message->message }}</td>
                                 <td> {{ $message->created_at }}</td>
                                 <td>
-                                    <a class="btn my-btn"
+                                    <a class="btn btn-sm my-btn fw-bold"
                                         href="mailto:{{ $message->email }}?subject=Apartment Reservation from {{ $message->name }}">Reply
                                     </a>
                                 </td>
