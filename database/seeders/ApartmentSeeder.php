@@ -50,7 +50,7 @@ class ApartmentSeeder extends Seeder
             [
                 'title' => 'House outside Milan',
                 'description' => "Apartment in a dream location for a romantic stay. Located on the top floor, this two-room apartment offers stunning views of the valley. The couple's jacuzzi, located in front of the panoramic window, is ideal for admiring the starry sky at night or to surprise you with the blue shades of the sky, at every hour of the day, while the private balcony is just perfect for a sunset aperitif. The apartment can accommodate up to 2 adults. Children are not allowed",
-                'image' => 'villa-outside-mi.jpg',
+                'image' => 'house-outside-mi.jpg',
                 'latitude' => '45.518903',
                 'longitude' => '9.346972',
                 'address' => 'VIa Guido Miglioli, Cernusco sul naviglio',
@@ -62,8 +62,7 @@ class ApartmentSeeder extends Seeder
             ],
             [
                 'title' => 'Condo in Brera',
-                'description' => "Stylish and refined super penthouse Sunrise to Sunset located on the renowned Via Manzoni. Ideal for short stays in the name of luxury and privacy. The space: direct entrance to the sleeping area, extra comfortable sofa bed with 20 cm mattress, folding technology to open and close in one movement.
-                From the living/sleeping area you will have access to the kitchen equipped with microwave, coffee maker, kettle as well as a two-burner induction hob and everything you need to prepare your favorite meals. The kitchen connects to a small space with two armchairs. The solution makes the presence of two terraces unique: the main one served by comfortable seats thanks to the presence of several cushioned seats as well as a sofa two outdoor seats and a table with additional two chairs; the secondary one with an enchanting cathedral view is furnished with a two-seater wooden table. Please also contact us for information about the private parking in the area.",
+                'description' => "Stylish and refined super penthouse Sunrise to Sunset located on the renowned Via Manzoni. Ideal for short stays in the name of luxury and privacy. The space: direct entrance to the sleeping area, extra comfortable sofa bed with 20 cm mattress, folding technology to open and close in one movement.From the living/sleeping area you will have access to the kitchen equipped with microwave, coffee maker, kettle as well as a two-burner induction hob and everything you need to prepare your favorite meals. The kitchen connects to a small space with two armchairs. The solution makes the presence of two terraces unique: the main one served by comfortable seats thanks to the presence of several cushioned seats as well as a sofa two outdoor seats and a table with additional two chairs; the secondary one with an enchanting cathedral view is furnished with a two-seater wooden table. Please also contact us for information about the private parking in the area.",
                 'image' => 'brera-condo.jpg',
                 'latitude' => '45.469299',
                 'longitude' => '9.186868',
@@ -77,7 +76,7 @@ class ApartmentSeeder extends Seeder
             [
                 'title' => "House near Piazza Vittorio & Mole Antonelliana",
                 'description' => "Splendid penthouse with panoramic terrace at the seventh floor of an elegant building, fully equipped and fully furnished.Idea for short term rent. Welcome in Milan! The apartment has two bedrooms and two bathrooms. The second bedroom is equipped with a sofa bed. The living room is large and bright and the terrace has a splendid view over the city.",
-                'image' => 'apartment-city-life.jpg',
+                'image' => 'house-near-turin',
                 'latitude' => '45.068812',
                 'longitude' => '7.698370',
                 'address' => 'Via Giulia di Barolo, Torino',
@@ -88,7 +87,7 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true,
             ],
             [
-                'title' => "Dimora Natura-Riserva Naturale Valle di Bondo",
+                'title' => "",
                 'description' => "Natura è ciò che siamo. Soggiornare nella Riserva Naturale Valle di Bondo, tra ampi prati e verdi boschi che dominano il lago di Garda, è armonia. Lontani dalla folla, a 600m di altitudine, ma vicini alle sue spiagge, solo 9km, Tremosine sul Garda regala panorami mozzafiato, una cultura contadina e tanto sano sport. Pet-friendly significa che accettiamo gli animali, ma soprattutto che li amiamo.",
                 'image' => 'dimora-natura.jpg',
                 'latitude' => '45.7642',
