@@ -28,7 +28,7 @@
                             <li class="nav-item dropdown pt-4">
 
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::current()->getName() == '' ? 'active' : '' }}"
+                                <a class="fs-6 nav-link {{ Route::current()->getName() == '' ? 'active' : '' }}"
                                     aria-current="page" href="http://localhost:5174/">
                                     <i class="fa-solid my-fa-solid fa-house"></i>
                                     Homepage
@@ -36,20 +36,20 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::current()->getName() == 'user.apartments.index' ? 'active' : '' }}"
+                                <a class="fs-6 nav-link {{ Route::current()->getName() == 'user.apartments.index' ? 'active' : '' }}"
                                     href="{{ route('user.apartments.index') }}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Apartments
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="fs-6 nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'user.messages.index' ? 'active' : '' }}"
                                     href="{{ route('user.messages.index') }}">
                                     <i class="fa-solid fa-envelope"></i>
                                     Messages
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="fs-6 nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'user.reports.index' ? 'active' : '' }}"
                                     href="#">
                                     <i class="fa-solid fa-chart-simple"></i>
@@ -57,7 +57,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="fs-6 nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'dashboard' ? 'active' : '' }}"
                                     href="{{ url('dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i>
@@ -66,7 +66,7 @@
 
                             <hr>
 
-                            <li class="nav-item">
+                            <li class="fs-6 nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
