@@ -14,6 +14,8 @@ class ApartmentController extends Controller
 {
     public function index(Request $request, Apartment $apartment)
     {
+
+
         $lat1 = $request->input('latitude'); // latitudine della città di ricerca
         $lon1 = $request->input('longitude'); // longitudine della città di ricerca
         $radius = $request->input('radius', 20) * 1000;
@@ -39,23 +41,28 @@ class ApartmentController extends Controller
             ->orderBy('title', 'asc')
             ->get();
 
-        $filteredApartments = [];
-        $coordinate1 = new Coordinate($lat1, $lon1); // Coordinate della ricerca
-        foreach ($data as $apartment) {
-            $lat2 = $apartment->latitude;
-            $lon2 = $apartment->longitude;
+        if ($request->input('address') != null) {
+            $filteredApartments = [];
+            $coordinate1 = new Coordinate($lat1, $lon1); // Coordinate della ricerca
+            foreach ($data as $apartment) {
+                $lat2 = $apartment->latitude;
+                $lon2 = $apartment->longitude;
 
-            $coordinate2 = new Coordinate($lat2, $lon2); // Coordinate dell'appartamento
-            $distance = $coordinate1->getDistance($coordinate2, new Vincenty()); // Distanza in metri
+                $coordinate2 = new Coordinate($lat2, $lon2); // Coordinate dell'appartamento
+                $distance = $coordinate1->getDistance($coordinate2, new Vincenty()); // Distanza in metri
 
-            if ($distance <= $radius) {
-                array_push($filteredApartments, $apartment);
+                if ($distance <= $radius) {
+                    array_push($filteredApartments, $apartment);
+                }
             }
+            $data = collect($filteredApartments);
+            $data = $data->values();
         }
-        $data = collect($filteredApartments);
+
+
 
         // Reindizziamo la collection per avere indici numerici consecutivi
-        $data = $data->values();
+
 
         return response()->json([
             'success' => true,
