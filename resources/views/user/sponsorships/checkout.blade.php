@@ -19,9 +19,9 @@
                       `braintree.dropin.create` inside a form will make layout and flow
                       easier to manage -->
                     <div id="dropin-container"></div>
-                    <input class="btn my-btn" type="submit" />
-                    <input class="btn my-btn" type="hidden" id="nonce" name="payment_method_nonce"/>
-                  </form>
+                    <input class="btn my-btn text-right" type="submit" />
+                    <input class="btn my-btn text-right" type="hidden" id="nonce" name="payment_method_nonce"/>
+                </form>
             </div>
         </div>
     </div>
