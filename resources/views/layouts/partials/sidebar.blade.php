@@ -49,13 +49,13 @@
                                     Messages
                                 </a>
                             </li>
-                            <li class="fs-6 nav-item">
+                            {{-- <li class="fs-6 nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'user.reports.index' ? 'active' : '' }}"
                                     href="#">
                                     <i class="fa-solid fa-chart-simple"></i>
                                     Reports
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="fs-6 nav-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'dashboard' ? 'active' : '' }}"
