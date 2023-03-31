@@ -16,7 +16,7 @@ class ApartmentController extends Controller
     {
         $lat1 = $request->input('latitude'); // latitudine della città di ricerca
         $lon1 = $request->input('longitude'); // longitudine della città di ricerca
-        $radius = $request->input('radius') * 1000; // Converti il raggio in metri
+        $radius = $request->input('radius', 20) * 1000;
 
         $data = Apartment::with('services')
             // condition when(boolean, callback function) to filter services only if requested
