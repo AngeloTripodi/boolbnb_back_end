@@ -135,7 +135,7 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
                     </div>
                     
                     {{-- Aggiungo una checkbox per i servizi dell'appartamento --}}
-                    <div class="card p-3 shadow-none">
+                    <div class="card shadow-none">
                         <p class="m-1">Services*</p>
                         <div class="d-flex flex-wrap border rounded-3 p-2">
                             @foreach ($services as $service)
@@ -149,13 +149,15 @@ enctype="multipart/form-data" class="py-3 needs-validation" novalidate>
                             </div>
                             @endforeach
                         </div>
+                        <div class="position-relative">
+                            <div class="text-danger position-absolute" id="services-error-message"></div>
+                            @if ($errors->has('services'))
+                            <div class="text-danger my-error mb-3">
+                                <i class="fa-solid fa-circle-exclamation pe-1"></i>Select at least one service
+                            </div>
+                            @endif
+                        </div>
                     </div>
-                    <div class="text-danger" id="services-error-message"></div>
-                    @if ($errors->has('services'))
-                    <div class="text-danger my-error mb-3">
-                        <i class="fa-solid fa-circle-exclamation pe-1"></i>Select at least one service
-                    </div>
-                    @endif
                     
                     <div class="my-3 d-flex">
                         <label for="is_visible">Visibility*</label>

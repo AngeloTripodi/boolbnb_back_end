@@ -25,7 +25,11 @@ header {
         background-color: white;
         color: $main-color;
         border: 1px solid $secondary-color;
-        ;
+
+    }
+
+    &:active {
+        color: $main-color
     }
 }
 
@@ -37,6 +41,16 @@ header {
         background-color: $main-color;
         color: white;
     }
+}
+
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+    color: $main-color;
+    background-color: white;
+    border-color: $main-color;
 }
 
 //? button style into dashboard
@@ -112,28 +126,45 @@ div.tt-search-box {
     margin-top: 0;
 }
 
+.tt-search-box-input {
+    padding-top: 3px;
+}
+
+
+
 div.tt-search-box-input-container {
     border-radius: 0.375rem;
-    padding: 0 10px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: 38px;
+    // padding-top: 3px !important;
 
-    &:focus {
-        position: relative;
-        z-index: 3;
-        border-color: $main-color;
-        box-shadow: 0 0 0 0.25rem #fe847654;
+    &:focus-visible {
+        outline: #fe8376;
     }
 
-    div svg {
-        margin: 0.375rem 0;
+    div:first-child {
+        display: none;
     }
 
-    input#address {
-        border: none;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-    }
+
+
+    // &:focus {
+    //     position: relative;
+    //     z-index: 3;
+    //     border-color: $main-color;
+    //     box-shadow: 0 0 0 0.25rem #fe847654;
+    // }
+
+    // div svg {
+    //     margin: 0.375rem 0;
+    // }
+
+    // input#address {
+    //     border: none;
+    //     font-size: 1rem;
+    //     font-weight: 400;
+    //     line-height: 1.5;
+    // }
 }
 
 //? alert messages style
@@ -196,15 +227,15 @@ div.tt-search-box-input-container {
     }
 }
 
-// .card_btn{
-//     margin-right: .25rem;
-//     background-color: white;
+.card_btn {
+    margin-right: .25rem;
+    background-color: white;
 
-//     &:hover{
-//         background-color: $main-color;
-//         color: white;
-//     }
-// }
+    &:hover {
+        background-color: $main-color;
+        color: white;
+    }
+}
 
 // autocomplete address list
 // .auto-list {
@@ -257,9 +288,13 @@ div.tt-search-box-input-container {
 }
 
 .tt-search-box-result-list-container {
-    box-shadow: 0 0 0 0.25rem rgba(254, 132, 118, 0.33);
+    box-shadow: 0 2px 0 0.25rem rgba(254, 132, 118, 0.33);
     border-bottom-right-radius: .5rem;
     border-bottom-left-radius: .5rem;
+
+    &:focus-visible {
+        outline: none;
+    }
 }
 
 .tt-search-box-result-list:hover {
@@ -290,14 +325,14 @@ div.tt-search-box-input-container {
     box-shadow: 0 0 0 0.25rem rgba(254, 132, 118, 0.33);
 }
 
-.tt-search-box-input-container {
-    height: 38px;
-    padding-top: 3px !important;
+// .tt-search-box-input-container {
+//     height: 38px;
+//     padding-top: 3px !important;
 
-    div:first-child {
-        display: none;
-    }
-}
+//     div:first-child {
+//         display: none;
+//     }
+// }
 
 #address {
     font-size: .9rem !important;
