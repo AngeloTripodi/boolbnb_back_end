@@ -14,10 +14,10 @@
     <div class="container pb-5">
         <div class="row justify-content-between align-items-center py-4">
             <div class="col-12 col-md-6 mb-2 mb-md-0">
-                <h4 class="text-uppercase">
+                <h1 class="text-uppercase">
                     Your apartments
-                </h4>
-                <h6>
+                </h1>
+                <h6 class="fs-5">
                     From here you can edit, view, or delete your apartments
                 </h6>
             </div>
@@ -48,9 +48,7 @@
                 @forelse ($apartments as $apartment)
                     <div class="col-sm-12 col-lg-6 d-flex">
                         <div
-                            class="card card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
-
-
+                            class="card border-0 card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
                             {{-- <div class="dropdown dropdown-index position-absolute btn-group">
                                 <button class="btn btn-custom-index dropdown-toggle rounded-0" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">

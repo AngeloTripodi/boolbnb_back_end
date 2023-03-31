@@ -4,9 +4,15 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <div class="py-4">
+                    <h1 class="text-uppercase">
+                        Your Messages
+                    </h1>
+                    <h6 class="fs-5">
+                        Check immediately the requests received.
+                    </h6>
+                </div>
 
-                <h1 class="py-5">Messages:</h1>
-                
                 <div class="table-responsive"></div>
                 <table class="table table-hover mt-1">
                     <thead class="text-white fw-bolds">

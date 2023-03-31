@@ -24,6 +24,7 @@ header {
 .my-btn {
     background-color: $main-color;
     color: white;
+    font-weight: bold;
 
     &:hover {
         background-color: white;
@@ -372,8 +373,28 @@ div.tt-search-box-input-container {
 .table {
     border-bottom: 1px solid $main-color;
     border-radius: 20px 20px!important;
+    font-size: 1.1rem;
 }
 
 thead {
     background-color: $main-color;
+}
+
+.fa-toggle-on,
+.fa-toggle-off
+{
+    color: $main-color;
+}
+
+.braintree-card {
+    border: 1px solid $main-color;
+}
+
+.braintree-sheet__header {
+    border-bottom: 1px solid $main-color;
+}
+
+
+.nav-link:hover {
+    color: $main-color;
 }
