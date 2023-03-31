@@ -15,6 +15,9 @@ class SponsorshipController extends Controller
             $query->where('ending_date', '>', now());
         })->with('sponsorships')->get();
 
-        return response()->json($apartments);
+        return response()->json([
+            'success' => true,
+            'results' => $apartments
+        ]);
     }
 }
