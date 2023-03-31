@@ -366,3 +366,14 @@ div.tt-search-box-input-container {
     align-items: center;
     height: 100vh;
 }
+
+//table colors
+
+.table {
+    border-bottom: 1px solid $main-color;
+    border-radius: 20px 20px!important;
+}
+
+thead {
+    background-color: $main-color;
+}

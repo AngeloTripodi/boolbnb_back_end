@@ -51,7 +51,7 @@ class SponsorshipController extends Controller
         'ending_date' => now()->addHours($sponsorship->duration)
     ]);
 
-    return redirect()->route('user.apartments.show', $apartment->id)->with('success', 'Sponsorizzazione salvata correttamente!');
+    return redirect()->route('user.apartments.show', $apartment->id)->with('message', "Your $sponsorship->name sponsorship is active now!")->with('alert-type', 'success');
 
     }
 }
