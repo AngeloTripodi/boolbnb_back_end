@@ -6,12 +6,15 @@
             <div class="col-12">
                 <h1 class="py-4">Pay your sponsorship</h1>
 
-                <div id="dropin-wrapper">
-                    <div id="checkout-message"></div>
+                <form id="payment-form" action="{{ route('user.sponsorships.store', ['apartment' => $apartment->id, 'sponsorship' => $sponsorship->id]) }}" method="POST">
+                    @csrf
+                    <!-- Putting the empty container you plan to pass to
+                      `braintree.dropin.create` inside a form will make layout and flow
+                      easier to manage -->
                     <div id="dropin-container"></div>
-                    <a class="btn my-btn" type="submit" id="submit-button">Submit payment</a>
-                </div>
-              
+                    <input type="submit" />
+                    <input type="hidden" id="nonce" name="payment_method_nonce"/>
+                  </form>
             </div>
         </div>
     </div>

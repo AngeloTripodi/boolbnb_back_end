@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <a class="btn my-btn fw-bold" href="{{ route('user.sponsorships.index') }}">
+                    <a class="btn my-btn fw-bold" href="{{ route('user.sponsorships.index', ['apartment' => $apartment->id]) }}">
                         Sponsor your apartment!
                     </a>
                 </div>

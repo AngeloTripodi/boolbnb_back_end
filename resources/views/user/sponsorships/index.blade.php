@@ -13,7 +13,7 @@
                             <div class="card p-4 me-2">
                                 <h5>Sponsorship level: <span class="fw-bold" >{{ucfirst($sponsorship->name)}}</span> </h5> 
                                 <p>Price: {{$sponsorship->price}} $</p>
-                                <a class="btn my-btn fw-bold py-2" href="{{ route('user.sponsorships.checkout') }}">Select</a>
+                                <a class="btn my-btn fw-bold py-2" href="{{ route('user.sponsorships.checkout', ['apartment' => $apartment->id, 'sponsorship' => $sponsorship->id]) }}">Select</a>
                             </div>
                             @endforeach
                         </div>
