@@ -368,8 +368,8 @@ div.tt-search-box-input-container {
     height: 100vh;
 }
 
-//table colors
 
+//table colors
 .table {
     border-bottom: 1px solid $main-color;
     border-radius: 20px 20px!important;
@@ -380,32 +380,54 @@ thead {
     background-color: $main-color;
 }
 
-.fa-toggle-on,
-.fa-toggle-off
-{
-    color: $main-color;
-}
-
-.braintree-card {
-    border: 1px solid $main-color;
-}
-
-.braintree-sheet__header {
-    border-bottom: 1px solid $main-color;
-}
-
-
-.nav-link:hover {
-    color: $main-color;
-}
-
 table td,
 table th {
   padding: 0.75rem 2rem;
   vertical-align: middle;
 }
 
+//index apartment style
+.fa-toggle-on,
+.fa-toggle-off
+{
+    color: $main-color;
+}
+
+
+//navbar and sidebar
+.nav-link:hover {
+    color: $main-color;
+}
+
+
 .dropdown-item:hover {
     color: $main-color;
 }
 
+@media only screen and (max-width: 768px) {
+    .my_dropdown-menu {
+        display: block;
+    }
+}
+
+//braintree changing style
+
+.braintree-card {
+    border: 1px solid $main-color;
+    border-radius: 15px 15px;
+}
+
+.braintree-sheet__header {
+    border-bottom: 1px solid $main-color;
+    background-color: $main-color;
+    border-radius: 10px 10px 0 0;
+}
+
+.braintree-form__hosted-field {
+    border: 1px solid $main-color!important;
+}
+
+.braintree-sheet__text {
+    color: white!important;
+    font-weight: bold;
+}
