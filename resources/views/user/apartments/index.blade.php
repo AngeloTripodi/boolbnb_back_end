@@ -43,10 +43,10 @@
             </div>
         @endsection --}}
         <div class="mt-2 my-cards-index">
-            <div class="row g-4">
+            <div class="row g-4 row align-items-stretch">
 
                 @forelse ($apartments as $apartment)
-                    <div class="col-sm-12 col-lg-6 d-flex">
+                    <div class="col-sm-12 col-lg-4 d-flex">
                         <div
                             class="card border-0 card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
                             {{-- <div class="dropdown dropdown-index position-absolute btn-group">
@@ -74,17 +74,17 @@
                             {{--Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate--}}
                                 <div class="index-img mb-3 position-relative">
                                     @if (str_starts_with($apartment->image, 'uploads'))
-                                    <img class="img-fluid rounded-3" src="{{ asset('storage/' . $apartment->image) }}"
+                                    <img class="img-fluid rounded-3 w-100" src="{{ asset('storage/' . $apartment->image) }}"
                                     alt="Image of {{ $apartment->title }}">
                                 @else
-                                    <img class="img-fluid rounded-3" src="{{ asset('img/' . $apartment->image) }}"
+                                    <img class="img-fluid rounded-3 w-100" src="{{ asset('img/' . $apartment->image) }}"
                                     alt="Image of {{ $apartment->title }}">
                                 @endif
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <h4 class="card-title">{{ $apartment->title }}</h4>
-                                    <h6>{{ $apartment->address }}</h6>
+                                    <h4 class="card-title text-truncate">{{ $apartment->title }}</h4>
+                                    <h6 class="text-truncate">{{ $apartment->address }}</h6>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end">
                                     <form action="{{ route('user.toggle', $apartment->id) }}" method="POST">
