@@ -2,6 +2,14 @@
 
 @section('content')
     <div class="container py-5">
+
+        <!--Aggiungo un if session per conferma sponsorship-->
+        @if (session('message'))
+            <div class="fw-bold mx-5 alert alert-{{ session('alert-type') }}">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="show-cards">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
