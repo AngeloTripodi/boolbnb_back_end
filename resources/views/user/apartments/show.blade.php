@@ -5,7 +5,7 @@
 
         <!--Aggiungo un if session per conferma sponsorship-->
         @if (session('message'))
-            <div class="fw-bold mx-5 alert alert-{{ session('alert-type') }}">
+            <div class="fw-bold text-center fs-6 mx-5 alert alert-custom">
                 {{ session('message') }}
             </div>
         @endif
