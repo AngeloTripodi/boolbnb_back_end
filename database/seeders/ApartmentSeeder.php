@@ -205,6 +205,7 @@ class ApartmentSeeder extends Seeder
             $newApartment->n_bathrooms = $apartment['n_bathrooms'];
             $newApartment->square_meters = $apartment['square_meters'];
             $newApartment->is_visible = $apartment['is_visible'];
+            $newApartment->n_price = $apartment['n_price'];
             $newApartment->save();
             $newApartment->slug = $newApartment->slug . "-$newApartment->id";
             $newApartment->update();
