@@ -16,6 +16,7 @@ class ApartmentController extends Controller
     protected $rules = [
         'title' => ['required', 'min:2', 'max:150'],
         'description' => ['nullable'],
+        'n_price' => ['nullable', 'numeric'],
         'n_rooms' => ['required', 'numeric', 'min:1', 'max:20'],
         'n_beds' => ['required', 'numeric', 'min:1', 'max:30'],
         'n_bathrooms' => ['required', 'numeric', 'min:0', 'max:25'],
