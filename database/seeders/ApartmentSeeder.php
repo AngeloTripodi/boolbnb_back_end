@@ -140,46 +140,64 @@ class ApartmentSeeder extends Seeder
                 'n_rooms' => 5,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
-                'square_meters' => 100,
+                'square_meters' => 170,
                 'is_visible' => true
             ],
             [
-                'title' => 'Appartamento panoramico con terrazza',
-                'description' => "Ampio appartamento di 150 mq con una spettacolare vista sulla città e sulle montagne circostanti. Dispone di una grande terrazza attrezzata e di un parcheggio privato. Situato in una zona residenziale tranquilla e ben servita, l'appartamento è stato ristrutturato di recente e arredato con stile moderno ed elegante. L'ampio soggiorno è luminoso e accogliente, con una grande finestra che offre una vista mozzafiato sulla città. La zona pranzo dispone di un grande tavolo in legno massello e di comode sedie imbottite. La cucina moderna e completamente attrezzata è dotata di tutti gli elettrodomestici necessari, tra cui un frigorifero, un freezer, un forno, un piano cottura e una lavastoviglie. Le tre camere da letto sono spaziose e confortevoli, tutte dotate di letti matrimoniali con materassi di alta qualità e di ampi armadi. I due bagni sono stati ristrutturati di recente e sono dotati di doccia, lavabo moderno e WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una vacanza indimenticabile nella splendida città di Trento.",
-                'image' => 'appartamento-panoramico-con-terrazza.jpg',
-                'latitude' => '46.0663',
-                'longitude' => '11.1166',
-                'address' => 'Via dei Tigli 22, Trento',
-                'n_rooms' => 6,
-                'n_beds' => 3,
-                'n_bathrooms' => 2,
-                'square_meters' => 150,
-                'is_visible' => true
-            ],
-            [
-                'title' => 'Monolocale accogliente in centro',
-                'description' => "Appartamento spazioso e luminoso di 80 mq con 2 camere da letto e 2 bagni. Ideale per famiglie o gruppi di amici che desiderano soggiornare in una zona tranquilla ma ben servita. L'appartamento si trova al secondo piano di un edificio moderno ed è composto da un ampio soggiorno con zona pranzo e angolo cottura completamente attrezzato, 2 camere da letto matrimoniali con armadi a muro, 2 bagni moderni con doccia e un balcone con vista sulla città. L'appartamento è arredato con gusto e dotato di ogni comfort, tra cui aria condizionata, TV a schermo piatto, lavatrice, asciugatrice, ferro da stiro, asse da stiro, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per raggiungere in pochi minuti il centro storico della città, nonché i principali centri commerciali e le aree verdi. Un'ottima scelta per chi desidera un soggiorno confortevole e rilassante.",
-                'image' => 'monolocale-accogliente-in-centro.jpg',
-                'latitude' => '41.9028',
-                'longitude' => '12.4964',
-                'address' => 'Via del Corso 10, Roma',
+                'title' => 'Contemporary loft with brick vaults.',
+                'description' => "Perfect for couples who want to relax after visiting the city, the apartment while being in the heart of Trastevere is extremely quiet because it overlooks a quiet inner courtyard. Air conditioning, shower and a large bathtub offer extreme comfort.
+                The apartment is also equipped with a fridge, induction plate, microwave and hood,  and a large table for lunch or work.",
+                'image' => 'loft-trast-rome.jpg',
+                'latitude' => '41.883590',
+                'longitude' => '12.469335',
+                'address' => 'Viale di trastevere, Roma',
                 'n_rooms' => 2,
-                'n_beds' => 1,
-                'n_bathrooms' => 1,
-                'square_meters' => 30,
-                'is_visible' => true
-            ],
-            [
-                'title' => 'Appartamento con vista sul mare',
-                'description' => "Delizioso bilocale di 50 mq con terrazzo privato e vista panoramica sulla città. L'appartamento è situato al quarto piano di un edificio storico nel cuore del centro storico, a pochi passi dai principali monumenti e musei della città. L'appartamento è stato recentemente ristrutturato e arredato con gusto, mantenendo le caratteristiche originali dell'edificio, come le travi in legno a vista e il pavimento in cotto. L'appartamento è composto da un soggiorno con angolo cottura completamente attrezzato, una camera da letto matrimoniale e un bagno moderno con doccia. Dal soggiorno si accede direttamente al terrazzo privato, attrezzato con tavolo, sedie e sdraio, ideale per godersi il panorama sulla città e rilassarsi al sole. L'appartamento è dotato di aria condizionata, TV a schermo piatto, lavatrice, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per scoprire il fascino della città a piedi, passeggiando tra i vicoli del centro storico e assaporando la cucina locale nei numerosi ristoranti e trattorie della zona. Un'esperienza indimenticabile per chi desidera vivere la città in modo autentico e romantico.",
-                'image' => 'appartamento-con-vista-sul-mare.jpg',
-                'latitude' => '43.7384',
-                'longitude' => '10.4514',
-                'address' => 'Via della Spiaggia 8, Livorno',
-                'n_rooms' => 4,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
-                'square_meters' => 80,
+                'square_meters' => 50,
+                'is_visible' => true
+            ],
+            [
+                'title' => 'Alice Vatican Family Room with St. Peter\'s view',
+                'description' => "My accommodation is a 5-minute walk from S. Pietro, 300 meters from the metro stop Ottaviano-S. Pietro that connects it to Termini Station, Colosseum and Piazza di Spagna,  Castel Sant'Angelo, Piazza Navona and Trevi Fountain, are reachable, instead also on foot, with a pleasant walk. We are in the Prati district, famous for shopping and tastings of all kinds.",
+                'image' => 'vatican-rome.jpg',
+                'latitude' => '41.906039', 
+                'longitude' => '12.458891',
+                'address' => 'Piazza risorgimento, Roma',
+                'n_rooms' => 3,
+                'n_beds' => 5,
+                'n_bathrooms' => 1,
+                'square_meters' => 140,
+                'is_visible' => true
+            ],
+            [
+                'title' => 'Lovely apartment via sistina',
+                'description' => "In the heart of the historical centre of Rome, very close to Piazza di Spagna, Piazza Barberini and Via Veneto, penthouse apartment on the 5th floor which consists of: living room with French pull-out bed and single bed, kitchen corner (in a closet) with three electric burners and microwave, bathroom with tub, little terrace . The apartment has just been refurbished; it is extremely” fresh”, cosy and full of light. White walls and green tapestry. Parquet floor. The apartment is on the top floor with lift and it composed from large living room,one sofa bed for two people, one single bed, little kitchen, bathroom with tub and wonderful terrace to make a breakfast!",
+                'image' => 'via-sistina-rome.jpg',
+                'latitude' => '41.904820', 
+                'longitude' => '12.485630',
+                'address' => 'Via sistina, Roma',
+                'n_rooms' => 3,
+                'n_beds' => 3,
+                'n_bathrooms' => 1,
+                'square_meters' => 103,
+                'is_visible' => true
+            ],
+            [
+                'title' => 'Pantheon Glam 1 - Pantheon',
+                'description' => "Recently renovated, the flat is furnished with parquet and modern furniture and it is equipped with air conditioning and wifi. The living room can be used as an extra bedroom (with 2 extra comfortable beds) so the apartment is well suited for families of 4 persons. It is located in a beautiful building of 1600 that overlooks the back of the Pantheon. The apartment has been recently renovated and consists of 1 bedroom, living area with 2 single beds, bathroom and kitchen (operational).
+                It has WI-FI internet connection, TV, air conditioning, heating, telephone and safe.
+                The cleaning of the apartment is included in the price so guests will NOT have to pay any additional cost at the time of check-out (the only extra to pay is the tourist tourist tax of € 3.50 per person, per day as per current municipal legislation). The apartment is on a quiet street behind the Pantheon in the city's historic center. Walk to the Colosseum, Piazza Navona, and the Trevi Fountain for atmospheric evenings. The area is full of bars, restaurants, and shops. You can easily reach the city's main attractions by walking.
+                The area is full of bars, shops and restaurants.
+                In case, we can also organize private transfers from/to the airport/port.",
+                'image' => 'panth-rome.jpg',
+                'latitude' => '41.898024', 
+                'longitude' => ' 12.476437',
+                'address' => 'Via della rotonda, Roma',
+                'n_rooms' => 3,
+                'n_beds' => 2,
+                'n_bathrooms' => 1,
+                'square_meters' => 93,
                 'is_visible' => true
             ]
 
