@@ -21,6 +21,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone Number</th>
                                 <th scope="col">Message</th>
+                                <th scope="col">Apartment</th>
                                 <th scope="col">Receipt date</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -33,7 +34,9 @@
                                     <td>{{ $message->name }}</td>
                                     <td>{{ $message->phone_number }}</td>
                                     <td> {{ $message->message }}</td>
+                                    <td>{{ $message->apartment->title }}</td>
                                     <td> {{ $message->created_at }}</td>
+
                                     <td>
                                         <a class="btn btn-sm my-btn fw-bold"
                                             href="mailto:{{ $message->email }}?subject=Apartment Reservation from {{ $message->name }}">Reply
