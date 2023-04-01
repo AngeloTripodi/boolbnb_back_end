@@ -93,3 +93,15 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+#hr-sidebar {
+    border-color: $main-color;
+}
+
+.top-menu-item {
+    margin-top: 5px;
+}
+
+.my-logo {
+    min-height: 62px;
+}
