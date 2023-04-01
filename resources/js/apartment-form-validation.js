@@ -6,6 +6,7 @@ const bedsInput = document.getElementById('n_beds');
 const bathroomsInput = document.getElementById('n_bathrooms');
 const mqInput = document.getElementById('square_meters');
 const servicesInput = document.querySelectorAll('input[type="checkbox"]');
+// const priceInput = document.getElementById('n_price');
 
 
 
@@ -16,6 +17,7 @@ const bedsErrorMessage = document.getElementById('beds-error-message');
 const bathroomsErrorMessage = document.getElementById('bathrooms-error-message');
 const mqErrorMessage = document.getElementById('mq-error-message');
 const servicesErrorMessage = document.getElementById('services-error-message');
+// const priceErrorMessage = document.getElementById('n_price-error-message')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -49,8 +51,8 @@ form.addEventListener('submit', (event) => {
     }
 
     // Validazione bagni
-    if (bathroomsInput.value < 0 || bathroomsInput.value > 25) {
-        bathroomsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of bathrooms must be between 0 and 25`;
+    if (bathroomsInput.value < 1 || bathroomsInput.value > 25) {
+        bathroomsErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Number of bathrooms must be between 1 and 25`;
     } else {
         bathroomsErrorMessage.innerHTML = '';
     }
@@ -61,6 +63,7 @@ form.addEventListener('submit', (event) => {
     } else {
         mqErrorMessage.innerHTML = '';
     }
+
 
     // // inizializza una variabile che rappresenta lo stato di selezione
     let isChecked = false;

@@ -51,50 +51,53 @@
 
                     </div>
                 </div>
-                <div class="card-image py-4">                         
-                    {{--Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate--}}
+                <div class="card-image py-4">
+                    {{-- Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate --}}
                     <div class="mb-3 position-relative">
                         @if (str_starts_with($apartment->image, 'uploads'))
-                        <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}" src="{{ asset('storage/' . $apartment->image) }}"
-                        alt="Image of {{ $apartment->title }}">
-                    @else
-                        <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}" src="{{ asset('img/' . $apartment->image) }}"
-                        alt="Image of {{ $apartment->title }}">
-                    @endif
-                    
-                </div>
-                <h3>
-                    Host: {{ Auth::user()->name }}
-                </h3>
-                <h6>
-                    Rooms: {{ $apartment->n_rooms }} - Beds: {{ $apartment->n_beds }} - Bathrooms:
-                    {{ $apartment->n_bathrooms }} - Mq: {{ $apartment->square_meters }}
-                </h6>
-                <p>
-                    {{ $apartment->description }}
-                </p>
-                <div class="apartment-info">
-                    <h5>
-                        Services:
-                    </h5>
-                    <ul class="ps-0">
-                        @foreach ($apartment->services as $service)
-                            <li>
-                                <i class="fa-solid fa-check"></i> {{ $service->name }}
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+                            <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                src="{{ asset('storage/' . $apartment->image) }}" alt="Image of {{ $apartment->title }}">
+                        @else
+                            <img class="img-fluid rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                src="{{ asset('img/' . $apartment->image) }}" alt="Image of {{ $apartment->title }}">
+                        @endif
 
-                <div class="d-flex justify-content-center">
-                    <a class="btn my-btn fw-bold" href="{{ route('user.sponsorships.index', ['apartment' => $apartment->id]) }}">
-                        Sponsor your apartment!
-                    </a>
-                </div>
-    </div>
-    
-@endsection
+                    </div>
+                    <h3>
+                        Host: {{ Auth::user()->name }}
+                    </h3>
+                    <h6>
+                        Price per night: &euro; {{ $apartment->n_price }}
+                    </h6>
+                    <h6>
+                        Rooms: {{ $apartment->n_rooms }} - Beds: {{ $apartment->n_beds }} - Bathrooms:
+                        {{ $apartment->n_bathrooms }} - Mq: {{ $apartment->square_meters }}
+                    </h6>
+                    <p>
+                        {{ $apartment->description }}
+                    </p>
+                    <div class="apartment-info">
+                        <h5>
+                            Services:
+                        </h5>
+                        <ul class="ps-0">
+                            @foreach ($apartment->services as $service)
+                                <li>
+                                    <i class="fa-solid fa-check"></i> {{ $service->name }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
 
-@section('script')
-    @vite('resources/js/deleteHandler.js')
-@endsection
+                    <div class="d-flex justify-content-center">
+                        <a class="btn my-btn fw-bold"
+                            href="{{ route('user.sponsorships.index', ['apartment' => $apartment->id]) }}">
+                            Sponsor your apartment!
+                        </a>
+                    </div>
+                </div>
+            @endsection
+
+            @section('script')
+                @vite('resources/js/deleteHandler.js')
+            @endsection
