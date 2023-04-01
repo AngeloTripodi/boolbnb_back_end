@@ -129,19 +129,14 @@ class ApartmentSeeder extends Seeder
             ],
             // Roma
             [
-                'title' => 'Appartamento elegante vicino al centro',
-                'description' => "Luminoso appartamento di 100 mq completamente ristrutturato, arredato con stile moderno e dotato di ogni comfort. 
-                Si trova in una zona tranquilla a pochi minuti a piedi dal centro storico. L'ampio soggiorno è arredato con eleganza e dispone 
-                di un comodo divano, una TV a schermo piatto e una zona pranzo con un tavolo in legno massello. La cucina moderna e completamente attrezzata 
-                è dotata di frigorifero, freezer, forno, piano cottura e lavastoviglie. Le due camere da letto sono spaziose e confortevoli, 
-                entrambe dotate di letti matrimoniali con materassi di alta qualità e armadi capienti. Il bagno è stato ristrutturato di recente 
-                ed è dotato di una grande doccia, un lavabo moderno e un WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, 
-                un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una 
-                vacanza indimenticabile nella bellissima città di Milano.",
-                'image' => 'appartamento-elegante-vicino-al-centro.jpg',
-                'latitude' => '45.4789',
-                'longitude' => '9.2254',
-                'address' => 'Via Verdi 12, Milano',
+                'title' => 'A stone\'s throw from the Colosseum',
+                'description' => "Located in the center of Rome, a 15-minute walk from the Colosseum, 150 m from Termini Station, and only 2 km from Piazza di Spagna and Trevi Fountain.
+                From the apartment you can enjoy a breathtaking view of the beautiful Roman Aquarium, now the House of Architecture of Rome.
+                Inside the Termini Station is the Central Market, where you can taste a wide variety of local cuisines with typical Italian dishes, but also international offerings.",
+                'image' => 'piazza-manf-rome.jpg',
+                'latitude' => '41.897683', 
+                'longitude' => '12.502221',
+                'address' => 'Piazza Manfredo Fanti, Roma',
                 'n_rooms' => 5,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
