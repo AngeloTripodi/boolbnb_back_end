@@ -19,6 +19,7 @@ class ApartmentSeeder extends Seeder
     {
         //
         $apartments = [
+            // Milano
             [
                 'title' => 'Condo in Montenapoleone',
                 'description' => "Beautiful apartment in the center of Milan within the fashion district, just renovated with pieces of art and design.
@@ -50,7 +51,7 @@ class ApartmentSeeder extends Seeder
             [
                 'title' => 'House outside Milan',
                 'description' => "Apartment in a dream location for a romantic stay. Located on the top floor, this two-room apartment offers stunning views of the valley. The couple's jacuzzi, located in front of the panoramic window, is ideal for admiring the starry sky at night or to surprise you with the blue shades of the sky, at every hour of the day, while the private balcony is just perfect for a sunset aperitif. The apartment can accommodate up to 2 adults. Children are not allowed",
-                'image' => 'house-outside-mi.jpg',
+                'image' => 'mountain-milan.jpg',
                 'latitude' => '45.518903',
                 'longitude' => '9.346972',
                 'address' => 'VIa Guido Miglioli, Cernusco sul naviglio',
@@ -73,6 +74,20 @@ class ApartmentSeeder extends Seeder
                 'square_meters' => 50,
                 'is_visible' => true,
             ],
+            [
+                'title' => 'Loft in Milan',
+                'description' => "Very spacious and unique loft, fully renovated in 2023 from the urban regeneration of a dismissed distillery. You'll find a fully equipped kitchen, fast Wi-fi, a spacious bedroom with wardrobe. The living room has a very comfy sofa-bed with 75 home cinema. It's a perfect choice for couples, families or a group of friends. The area is very central and safe, only 5 minutes walking far from De Angeli M1 subway station. You can find free parking on nearby streets, or use a nearby parking garage",
+                'image' => 'loft-milan.jpg',
+                'latitude' => '45.466580', 
+                'longitude' => '9.172382',
+                'address' => 'Via caradosso, Milano',
+                'n_rooms' => 6,
+                'n_beds' => 10,
+                'n_bathrooms' => 3,
+                'square_meters' => 450,
+                'is_visible' => true,
+            ],
+            // Torino
             [
                 'title' => "House near Piazza Vittorio & Mole Antonelliana",
                 'description' => "Splendid penthouse with panoramic terrace at the seventh floor of an elegant building, fully equipped and fully furnished.Idea for short term rent. Welcome in Milan! The apartment has two bedrooms and two bathrooms. The second bedroom is equipped with a sofa bed. The living room is large and bright and the terrace has a splendid view over the city.",
