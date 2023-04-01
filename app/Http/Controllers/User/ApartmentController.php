@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -112,8 +113,18 @@ class ApartmentController extends Controller
         if ($apartment->user_id !== Auth::user()->id) {
             abort(403);
         }
-        $apartments = Apartment::where('user_id', Auth::user()->id)->get();
-        return view('user.apartments.show', compact('apartment'));
+        // $apartments = Apartment::where('user_id', Auth::user()->id)->get();
+
+        //fare foreach
+        $isSponsored = false;
+        foreach ($apartment->sponsorships as $sponsorship) {
+            $sponsorship->pivot->ending_date;
+            $ending_date = new Carbon($sponsorship->pivot->ending_date);
+            if ($ending_date->gte(Carbon::now())) {
+                $isSponsored = true;
+            }
+        }
+        return view('user.apartments.show', compact('apartment', 'isSponsored'));
     }
 
     /**

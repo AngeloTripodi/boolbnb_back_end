@@ -372,7 +372,7 @@ div.tt-search-box-input-container {
 //table colors
 .table {
     border-bottom: 1px solid $main-color;
-    border-radius: 20px 20px!important;
+    border-radius: 20px 20px !important;
     font-size: 1.1rem;
 }
 
@@ -382,14 +382,13 @@ thead {
 
 table td,
 table th {
-  padding: 0.75rem 2rem;
-  vertical-align: middle;
+    padding: 0.75rem 2rem;
+    vertical-align: middle;
 }
 
 //index apartment style
 .fa-toggle-on,
-.fa-toggle-off
-{
+.fa-toggle-off {
     color: $main-color;
 }
 
@@ -424,16 +423,22 @@ table th {
 }
 
 .braintree-form__hosted-field {
-    border: 1px solid $main-color!important;
+    border: 1px solid $main-color !important;
 }
 
 .braintree-sheet__text {
-    color: white!important;
+    color: white !important;
     font-weight: bold;
 }
 
 //sponsorship message
-.alert-custom{
+.alert-custom {
     background-color: $main-color;
-    color:#fff;
-  }
+    color: #fff;
+}
+
+
+#sponsored-apartment-icon i {
+    color: $main-color;
+    font-size: 1.5rem;
+}

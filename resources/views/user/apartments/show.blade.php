@@ -63,9 +63,16 @@
                         @endif
 
                     </div>
-                    <h3>
-                        Host: {{ Auth::user()->name }}
-                    </h3>
+                    <div class="d-flex justify-content-between">
+                        <h3>
+                            Host: {{ Auth::user()->name }}
+                        </h3>
+                        <div>
+                            @if ($isSponsored)
+                                <p id="sponsored-apartment-icon"><i class="fa-solid fa-crown"></i></p>
+                            @endif
+                        </div>
+                    </div>
                     <h6>
                         Price per night: &euro; {{ $apartment->n_price }}
                     </h6>
