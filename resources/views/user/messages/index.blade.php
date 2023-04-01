@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-hover table-sm mt-1">
+                    <table id="messages-table" class="table table-hover table-sm mt-1">
                         <thead class="text-white fw-bolds">
                             <tr>
                                 <th scope="col">Email</th>
@@ -35,7 +35,7 @@
                                     <td>{{ $message->phone_number }}</td>
                                     <td> {{ $message->message }}</td>
                                     <td>{{ $message->apartment->title }}</td>
-                                    <td> {{ $message->created_at }}</td>
+                                    <td> {{ $message->created_at->format('d M y, H:i') }}</td>
 
                                     <td>
                                         <a class="btn btn-sm my-btn fw-bold"
