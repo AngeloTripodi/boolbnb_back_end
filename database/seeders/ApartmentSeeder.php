@@ -91,7 +91,7 @@ class ApartmentSeeder extends Seeder
             [
                 'title' => "House near Piazza Vittorio & Mole Antonelliana",
                 'description' => "Splendid penthouse with panoramic terrace at the seventh floor of an elegant building, fully equipped and fully furnished.Idea for short term rent. Welcome in Milan! The apartment has two bedrooms and two bathrooms. The second bedroom is equipped with a sofa bed. The living room is large and bright and the terrace has a splendid view over the city.",
-                'image' => 'house-near-turin',
+                'image' => 'house-near-turin.jpg',
                 'latitude' => '45.068812',
                 'longitude' => '7.698370',
                 'address' => 'Via Giulia di Barolo, Torino',
