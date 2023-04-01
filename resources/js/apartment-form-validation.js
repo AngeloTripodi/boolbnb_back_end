@@ -6,7 +6,7 @@ const bedsInput = document.getElementById('n_beds');
 const bathroomsInput = document.getElementById('n_bathrooms');
 const mqInput = document.getElementById('square_meters');
 const servicesInput = document.querySelectorAll('input[type="checkbox"]');
-// const priceInput = document.getElementById('n_price');
+const priceInput = document.getElementById('n_price');
 
 
 
@@ -17,7 +17,7 @@ const bedsErrorMessage = document.getElementById('beds-error-message');
 const bathroomsErrorMessage = document.getElementById('bathrooms-error-message');
 const mqErrorMessage = document.getElementById('mq-error-message');
 const servicesErrorMessage = document.getElementById('services-error-message');
-// const priceErrorMessage = document.getElementById('n_price-error-message')
+const priceErrorMessage = document.getElementById('n_price-error-message')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -62,6 +62,13 @@ form.addEventListener('submit', (event) => {
         mqErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Square meters must be between 10 and 2000`;
     } else {
         mqErrorMessage.innerHTML = '';
+    }
+
+    // Validazione price
+    if (isNaN(priceInput)) {
+        priceErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Price must be a number`;
+    } else {
+        priceErrorMessage.innerHTML = '';
     }
 
 
@@ -128,7 +135,12 @@ mqInput.addEventListener('input', () => {
 
 });
 
-servicesInput.addEventListener('input[type="checkbox"]', () => {
-    servicesErrorMessage.innerHTML = '';
+priceInput.addEventListener('input', () => {
+    priceErrorMessage.innerHTML = '';
 
 });
+
+servicesInput.forEach(checkbox => checkbox.addEventListener('input', () => {
+    servicesErrorMessage.innerHTML = '';
+})
+)
