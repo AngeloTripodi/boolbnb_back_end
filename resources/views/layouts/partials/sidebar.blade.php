@@ -2,9 +2,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky h-100">
-                    <ul class="nav flex-column text-white h-100">
+                    <ul class="nav flex-column h-100">
                         <div class="my-logo mx-2 ">
                             <img class="w-100" src="{{ asset('img/Logo.png') }}" alt="boolbnb logo">
                         </div>
@@ -70,7 +70,7 @@
                             <li class="fs-6 nav-item pb-3 me-1">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-right-from-bracket fa-fw"></i>
                                     {{ __('Logout') }}
                                 </a>
