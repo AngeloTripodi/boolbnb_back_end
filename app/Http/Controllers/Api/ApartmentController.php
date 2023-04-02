@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Location\Coordinate;
 use Location\Distance\Vincenty;
@@ -122,7 +123,9 @@ class ApartmentController extends Controller
     public function show($slug)
     {
         // show apartment by slug, findOrFail method works only  with ID
-        $apartment = Apartment::where('slug', $slug)->with('services')->firstOrFail();
+        $apartment = Apartment::where('slug', $slug)->with('services')->withCount(['sponsorships' => function (Builder $query) {
+            $query->where('ending_date', '>', now());
+        }])->firstOrFail();
         return response()->json([
             'success' => true,
             'results' => $apartment
