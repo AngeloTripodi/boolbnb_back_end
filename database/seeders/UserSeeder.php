@@ -32,5 +32,13 @@ class UserSeeder extends Seeder
         $userTwo->password = Hash::make('123456789');
         $userTwo->email = 'tizio@boolbnb.com';
         $userTwo->save();
+
+        $userTwo = new User();
+        $userTwo->name = 'Monica';
+        $userTwo->last_name = 'De Bona';
+        $userTwo->date_of_birth = '1991-09-11';
+        $userTwo->password = Hash::make('12345678');
+        $userTwo->email = 'm.debona@boolbnb.com';
+        $userTwo->save();
     }
 }

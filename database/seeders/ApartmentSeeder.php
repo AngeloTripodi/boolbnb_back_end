@@ -123,15 +123,15 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true,
             ],
             [
-                'title' => 'Appartamento elegante vicino al centro',
-                'description' => "Luminoso appartamento di 100 mq completamente ristrutturato, arredato con stile moderno e dotato di ogni comfort. 
-                Si trova in una zona tranquilla a pochi minuti a piedi dal centro storico. L'ampio soggiorno è arredato con eleganza e dispone 
-                di un comodo divano, una TV a schermo piatto e una zona pranzo con un tavolo in legno massello. La cucina moderna e completamente attrezzata 
-                è dotata di frigorifero, freezer, forno, piano cottura e lavastoviglie. Le due camere da letto sono spaziose e confortevoli, 
-                entrambe dotate di letti matrimoniali con materassi di alta qualità e armadi capienti. Il bagno è stato ristrutturato di recente 
-                ed è dotato di una grande doccia, un lavabo moderno e un WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, 
-                un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una 
-                vacanza indimenticabile nella bellissima città di Milano.",
+                'title' => 'Classy downtown apartment, Milan',
+                'description' => "Bright, completely renovated 100 m2 apartment, furnished in a modern style and equipped with every comfort.
+                It is located in a quiet area just a few minutes walk from the historic centre. The large living room is elegantly furnished and has
+                of a comfortable sofa, a flat screen TV and a dining area with a solid wood table. The modern and fully equipped kitchen
+                it is equipped with a fridge, freezer, oven, hob and dishwasher. The two bedrooms are spacious and comfortable,
+                both equipped with double beds with high quality mattresses and spacious wardrobes. The bathroom has been recently remodeled
+                and is equipped with a large shower, a modern sink and a WC. Furthermore, the apartment has a washing machine, a hair dryer,
+                an iron and a high-speed Wi-Fi connection. Ideal for a family or a group of friends who want to spend a
+                unforgettable holiday in the beautiful city of Milan.",
                 'n_price' => 115,
                 'image' => 'appartamento-elegante-vicino-al-centro.jpg',
                 'latitude' => '45.4789',
@@ -144,8 +144,8 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Appartamento panoramico con terrazza',
-                'description' => "Ampio appartamento di 150 mq con una spettacolare vista sulla città e sulle montagne circostanti. Dispone di una grande terrazza attrezzata e di un parcheggio privato. Situato in una zona residenziale tranquilla e ben servita, l'appartamento è stato ristrutturato di recente e arredato con stile moderno ed elegante. L'ampio soggiorno è luminoso e accogliente, con una grande finestra che offre una vista mozzafiato sulla città. La zona pranzo dispone di un grande tavolo in legno massello e di comode sedie imbottite. La cucina moderna e completamente attrezzata è dotata di tutti gli elettrodomestici necessari, tra cui un frigorifero, un freezer, un forno, un piano cottura e una lavastoviglie. Le tre camere da letto sono spaziose e confortevoli, tutte dotate di letti matrimoniali con materassi di alta qualità e di ampi armadi. I due bagni sono stati ristrutturati di recente e sono dotati di doccia, lavabo moderno e WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una vacanza indimenticabile nella splendida città di Trento.",
+                'title' => 'Apartment gorgeous view',
+                'description' => "Large 150 m2 apartment with a spectacular view of the city and the surrounding mountains. It has a large equipped terrace and private parking. Located in a quiet and well served residential area, the apartment has been recently renovated and furnished in a modern and elegant style. The large living room is bright and welcoming, with a large window offering a breathtaking view of the city. The dining area features a large solid wood table and comfortable upholstered chairs. The modern and fully equipped kitchen comes with all necessary appliances including a fridge, freezer, oven, hob and dishwasher. The three bedrooms are spacious and comfortable, all featuring double beds with high quality mattresses and large wardrobes. The two bathrooms have been recently refurbished and are equipped with a shower, modern sink and WC. Furthermore, the apartment has a washing machine, a hair dryer, an iron and a high-speed Wi-Fi connection. Ideal for a family or a group of friends who want to spend an unforgettable holiday in the splendid city of Trento.",
                 'image' => 'appartamento-panoramico-con-terrazza.jpg',
                 'n_price' => 125,
                 'latitude' => '46.0663',
@@ -158,8 +158,8 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Monolocale accogliente in centro',
-                'description' => "Appartamento spazioso e luminoso di 80 mq con 2 camere da letto e 2 bagni. Ideale per famiglie o gruppi di amici che desiderano soggiornare in una zona tranquilla ma ben servita. L'appartamento si trova al secondo piano di un edificio moderno ed è composto da un ampio soggiorno con zona pranzo e angolo cottura completamente attrezzato, 2 camere da letto matrimoniali con armadi a muro, 2 bagni moderni con doccia e un balcone con vista sulla città. L'appartamento è arredato con gusto e dotato di ogni comfort, tra cui aria condizionata, TV a schermo piatto, lavatrice, asciugatrice, ferro da stiro, asse da stiro, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per raggiungere in pochi minuti il centro storico della città, nonché i principali centri commerciali e le aree verdi. Un'ottima scelta per chi desidera un soggiorno confortevole e rilassante.",
+                'title' => 'Cozy tiny apartment',
+                'description' => "Spacious and bright 80m2 apartment with 2 bedrooms and 2 bathrooms. Ideal for families or groups of friends who wish to stay in a quiet but well-served area. The apartment is located on the second floor of a modern building and consists of a large living room with dining area and fully equipped kitchenette, 2 double bedrooms with built-in wardrobes, 2 modern bathrooms with shower and a balcony overlooking the city . The apartment is tastefully furnished and equipped with every comfort, including air conditioning, flat screen TV, washing machine, dryer, iron, ironing board, hair dryer and high speed Wi-Fi connection. The location of the apartment is ideal for reaching the historic center of the city in just a few minutes, as well as the main shopping centers and green areas. An excellent choice for those who want a comfortable and relaxing stay.",
                 'n_price' => 35,
                 'image' => 'monolocale-accogliente-in-centro.jpg',
                 'latitude' => '41.9028',
@@ -172,8 +172,8 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Appartamento con vista sul mare',
-                'description' => "Delizioso bilocale di 50 mq con terrazzo privato e vista panoramica sulla città. L'appartamento è situato al quarto piano di un edificio storico nel cuore del centro storico, a pochi passi dai principali monumenti e musei della città. L'appartamento è stato recentemente ristrutturato e arredato con gusto, mantenendo le caratteristiche originali dell'edificio, come le travi in legno a vista e il pavimento in cotto. L'appartamento è composto da un soggiorno con angolo cottura completamente attrezzato, una camera da letto matrimoniale e un bagno moderno con doccia. Dal soggiorno si accede direttamente al terrazzo privato, attrezzato con tavolo, sedie e sdraio, ideale per godersi il panorama sulla città e rilassarsi al sole. L'appartamento è dotato di aria condizionata, TV a schermo piatto, lavatrice, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per scoprire il fascino della città a piedi, passeggiando tra i vicoli del centro storico e assaporando la cucina locale nei numerosi ristoranti e trattorie della zona. Un'esperienza indimenticabile per chi desidera vivere la città in modo autentico e romantico.",
+                'title' => 'Sea view apartment',
+                'description' => "Delightful 50m2 one bedroom apartment with private terrace and panoramic view of the city. The apartment is located on the fourth floor of a historic building in the heart of the historic centre, a few steps from the main monuments and museums of the city. The apartment has been recently renovated and tastefully furnished, maintaining the original features of the building, such as the exposed wooden beams and the terracotta floor. The apartment consists of a living room with fully equipped kitchenette, a double bedroom and a modern bathroom with shower. The living room leads directly to the private terrace, equipped with table, chairs and deck chairs, ideal for enjoying the view over the city and relaxing in the sun. The apartment is equipped with air conditioning, flat screen TV, washing machine, hairdryer and high speed Wi-Fi connection. The location of the apartment is ideal for discovering the charm of the city on foot, strolling through the narrow streets of the historic center and savoring the local cuisine in the numerous restaurants and trattorias in the area. An unforgettable experience for those who want to experience the city in an authentic and romantic way.",
                 'n_price' => 63,
                 'image' => 'appartamento-con-vista-sul-mare.jpg',
                 'latitude' => '43.7384',
@@ -184,7 +184,36 @@ class ApartmentSeeder extends Seeder
                 'n_bathrooms' => 1,
                 'square_meters' => 80,
                 'is_visible' => true
-            ]
+            ],
+            [
+                'title' => 'Elegant house in Tortona area',
+                'description' => "Elegant and refined apartment in the heart of Via Savona, one of the most fashionable and trendy areas of Milan, characterized by stores, trendy clubs, art galleries and restaurants with Italian and international cuisine. Opposite Mudec, a stone's throw from the Navigli and a few minutes from the Duomo, you'll be staying in a typical Milanese house, you'll be in the heart of the city, in one of the most served, vibrant and cosmopolitan areas of all Milan.",
+                'n_price' => 132,
+                'image' => 'appartamento-tortona.jpg',
+                'latitude' => '45.452076',
+                'longitude' => '9.163807',
+                'address' => 'Via Tortona 27, Milano',
+                'n_rooms' => 5,
+                'n_beds' => 4,
+                'n_bathrooms' => 2,
+                'square_meters' => 95,
+                'is_visible' => true
+            ],
+            [
+                'title' => 'PoP Studio,tiny and cute-few minutes by Navigli',
+                'description' => "Tiny but cozy and joyful flat studio facing the Naviglio Canal,only few minutes of tram by the heart of Naviglia/Darsena. Small but cozy Flat Studio in front of Naviglio(canal)in Via Lodovico il Moro,10 minutes by tram from the hear of city mondanity,Navigli,and the new renovated old port of Milan,'Darsena',that became again the favourite area of tourists and citizen for taking a walk outside,cause of many events,all the nice bar and restaurants happening there. The flat is full of colours to transfer you some more joyness and good vibrations.It's pretty small(30mq),but you got everything you will need you in short stay,from kitchen to waching machine ecc.",
+                'n_price' => 132,
+                'image' => 'appartamento-navigli.jpg',
+                'latitude' => '45.4448622',
+                'longitude' => '9.143070',
+                'address' => 'Via Lodovico il Moro, Milano',
+                'n_rooms' => 5,
+                'n_beds' => 4,
+                'n_bathrooms' => 2,
+                'square_meters' => 95,
+                'is_visible' => true
+            ],
+
 
         ];
 
@@ -192,7 +221,8 @@ class ApartmentSeeder extends Seeder
 
             $newApartment = new Apartment();
             // $newApartment->user_id = FACCIAMOLO!
-            $newApartment->user_id = User::inRandomOrder()->first()->id;
+            // $newApartment->user_id = User::inRandomOrder()->first()->id;
+            $newApartment->user_id = User::where('email', 'm.debona@boolbnb.com')->first()->id;
             $newApartment->title = $apartment['title'];
             $newApartment->slug = Str::slug($newApartment->title);
             $newApartment->description = $apartment['description'];

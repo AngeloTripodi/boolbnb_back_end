@@ -65,7 +65,7 @@ form.addEventListener('submit', (event) => {
     }
 
     // Validazione price
-    if (isNaN(priceInput)) {
+    if (isNaN(priceInput.value)) {
         priceErrorMessage.innerHTML = `<i class="fa-solid fa-circle-exclamation pe-1"></i> Price must be a number`;
     } else {
         priceErrorMessage.innerHTML = '';
@@ -98,7 +98,8 @@ form.addEventListener('submit', (event) => {
         bedsErrorMessage.innerHTML == '' &&
         bathroomsErrorMessage.innerHTML == '' &&
         mqErrorMessage.innerHTML == '' &&
-        servicesErrorMessage.innerHTML == ''
+        servicesErrorMessage.innerHTML == '' &&
+        priceErrorMessage.innerHTML == ''
     ) {
         console.log('ciao')
         // Nessun errore, invia il form
