@@ -48,7 +48,7 @@
                 @forelse ($apartments as $apartment)
                     <div class="col-sm-12 col-lg-4 d-flex">
                         <div
-                            class="card border-0 card-block rounded-3 p-3 align-items-stretch align-content-between {{ $apartment->is_visible ? '' : 'opacity-50' }}">
+                            class="card w-100 border-0 card-block rounded-3 p-3 align-items-stretch align-content-between ">
                             {{-- <div class="dropdown dropdown-index position-absolute btn-group">
                                 <button class="btn btn-custom-index dropdown-toggle rounded-0" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,34 +71,19 @@
                             </div> --}}
 
 
-                            {{--Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate--}}
-                                <div class="index-img mb-3 position-relative">
-                                    @if (str_starts_with($apartment->image, 'uploads'))
-                                    <img class="img-fluid rounded-3 w-100" src="{{ asset('storage/' . $apartment->image) }}"
-                                    alt="Image of {{ $apartment->title }}">
+                            {{-- Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate --}}
+                            <div class="index-img mb-3 position-relative">
+                                @if (str_starts_with($apartment->image, 'uploads'))
+                                    <img class="rounded-3 w-100 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                        src="{{ asset('storage/' . $apartment->image) }}"
+                                        alt="Image of {{ $apartment->title }}">
                                 @else
-                                    <img class="img-fluid rounded-3 w-100" src="{{ asset('img/' . $apartment->image) }}"
-                                    alt="Image of {{ $apartment->title }}">
+                                    <img class="rounded-3 w-100 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                        src="{{ asset('img/' . $apartment->image) }}"
+                                        alt="Image of {{ $apartment->title }}">
                                 @endif
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4 class="card-title text-truncate">{{ $apartment->title }}</h4>
-                                    <h6 class="text-truncate">{{ $apartment->address }}</h6>
-                                </div>
-                                <div class="col-6 d-flex justify-content-end">
-                                    <form action="{{ route('user.toggle', $apartment->id) }}" method="POST">
-                                        @method('PATCH')
-                                        @csrf
-                                        <button type="submit"
-                                            title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
-                                            class="btn btn-outline">
-                                            <i
-                                                class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="text-end">
+                                <div
+                                    class="text-end actions position-absolute bottom-0 w-100 p-2 d-flex justify-content-between">
                                     <a href="{{ route('user.apartments.show', $apartment->id) }}" class="btn card_btn">
                                         <i class="fa-regular fa-eye"></i>
                                         Show
@@ -118,6 +103,25 @@
                                         </button>
                                     </form>
                                 </div>
+                            </div>
+                            <div class="row {{ $apartment->is_visible ? '' : 'opacity-50' }}">
+                                <div class="col-6">
+                                    <h4 class="card-title text-truncate">{{ $apartment->title }}</h4>
+                                    <h6 class="text-truncate">{{ $apartment->address }}</h6>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <form action="{{ route('user.toggle', $apartment->id) }}" method="POST">
+                                        @method('PATCH')
+                                        @csrf
+                                        <button type="submit"
+                                            title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
+                                            class="btn btn-outline">
+                                            <i
+                                                class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -36,12 +36,9 @@ header {
 
 .card_btn {
     margin-right: .25rem;
-    background-color: white;
+    background-color: transparent;
+    color: black;
 
-    &:hover {
-        background-color: $main-color;
-        color: white;
-    }
 }
 
 //? button style into dashboard
@@ -453,4 +450,10 @@ table th {
 
 #messages-table th {
     min-width: 150px;
+}
+
+.actions {
+
+    background-color: rgba(255, 255, 255, 0.705);
+
 }
