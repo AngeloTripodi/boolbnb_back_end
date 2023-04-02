@@ -28,9 +28,7 @@
                                         @csrf
                                         {{-- Logo --}}
                                         <div class="d-flex align-items-center mb-2 pb-1">
-                                            {{-- insert logo here --}}
-                                            <i class="fa-solid fa-b fa-2x me-3 main-color"></i>
-                                            <span class="h1 fw-bold mb-0">Boolbnb</span>
+                                            <img src="{{ asset('img/' . 'Logo.png') }}" alt="Image logo Boolbnb" style="width: 200px">
                                         </div>
                                         
                                         <h5 class="fw-normal mb-2 pb-3">Sign into your account</h5>

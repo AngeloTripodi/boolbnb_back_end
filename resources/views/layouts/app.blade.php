@@ -39,7 +39,7 @@
 <body>
     <div id="app">
         <header class="col-md-9 ms-sm-auto col-lg-10">
-            <nav class="navbar my-navbar navbar-expand-md navbar-dark bg-dark shadow-sm mb-2 fs-5">
+            <nav class="navbar my-navbar navbar-expand-md shadow-sm mb-2">
                 <div class="container p-1">
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                         {{-- config('app.name', 'Laravel') --}}
@@ -51,13 +51,13 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav me-auto">
+                        {{-- <ul class="navbar-nav me-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost:5174/">Homepage</a>
                             </li>
-                        </ul>
+                        </ul> --}}
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
