@@ -59,7 +59,7 @@
                             <li class="nav-item">
                                 <a class="fs-6 nav-link {{ Route::current()->getName() == '' ? 'active' : '' }}"
                                     aria-current="page" href="http://localhost:5174/">
-                                    <i class="fa-solid my-fa-solid fa-house fa-fw me-1"></i>
+                                    <i class="fa-solid fa-house fa-fw me-1"></i>
                                     Homepage
                                 </a>
                             </li>

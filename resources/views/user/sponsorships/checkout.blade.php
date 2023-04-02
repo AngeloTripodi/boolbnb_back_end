@@ -12,7 +12,7 @@
                         Pay in security your best sponsorship.
                     </h6>
                 </div>
-                <h5 class="sponsorship-recap-message">
+                <h5>
                     You are buying the <span class="fw-bold">"{{ $sponsorship->name }} sponsorship"</span> for the apartment
                     <span class="fw-bold">"{{ $apartment->title }}"</span>
                     with total price: <span class="fw-bold" id="sponsorship-price">&euro;
@@ -23,8 +23,8 @@
                     method="POST">
                     @csrf
                     <!-- Putting the empty container you plan to pass to
-                                             `braintree.dropin.create` inside a form will make layout and flow
-                                               easier to manage -->
+                                                 `braintree.dropin.create` inside a form will make layout and flow
+                                                   easier to manage -->
                     <div id="dropin-container"></div>
                     <input class="btn my-btn text-right" type="submit" />
                     <input class="btn my-btn text-right" type="hidden" id="nonce" name="payment_method_nonce" />
