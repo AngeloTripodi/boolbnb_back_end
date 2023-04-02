@@ -37,7 +37,7 @@ class ApartmentController extends Controller
     public function index(Request $request)
     {
 
-        $apartments = Apartment::where('user_id', Auth::user()->id)->get();
+        $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('title')->get();
         return view('user.apartments.index', compact('apartments'));
     }
 
