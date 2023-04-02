@@ -79,7 +79,7 @@
                                         {{ Auth::user()->name ?? Auth::user()->email }}
                                     </a>
 
-                                    <div class="dropdown-menu my_dropdown-menu dropdown-menu-right fs-5"
+                                    <div class="dropdown-menu my_dropdown-menu dropdown-menu-right"
                                         aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
                                         <a class="dropdown-item"
