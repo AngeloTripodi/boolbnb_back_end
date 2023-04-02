@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +38,9 @@ class ApartmentController extends Controller
     public function index(Request $request)
     {
 
-        $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('title')->get();
+        $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('title')->withCount(['sponsorships' => function (Builder $query) {
+            $query->where('ending_date', '>', now());
+        }])->get();
         return view('user.apartments.index', compact('apartments'));
     }
 

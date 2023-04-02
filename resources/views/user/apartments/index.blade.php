@@ -73,6 +73,11 @@
 
                             {{-- Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate --}}
                             <div class="index-img mb-3 position-relative">
+                                @if ($apartment->sponsorships_count > 0)
+                                    <div class="index-sponsored-icon position-absolute top-0 end-0">
+                                        <i class="fa-solid fa-crown"></i>
+                                    </div>
+                                @endif
                                 @if (str_starts_with($apartment->image, 'uploads'))
                                     <img class="rounded-3 w-100 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
                                         src="{{ asset('storage/' . $apartment->image) }}"
