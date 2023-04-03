@@ -5,7 +5,7 @@
 
         <!--Aggiungo un if session per conferma sponsorship-->
         @if (session('message'))
-            <div class="fw-bold text-center fs-6 mx-5 alert alert-custom">
+            <div class="fw-bold text-center fs-6 alert alert-custom">
                 {{ session('message') }}
             </div>
         @endif
@@ -17,11 +17,11 @@
                     <h6>{{ $apartment->address }}</h6>
                 </div>
                 <div class="col-12 col-lg-6 d-flex justify-content-end">
-                    <div class="actions pe-3">
+                    <div class="actions">
 
                         <a href="{{ route('user.apartments.index') }}" class="btn card_btn">
                             <i class="fa-solid fa-angles-left pe-1"></i>
-                            Go back
+                            Back
                         </a>
 
                         <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
@@ -42,7 +42,7 @@
                             @method('PATCH')
                             @csrf
                             <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
-                                class="btn btn-outline">
+                                class="btn btn-outline pe-0">
                                 <i
                                     class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}">
                                 </i>
