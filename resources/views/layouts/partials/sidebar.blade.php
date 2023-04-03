@@ -25,8 +25,6 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown pt-4">
-
                             <li class="fs-6 nav-item top-menu-item">
                                 <a class="nav-link {{ Route::current()->getName() == 'dashboard' ? 'active' : '' }}"
                                     href="{{ url('dashboard') }}">

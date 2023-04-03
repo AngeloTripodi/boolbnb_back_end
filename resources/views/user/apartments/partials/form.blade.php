@@ -89,7 +89,7 @@
 
             <div class="form-outline my-3 col-md-12 col-lg-4">
                 <label for="n_price" class="form-label mb-1 @error('n_price') is-invalid @enderror">Price per
-                    night:*</label>
+                    night:</label>
                 <input placeholder="Insert price per night" min="0" type="number" class="form-control"
                     id="n_price" name="n_price" value="{{ old('n_price', $apartment->n_price) }}" required>
                 <div class="text-danger" id="n_price-error-message"></div>
