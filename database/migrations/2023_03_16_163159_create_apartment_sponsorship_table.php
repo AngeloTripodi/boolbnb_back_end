@@ -32,7 +32,7 @@ return new class extends Migration
             $table->dateTime('starting_date')->nullable();
             $table->dateTime('ending_date')->nullable();
 
-            $table->primary(['apartment_id', 'sponsorship_id']);
+            $table->id();
             $table->timestamps();
         });
     }

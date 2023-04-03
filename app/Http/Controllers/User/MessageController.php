@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Message;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -15,9 +17,15 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
-        dd($messages);
-        return view('user.message.index', compact('messages'));
+
+        $userId = Auth::id();
+        $messages = Message::whereHas('apartment', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->orderBy('created_at', 'desc')->get();
+
+
+        //dd($messages);
+        return view('user.messages.index', compact('messages'));
     }
 
     /**
@@ -28,7 +36,7 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        dd($message);
-        return view('user.message.show', compact('message'));
+        //dd($message);
+        return view('user.messages.show', compact('message'));
     }
 }

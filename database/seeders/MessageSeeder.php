@@ -18,15 +18,15 @@ class MessageSeeder extends Seeder
     {
         $messages = [
             [
-                'name' => 'Ginetto',
-                'email'=> 'ginetto@ginetta.com',
-                'message' => 'Ciao Ginetto, ci manchi!',
+                'name' => 'Paolo',
+                'email' => 'paolo@gmail.com',
+                'message' => 'Salve, sono ammessi i cani?',
                 'phone_number' => '+393490005000'
             ],
             [
-                'name' => 'Ginetta',
-                'email'=> 'ginetta@ginetto.com',
-                'message' => 'Ciao Ginetta, ci manchi!',
+                'name' => 'Anna',
+                'email' => 'anna@gmail.com',
+                'message' => 'Salve, è possibile avere uno sconto?',
                 'phone_number' => null
             ],
 

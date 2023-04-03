@@ -12,9 +12,9 @@
 
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    {{-- <link href="./resources/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
     <!-- Usando Vite -->
@@ -23,18 +23,25 @@
     {{-- Link cdn sweet alert --}}
     <link href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css" />
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js">
+    </script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js">
+    </script>
+
+    <!-- includes the Braintree JS client SDK -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.34.0/js/dropin.min.js"></script>
+
 </head>
 
 <body>
     <div id="app">
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-            <nav class="navbar my-navbar rounded-2 navbar-expand-md navbar-dark bg-dark shadow-sm mb-2">
-                <div class="container">
+        <header class="col-md-9 ms-sm-auto col-lg-10">
+            <nav class="navbar my-navbar navbar-expand-md shadow-sm mb-2">
+                <div class="container-fluid pl-2 pe-2">
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-
-
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
 
@@ -44,13 +51,13 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav me-auto">
+                        {{-- <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link" href="http://localhost:5174/">Homepage</a>
                             </li>
-                        </ul>
+                        </ul> --}}
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -68,15 +75,21 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->email }}
+                                        {{-- Show name if available, else show email --}}
+                                        {{ Auth::user()->name ?? Auth::user()->email }}
                                     </a>
 
                                     <div class="dropdown-menu my_dropdown-menu dropdown-menu-right"
                                         aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('user.apartments.index') }}">{{ __('Apartments') }}</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('user.messages.index') }}">{{ __('Messages') }}</a>
+                                        <a class="dropdown-item" href="http://localhost:5174/">Homepage</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                        document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -91,6 +104,11 @@
                     </div>
                 </div>
             </nav>
+
+        </header>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+
+
             <section id="messages" class="">
                 @yield('messages')
             </section>

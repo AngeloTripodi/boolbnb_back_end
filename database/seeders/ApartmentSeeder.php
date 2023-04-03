@@ -20,80 +20,83 @@ class ApartmentSeeder extends Seeder
         //
         $apartments = [
             [
-                'title' => 'Elegante villa con piscina',
-                'description' => "Casa vacanze immersa nel verde in una zona collinare lontana dal centro abitato. Fa parte di un grosso complesso storico edificato a partire dal XV secolo. Il contesto è prestigioso con ampi spazi, arredamento d'antiquariato e piscina. Lo spazio è disposto su due piani con accesso diretto al giardino. Gli spazi sono ampi con una grande cucina, una grande sala e un vasto patio dove mangiare in estate. La piscina è nella parte bassa del giardino a circa 20 metri dalla casa.",
-                'image' => 'elegante-villa-con-piscina.jpg',
-                'latitude' => '45.73162371',
-                'longitude' => '9.4999649',
-                'address' => 'Pontida, Lombardia, Italia',
-                'n_rooms' => 8,
-                'n_beds' => 12,
-                'n_bathrooms' => 4,
-                'square_meters' => 200,
+                'title' => 'Condo in Montenapoleone',
+                'description' => "Beautiful apartment in the center of Milan within the fashion district, just renovated with pieces of art and design.
+                Ideal for a holiday or for work.
+                double bedroom with extra comfort mattress and 4 pillows . TV, living room with fully equipped kitchen, TV and sofa.",
+                'n_price' => 50,
+                'image' => 'condo-in-montenapoleone.jpg',
+                'latitude' => '45.468316',
+                'longitude' => '9.195161',
+                'address' => 'Via Monte Napoleone, Milano',
+                'n_rooms' => 2,
+                'n_beds' => 4,
+                'n_bathrooms' => 1,
+                'square_meters' => 100,
                 'is_visible' => true,
             ],
             [
-                'title' => 'Appartamento con Vista sulle Dolomiti di Brenta',
-                'description' => "La 'Casa Vacanze Orizzonti d'Anaunia' incorniciata dalle montagne del Brenta e dai prati coltivati a mele, si colloca al centro della Val di Non, nel tranquillo paese di Tassullo in provincia di Trento. L’edificio è nato agli inizi degli anni 30 come abitazione e attualmente ristrutturato e adibito all'ospitalità turistica.",
-                'image' => 'appartamento-con-vista-sulle-dolomiti-di-brenta.jpg',
-                'latitude' => '46.3274581',
-                'longitude' => '11.02588072',
-                'address' => "ville d'aunania, Trentino, Italia",
-                'n_rooms' => 4,
-                'n_beds' => 4,
+                'title' => 'Confort apartment Porta Genova',
+                'description' => "You will be staying in the heart of Porta Genova, a bohemian neighborhood that stretches along the Naviglio Grande , boasts a rich selection of outdoor restaurants, pubs and aperitif bars. Convenient to get around with all the public transit nearby .",
+                'n_price' => 67,
+                'image' => 'porta-genova-mi.jpg',
+                'latitude' => '45.453120',
+                'longitude' => '9.170197',
+                'address' => "Porta Genova, Milano",
+                'n_rooms' => 2,
+                'n_beds' => 2,
                 'n_bathrooms' => 1,
                 'square_meters' => 75,
                 'is_visible' => true,
             ],
             [
-                'title' => 'TrivignoLife Ridente chalet in montagna',
-                'description' => "Rilassati con tutta la famiglia in questo alloggio tranquillo.
-                Trivigno 1700 m, vicino alla riserva naturale di Pian di Gembro, alle piste di sci ( Aprica) e al passo del Mortirolo, immerso nella natura tra boschi, prati e pascoli . Ampio giardino con posti auto , sauna finlandese, barbecue coperto , ampio soggiorno con camino , stufe a legna, soppalchi artigianali in legno, due balconi, due bagni , cucina , lavatrice.
-                Un' esperienza incredibile in un contesto meraviglioso , provare per credere!",
-                'image' => 'trivignolife-chalet.jpg',
-                'latitude' => '46.219408',
-                'longitude' => '10.166880',
-                'address' => 'Via visoli, 16, Tirano',
+                'title' => 'House outside Milan',
+                'description' => "Apartment in a dream location for a romantic stay. Located on the top floor, this two-room apartment offers stunning views of the valley. The couple's jacuzzi, located in front of the panoramic window, is ideal for admiring the starry sky at night or to surprise you with the blue shades of the sky, at every hour of the day, while the private balcony is just perfect for a sunset aperitif. The apartment can accommodate up to 2 adults. Children are not allowed",
+                'n_price' => 136,
+                'image' => 'villa-outside-mi.jpg',
+                'latitude' => '45.518903',
+                'longitude' => '9.346972',
+                'address' => 'VIa Guido Miglioli, Cernusco sul naviglio',
                 'n_rooms' => 6,
                 'n_beds' => 9,
-                'n_bathrooms' => 2,
-                'square_meters' => 220,
+                'n_bathrooms' => 4,
+                'square_meters' => 320,
                 'is_visible' => true,
             ],
             [
-                'title' => 'Riegelehof App 3',
-                'description' => "Questo bellissimo appartamento si trova a Lajen ed è la sistemazione ideale per una vacanza rilassante. Si trova tra     Chiusa (Klausen) e Ortisei (St. Ulrich in Gröden).
-                L'appartamento di 38 m² è composto da un soggiorno, una cucina ben attrezzata con lavastoviglie, 1 camera da letto e 1 bagno e può quindi ospitare 3 persone.
-                I servizi aggiuntivi includono la connessione Wi-Fi.
-                L'appartamento vacanze vanta un'area esterna privata con un balcone.",
-                'image' => 'Riegelehof-App-3.jpg',
-                'latitude' => '46.609165',
-                'longitude' => '11.569198',
-                'address' => 'Via Bergweg, 18, Laion',
-                'n_rooms' => 3,
-                'n_beds' => 2,
-                'n_bathrooms' => 1,
-                'square_meters' => 70,
-                'is_visible' => true,
-            ],
-            [
-                'title' => "Splendida Casa sull'Albero a Pochi Minuti da Firenze",
-                'description' => "The TREEhouse is a romantic room immersed in the pine trees with fire place for the winter and AC for the summer. It offers a bedroom with a queen size bed, a small kitchenette with stove and fridge; a bathroom with shower, and a private outdoor terrace. And a fantastic view towards the Tuscan landscape!
-                And if you want to see and know more about our passion for the interior design, the arts and crafts, and antiques you should come visit our design and make shop Riccardo Barthel in Via dei Serragli n. 234 r, in the Santo Spirito district of Florence!",
-                'image' => 'casa-sull-albero.jpg',
-                'latitude' => '43.7762',
-                'longitude' => '11.2336',
-                'address' => 'Via di Monteloro, 19, Firenze, Toscana, Italia',
+                'title' => 'Condo in Brera',
+                'description' => "Stylish and refined super penthouse Sunrise to Sunset located on the renowned Via Manzoni. Ideal for short stays in the name of luxury and privacy. The space: direct entrance to the sleeping area, extra comfortable sofa bed with 20 cm mattress, folding technology to open and close in one movement.
+                From the living/sleeping area you will have access to the kitchen equipped with microwave, coffee maker, kettle as well as a two-burner induction hob and everything you need to prepare your favorite meals. The kitchen connects to a small space with two armchairs. The solution makes the presence of two terraces unique: the main one served by comfortable seats thanks to the presence of several cushioned seats as well as a sofa two outdoor seats and a table with additional two chairs; the secondary one with an enchanting cathedral view is furnished with a two-seater wooden table. Please also contact us for information about the private parking in the area.",
+                'n_price' => 56,
+                'image' => 'brera-condo.jpg',
+                'latitude' => '45.469299',
+                'longitude' => '9.186868',
+                'address' => 'Via ciovasso, Milano',
                 'n_rooms' => 2,
                 'n_beds' => 2,
                 'n_bathrooms' => 1,
-                'square_meters' => 30,
+                'square_meters' => 50,
+                'is_visible' => true,
+            ],
+            [
+                'title' => "House near Piazza Vittorio & Mole Antonelliana",
+                'description' => "Splendid penthouse with panoramic terrace at the seventh floor of an elegant building, fully equipped and fully furnished.Idea for short term rent. Welcome in Milan! The apartment has two bedrooms and two bathrooms. The second bedroom is equipped with a sofa bed. The living room is large and bright and the terrace has a splendid view over the city.",
+                'n_price' => 49,
+                'image' => 'apartment-city-life.jpg',
+                'latitude' => '45.068812',
+                'longitude' => '7.698370',
+                'address' => 'Via Giulia di Barolo, Torino',
+                'n_rooms' => 2,
+                'n_beds' => 2,
+                'n_bathrooms' => 1,
+                'square_meters' => 100,
                 'is_visible' => true,
             ],
             [
                 'title' => "Dimora Natura-Riserva Naturale Valle di Bondo",
                 'description' => "Natura è ciò che siamo. Soggiornare nella Riserva Naturale Valle di Bondo, tra ampi prati e verdi boschi che dominano il lago di Garda, è armonia. Lontani dalla folla, a 600m di altitudine, ma vicini alle sue spiagge, solo 9km, Tremosine sul Garda regala panorami mozzafiato, una cultura contadina e tanto sano sport. Pet-friendly significa che accettiamo gli animali, ma soprattutto che li amiamo.",
                 'image' => 'dimora-natura.jpg',
+                'n_price' => 77,
                 'latitude' => '45.7642',
                 'longitude' => '10.7408',
                 'address' => 'Piazza Guglielmo Marconi, 1, Tremosine sul Garda, Brescia, Italia',
@@ -108,6 +111,7 @@ class ApartmentSeeder extends Seeder
                 'description' => "Il mio alloggio è situato in centro Sicilia, immerso nella campagna dell'entroterra Siciliano.
                 Se cerchi un alloggio dove rilassarti, lontano dal frastuono della città, intimo, dove respirare aria pulita e goderti i colori e i profumi della nostra bella isola, allora il mio alloggio è perfetto per te!
                 E' adatto a coppie, avventurieri solitari e famiglie con bambini ed essendo situato al centro dell'isola, offre una comoda soluzione per chi vuole raggiungere tutte le parti della Sicilia.",
+                'n_price' => 110,
                 'image' => 'masseria-del-paradiso.jpg',
                 'latitude' => '37.4368',
                 'longitude' => '14.0769',
@@ -119,15 +123,16 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true,
             ],
             [
-                'title' => 'Appartamento elegante vicino al centro',
-                'description' => "Luminoso appartamento di 100 mq completamente ristrutturato, arredato con stile moderno e dotato di ogni comfort. 
-                Si trova in una zona tranquilla a pochi minuti a piedi dal centro storico. L'ampio soggiorno è arredato con eleganza e dispone 
-                di un comodo divano, una TV a schermo piatto e una zona pranzo con un tavolo in legno massello. La cucina moderna e completamente attrezzata 
-                è dotata di frigorifero, freezer, forno, piano cottura e lavastoviglie. Le due camere da letto sono spaziose e confortevoli, 
-                entrambe dotate di letti matrimoniali con materassi di alta qualità e armadi capienti. Il bagno è stato ristrutturato di recente 
-                ed è dotato di una grande doccia, un lavabo moderno e un WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, 
-                un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una 
-                vacanza indimenticabile nella bellissima città di Milano.",
+                'title' => 'Classy downtown apartment, Milan',
+                'description' => "Bright, completely renovated 100 m2 apartment, furnished in a modern style and equipped with every comfort.
+                It is located in a quiet area just a few minutes walk from the historic centre. The large living room is elegantly furnished and has
+                of a comfortable sofa, a flat screen TV and a dining area with a solid wood table. The modern and fully equipped kitchen
+                it is equipped with a fridge, freezer, oven, hob and dishwasher. The two bedrooms are spacious and comfortable,
+                both equipped with double beds with high quality mattresses and spacious wardrobes. The bathroom has been recently remodeled
+                and is equipped with a large shower, a modern sink and a WC. Furthermore, the apartment has a washing machine, a hair dryer,
+                an iron and a high-speed Wi-Fi connection. Ideal for a family or a group of friends who want to spend a
+                unforgettable holiday in the beautiful city of Milan.",
+                'n_price' => 115,
                 'image' => 'appartamento-elegante-vicino-al-centro.jpg',
                 'latitude' => '45.4789',
                 'longitude' => '9.2254',
@@ -139,9 +144,10 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Appartamento panoramico con terrazza',
-                'description' => "Ampio appartamento di 150 mq con una spettacolare vista sulla città e sulle montagne circostanti. Dispone di una grande terrazza attrezzata e di un parcheggio privato. Situato in una zona residenziale tranquilla e ben servita, l'appartamento è stato ristrutturato di recente e arredato con stile moderno ed elegante. L'ampio soggiorno è luminoso e accogliente, con una grande finestra che offre una vista mozzafiato sulla città. La zona pranzo dispone di un grande tavolo in legno massello e di comode sedie imbottite. La cucina moderna e completamente attrezzata è dotata di tutti gli elettrodomestici necessari, tra cui un frigorifero, un freezer, un forno, un piano cottura e una lavastoviglie. Le tre camere da letto sono spaziose e confortevoli, tutte dotate di letti matrimoniali con materassi di alta qualità e di ampi armadi. I due bagni sono stati ristrutturati di recente e sono dotati di doccia, lavabo moderno e WC. Inoltre, l'appartamento dispone di una lavatrice, un asciugacapelli, un ferro da stiro e una connessione Wi-Fi ad alta velocità. Ideale per una famiglia o un gruppo di amici che desidera trascorrere una vacanza indimenticabile nella splendida città di Trento.",
+                'title' => 'Apartment gorgeous view',
+                'description' => "Large 150 m2 apartment with a spectacular view of the city and the surrounding mountains. It has a large equipped terrace and private parking. Located in a quiet and well served residential area, the apartment has been recently renovated and furnished in a modern and elegant style. The large living room is bright and welcoming, with a large window offering a breathtaking view of the city. The dining area features a large solid wood table and comfortable upholstered chairs. The modern and fully equipped kitchen comes with all necessary appliances including a fridge, freezer, oven, hob and dishwasher. The three bedrooms are spacious and comfortable, all featuring double beds with high quality mattresses and large wardrobes. The two bathrooms have been recently refurbished and are equipped with a shower, modern sink and WC. Furthermore, the apartment has a washing machine, a hair dryer, an iron and a high-speed Wi-Fi connection. Ideal for a family or a group of friends who want to spend an unforgettable holiday in the splendid city of Trento.",
                 'image' => 'appartamento-panoramico-con-terrazza.jpg',
+                'n_price' => 125,
                 'latitude' => '46.0663',
                 'longitude' => '11.1166',
                 'address' => 'Via dei Tigli 22, Trento',
@@ -152,8 +158,9 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Monolocale accogliente in centro',
-                'description' => "Appartamento spazioso e luminoso di 80 mq con 2 camere da letto e 2 bagni. Ideale per famiglie o gruppi di amici che desiderano soggiornare in una zona tranquilla ma ben servita. L'appartamento si trova al secondo piano di un edificio moderno ed è composto da un ampio soggiorno con zona pranzo e angolo cottura completamente attrezzato, 2 camere da letto matrimoniali con armadi a muro, 2 bagni moderni con doccia e un balcone con vista sulla città. L'appartamento è arredato con gusto e dotato di ogni comfort, tra cui aria condizionata, TV a schermo piatto, lavatrice, asciugatrice, ferro da stiro, asse da stiro, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per raggiungere in pochi minuti il centro storico della città, nonché i principali centri commerciali e le aree verdi. Un'ottima scelta per chi desidera un soggiorno confortevole e rilassante.",
+                'title' => 'Cozy tiny apartment',
+                'description' => "Spacious and bright 80m2 apartment with 2 bedrooms and 2 bathrooms. Ideal for families or groups of friends who wish to stay in a quiet but well-served area. The apartment is located on the second floor of a modern building and consists of a large living room with dining area and fully equipped kitchenette, 2 double bedrooms with built-in wardrobes, 2 modern bathrooms with shower and a balcony overlooking the city . The apartment is tastefully furnished and equipped with every comfort, including air conditioning, flat screen TV, washing machine, dryer, iron, ironing board, hair dryer and high speed Wi-Fi connection. The location of the apartment is ideal for reaching the historic center of the city in just a few minutes, as well as the main shopping centers and green areas. An excellent choice for those who want a comfortable and relaxing stay.",
+                'n_price' => 35,
                 'image' => 'monolocale-accogliente-in-centro.jpg',
                 'latitude' => '41.9028',
                 'longitude' => '12.4964',
@@ -165,8 +172,9 @@ class ApartmentSeeder extends Seeder
                 'is_visible' => true
             ],
             [
-                'title' => 'Appartamento con vista sul mare',
-                'description' => "Delizioso bilocale di 50 mq con terrazzo privato e vista panoramica sulla città. L'appartamento è situato al quarto piano di un edificio storico nel cuore del centro storico, a pochi passi dai principali monumenti e musei della città. L'appartamento è stato recentemente ristrutturato e arredato con gusto, mantenendo le caratteristiche originali dell'edificio, come le travi in legno a vista e il pavimento in cotto. L'appartamento è composto da un soggiorno con angolo cottura completamente attrezzato, una camera da letto matrimoniale e un bagno moderno con doccia. Dal soggiorno si accede direttamente al terrazzo privato, attrezzato con tavolo, sedie e sdraio, ideale per godersi il panorama sulla città e rilassarsi al sole. L'appartamento è dotato di aria condizionata, TV a schermo piatto, lavatrice, asciugacapelli e connessione Wi-Fi ad alta velocità. La posizione dell'appartamento è ideale per scoprire il fascino della città a piedi, passeggiando tra i vicoli del centro storico e assaporando la cucina locale nei numerosi ristoranti e trattorie della zona. Un'esperienza indimenticabile per chi desidera vivere la città in modo autentico e romantico.",
+                'title' => 'Sea view apartment',
+                'description' => "Delightful 50m2 one bedroom apartment with private terrace and panoramic view of the city. The apartment is located on the fourth floor of a historic building in the heart of the historic centre, a few steps from the main monuments and museums of the city. The apartment has been recently renovated and tastefully furnished, maintaining the original features of the building, such as the exposed wooden beams and the terracotta floor. The apartment consists of a living room with fully equipped kitchenette, a double bedroom and a modern bathroom with shower. The living room leads directly to the private terrace, equipped with table, chairs and deck chairs, ideal for enjoying the view over the city and relaxing in the sun. The apartment is equipped with air conditioning, flat screen TV, washing machine, hairdryer and high speed Wi-Fi connection. The location of the apartment is ideal for discovering the charm of the city on foot, strolling through the narrow streets of the historic center and savoring the local cuisine in the numerous restaurants and trattorias in the area. An unforgettable experience for those who want to experience the city in an authentic and romantic way.",
+                'n_price' => 63,
                 'image' => 'appartamento-con-vista-sul-mare.jpg',
                 'latitude' => '43.7384',
                 'longitude' => '10.4514',
@@ -176,7 +184,36 @@ class ApartmentSeeder extends Seeder
                 'n_bathrooms' => 1,
                 'square_meters' => 80,
                 'is_visible' => true
-            ]
+            ],
+            [
+                'title' => 'Elegant house in Tortona area',
+                'description' => "Elegant and refined apartment in the heart of Via Savona, one of the most fashionable and trendy areas of Milan, characterized by stores, trendy clubs, art galleries and restaurants with Italian and international cuisine. Opposite Mudec, a stone's throw from the Navigli and a few minutes from the Duomo, you'll be staying in a typical Milanese house, you'll be in the heart of the city, in one of the most served, vibrant and cosmopolitan areas of all Milan.",
+                'n_price' => 132,
+                'image' => 'appartamento-tortona.jpg',
+                'latitude' => '45.452076',
+                'longitude' => '9.163807',
+                'address' => 'Via Tortona 27, Milano',
+                'n_rooms' => 5,
+                'n_beds' => 4,
+                'n_bathrooms' => 2,
+                'square_meters' => 95,
+                'is_visible' => true
+            ],
+            [
+                'title' => 'PoP Studio,tiny and cute-few minutes by Navigli',
+                'description' => "Tiny but cozy and joyful flat studio facing the Naviglio Canal,only few minutes of tram by the heart of Naviglia/Darsena. Small but cozy Flat Studio in front of Naviglio(canal)in Via Lodovico il Moro,10 minutes by tram from the hear of city mondanity,Navigli,and the new renovated old port of Milan,'Darsena',that became again the favourite area of tourists and citizen for taking a walk outside,cause of many events,all the nice bar and restaurants happening there. The flat is full of colours to transfer you some more joyness and good vibrations.It's pretty small(30mq),but you got everything you will need you in short stay,from kitchen to waching machine ecc.",
+                'n_price' => 132,
+                'image' => 'appartamento-navigli.jpg',
+                'latitude' => '45.4448622',
+                'longitude' => '9.143070',
+                'address' => 'Via Lodovico il Moro, Milano',
+                'n_rooms' => 5,
+                'n_beds' => 4,
+                'n_bathrooms' => 2,
+                'square_meters' => 95,
+                'is_visible' => true
+            ],
+
 
         ];
 
@@ -184,7 +221,8 @@ class ApartmentSeeder extends Seeder
 
             $newApartment = new Apartment();
             // $newApartment->user_id = FACCIAMOLO!
-            $newApartment->user_id = User::inRandomOrder()->first()->id;
+            // $newApartment->user_id = User::inRandomOrder()->first()->id;
+            $newApartment->user_id = User::where('email', 'm.debona@boolbnb.com')->first()->id;
             $newApartment->title = $apartment['title'];
             $newApartment->slug = Str::slug($newApartment->title);
             $newApartment->description = $apartment['description'];
@@ -197,6 +235,7 @@ class ApartmentSeeder extends Seeder
             $newApartment->n_bathrooms = $apartment['n_bathrooms'];
             $newApartment->square_meters = $apartment['square_meters'];
             $newApartment->is_visible = $apartment['is_visible'];
+            $newApartment->n_price = $apartment['n_price'];
             $newApartment->save();
             $newApartment->slug = $newApartment->slug . "-$newApartment->id";
             $newApartment->update();

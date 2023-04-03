@@ -17,8 +17,8 @@ use App\Http\Controllers\User\MessageController as MessageController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,13 +26,16 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
+    Route::patch('/apartment/{apartment}/toggle', [ApartmentController::class, 'enableToggle'])->name('toggle');
     Route::resource('/apartments', ApartmentController::class);
 })->name('user.apartments.index');
 
-Route::get('/user/sponsorship', [SponsorshipController::class, 'index'])->name('user.sponsorship.index');
+Route::get('/user/apartments/{apartment}/sponsorships', [SponsorshipController::class, 'index'])->name('user.sponsorships.index');
+Route::get('/user/apartments/{apartment}/sponsorships/{sponsorship}', [SponsorshipController::class, 'checkout'])->name('user.sponsorships.checkout');
+Route::post('/user/apartments/{apartment}/sponsorships/{sponsorship}', [SponsorshipController::class, 'store'])->name('user.sponsorships.store');
 
-Route::get('/user/message', [MessageController::class, 'index'])->name('user.message.index');
-Route::get('/user/message/{message}', [MessageController::class, 'show'])->name('user.message.show');
+Route::get('/user/messages', [MessageController::class, 'index'])->name('user.messages.index');
+Route::get('/user/messages/{message}', [MessageController::class, 'show'])->name('user.messages.show');
 
 
 require __DIR__ . '/auth.php';

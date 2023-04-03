@@ -1,54 +1,110 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="card mb-3 mt-5 shadow-lg">
-            <div class="card-header text-center">
-                <h3 class="card-title">{{ $apartment->title }}</h3>
+    <div class="container-fluid py-5">
+
+        <!--Aggiungo un if session per conferma sponsorship-->
+        @if (session('message'))
+            <div class="fw-bold text-center fs-6 alert alert-custom">
+                {{ session('message') }}
             </div>
-            <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                <div class="card-image py-4">
-                    <img src="{{ asset('storage/' . $apartment->image) }}" alt="{{ $apartment->title }}" class="img-fluid">
+        @endif
+
+        <div class="show-cards">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h2 class="card-title pb-2">{{ $apartment->title }}</h2>
+                    <h6>{{ $apartment->address }}</h6>
                 </div>
-                <div class="pb-5">
-                    @foreach ($apartment->services as $service)
-                        #{{ $service->name }}
-                    @endforeach
-                </div>
-                <p class="card-text text-center fw-bold">{{ $apartment->description }}</p>
-                <ul class="list-unstyled text-center mb-4">
-                    <li class="text-muted"> {{ $apartment->slug }}</li>
-                    {{-- <li class="text-muted">Type: {{ $apartment->user->first_name }} {{ $apartment->user->last_name }}</li> --}}
-                    <li class="text-muted">LONG: {{ $apartment->address }}</li>
-                    <li class="text-muted">LAT: {{ $apartment->latitude }}</li>
-                    <li class="text-muted">LONG: {{ $apartment->longitude }}</li>
-                    <li class="text-muted">Beds: {{ $apartment->n_beds }}</li>
-                    <li class="text-muted">Bathrooms: {{ $apartment->n_bathrooms }}</li>
-                    <li class="text-muted">Square meters: {{ $apartment->square_meters }}</li>
-                </ul>
-                <div class="actions d-flex justify-content-between w-100">
-                    <div class="main-actions">
-                        <a href="{{ route('user.apartments.index') }}" class="btn btn-success"><i
-                                class="fa-solid fa-arrow-left"></i></a>
-                    </div>
-                    <div class="secondary-actions">
-                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn btn-warning"><i
-                                class="fa-solid fa-edit"></i></a>
+                <div class="col-12 col-lg-6 d-flex justify-content-end">
+                    <div class="actions">
+
+                        <a href="{{ route('user.apartments.index') }}" class="btn card_btn">
+                            <i class="fa-solid fa-angles-left pe-1"></i>
+                            Back
+                        </a>
+
+                        <a href="{{ route('user.apartments.edit', $apartment->id) }}" class="btn card_btn">
+                            <i class="fa-solid fa-edit"></i>
+                            Edit
+                        </a>
                         <form class="d-inline-block form-delete double-confirm delete"
                             action="{{ route('user.apartments.destroy', $apartment->id) }}" method="POST"
                             data-element-name="{{ $apartment->title }}">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" title="Delete" class="btn btn-danger"><i
-                                    class="fa-solid fa-trash"></i></button>
+                            <button type="submit" title="Delete" class="btn card_btn">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
                         </form>
+                        <form action="{{ route('user.toggle', $apartment->id) }}" method="POST" class="d-inline">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" title="{{ $apartment->is_visible ? 'visible' : 'not visible' }}"
+                                class="btn btn-outline pe-0">
+                                <i
+                                    class="fa-2x fa-solid fas fa-fw {{ $apartment->is_visible ? 'fa-toggle-on' : 'fa-toggle-off' }}">
+                                </i>
+                            </button>
+                        </form>
+
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-@endsection
+                <div class="card-image py-4">
+                    {{-- Creo un if per visualizzare correttamente le immagine sul db e le immagini uploadate --}}
+                    <div class="mb-3 position-relative">
+                        @if (str_starts_with($apartment->image, 'uploads'))
+                            <img class="w-100 rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                src="{{ asset('storage/' . $apartment->image) }}" alt="Image of {{ $apartment->title }}">
+                        @else
+                            <img class="w-100 rounded-3 {{ $apartment->is_visible ? '' : 'opacity-50' }}"
+                                src="{{ asset('img/' . $apartment->image) }}" alt="Image of {{ $apartment->title }}">
+                        @endif
 
-@section('script')
-    @vite('resources/js/deleteHandler.js')
-@endsection
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h3>
+                            Host: {{ Auth::user()->name }}
+                        </h3>
+                        <div>
+                            @if ($isSponsored)
+                                <p id="sponsored-apartment-icon"><i class="fa-solid fa-crown"></i></p>
+                            @endif
+                        </div>
+                    </div>
+                    <h6>
+                        Price per night: &euro; {{ $apartment->n_price }}
+                    </h6>
+                    <h6>
+                        Rooms: {{ $apartment->n_rooms }} - Beds: {{ $apartment->n_beds }} - Bathrooms:
+                        {{ $apartment->n_bathrooms }} - Mq: {{ $apartment->square_meters }}
+                    </h6>
+                    <p>
+                        {{ $apartment->description }}
+                    </p>
+                    <div class="apartment-info">
+                        <h5>
+                            Services:
+                        </h5>
+                        <ul class="ps-0">
+                            @foreach ($apartment->services as $service)
+                                <li>
+                                    <i class="fa-solid fa-check"></i> {{ $service->name }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <a class="btn my-btn fw-bold"
+                            href="{{ route('user.sponsorships.index', ['apartment' => $apartment->id]) }}">
+                            Sponsor your apartment!
+                        </a>
+                    </div>
+                </div>
+            @endsection
+
+            @section('script')
+                @vite('resources/js/deleteHandler.js')
+            @endsection

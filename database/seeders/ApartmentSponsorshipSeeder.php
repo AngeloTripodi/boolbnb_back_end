@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Apartment;
 use App\Models\Sponsorship;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -17,26 +18,24 @@ class ApartmentSponsorshipSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('address', 'LIKE', '%' . 'Milano')->get();
 
         $sponsorships = Sponsorship::all()->pluck('id');
 
-        foreach ($apartments as $apartment) {
+        foreach ($faker->randomElements($apartments, 3) as $apartment) {
             $apartment->sponsorships()->attach($faker->randomElement($sponsorships), [
                 'starting_date' => $faker->dateTime(),
-                'ending_date' => $faker->dateTime(),
+                'ending_date' => Carbon::now()->addDays(7)
             ]);
         }
 
+        $otherApartments = Apartment::where('address', 'LIKE', '%' . 'Roma')->orWhere('address', 'LIKE', '%' . 'Caltanissetta' . '%')->get();
 
-        // !errore perchè andiamo ad inserire i records starting/endind_date nella tabella apartment, il metodo attach() si occupa di creare le righe nella tabella pivot
-        /* foreach ($apartments as $apartment) {
-            $apartment->sponsorships()->attach($faker->randomElements($sponsorships, 1));
-            $apartment = new Apartment();
-            $apartment->starting_date = $faker->dateTime();
-            $apartment->ending_date = $faker->dateTime();
-            $apartment->save(); 
-            }
-        */
+        foreach ($otherApartments as $apartment) {
+            $apartment->sponsorships()->attach($faker->randomElement($sponsorships), [
+                'starting_date' => $faker->dateTime(),
+                'ending_date' => Carbon::now()->addDays(7)
+            ]);
+        }
     }
 }
