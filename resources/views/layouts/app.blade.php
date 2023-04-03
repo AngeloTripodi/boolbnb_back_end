@@ -13,8 +13,8 @@
 
     <!-- Fonts -->
     <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
     <!-- Usando Vite -->
@@ -40,7 +40,7 @@
     <div id="app">
         <header class="col-md-9 ms-sm-auto col-lg-10">
             <nav class="navbar my-navbar navbar-expand-md shadow-sm mb-2">
-                <div class="container p-1">
+                <div class="container-fluid pl-2 pe-2">
                     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                         {{-- config('app.name', 'Laravel') --}}
                     </a>
@@ -84,8 +84,9 @@
                                         <a class="dropdown-item" href="{{ url('dashboard') }}">{{ __('Dashboard') }}</a>
                                         <a class="dropdown-item"
                                             href="{{ route('user.apartments.index') }}">{{ __('Apartments') }}</a>
-                                            <a class="dropdown-item"
+                                        <a class="dropdown-item"
                                             href="{{ route('user.messages.index') }}">{{ __('Messages') }}</a>
+                                        <a class="dropdown-item" href="http://localhost:5174/">Homepage</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
