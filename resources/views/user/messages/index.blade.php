@@ -32,11 +32,16 @@
                                 <tr>
                                     <th scope="row">{{ $message->email }}</th>
                                     <td>{{ $message->name }}</td>
-                                    <td>{{ $message->phone_number }}</td>
+                                    <td>
+                                        @if ($message->phone_number != '')
+                                        {{ $message->phone_number }}
+                                        @else
+                                        -
+                                        @endif    
+                                    </td>
                                     <td> {{ $message->message }}</td>
                                     <td>{{ $message->apartment->title }}</td>
                                     <td> {{ $message->created_at->format('d M y, H:i') }}</td>
-
                                     <td>
                                         <a class="btn btn-sm my-btn fw-bold"
                                             href="mailto:{{ $message->email }}?subject=Apartment Reservation from {{ $message->name }}">Reply

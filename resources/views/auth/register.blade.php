@@ -33,7 +33,7 @@
             
                                         {{-- Name --}}
                                         <div class="form-outline mb-2">
-                                            <label class="form-label m-0" for="name">{{ __('Name') }}</label>
+                                            <label class="form-label m-1" for="name">{{ __('Name') }}</label>
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus />
                                             <div class="text-danger" id="name-error-message"></div>
                                             @error('name')
@@ -45,7 +45,7 @@
             
                                         {{-- Last name --}}
                                         <div class="form-outline mb-2">
-                                            <label class="form-label m-0" for="last_name">{{ __('Last name') }}</label>
+                                            <label class="form-label m-1" for="last_name">{{ __('Last name') }}</label>
                                             <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus />
                                             <div class="text-danger" id="last-name-error-message"></div>
                                             @error('last_name')
@@ -57,7 +57,7 @@
             
                                         {{-- Date of Birth --}}
                                         <div class="form-outline mb-2">
-                                            <label class="form-label m-0" for="date_of_birth">{{ __('Date of birth') }}</label>
+                                            <label class="form-label m-1" for="date_of_birth">{{ __('Date of birth') }}</label>
                                             <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus />
                                             <div class="text-danger" id="dob-error-message"></div>
                                             @error('date_of_birth')
@@ -69,7 +69,7 @@
 
                                         {{-- Email --}}
                                         <div class="form-outline mb-2">
-                                            <label class="form-label m-0" for="email">{{ __('E-Mail Address')}}*</label>
+                                            <label class="form-label m-1" for="email">{{ __('E-Mail Address')}}*</label>
                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                                             <div class="text-danger" id="email-error-message"></div>
@@ -82,7 +82,7 @@
             
                                         {{-- Password --}}
                                         <div class="form-outline mb-2">
-                                            <label class="form-label m-0" for="password">{{ __('Password') }}*</label>
+                                            <label class="form-label m-1" for="password">{{ __('Password') }}*</label>
                                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password" autofocus />
                                             <div class="text-danger" id="password-error-message"></div>
                                             @error('password')
@@ -93,8 +93,8 @@
                                         </div>
             
                                         {{-- Password confirm --}}
-                                        <div class="form-outline mb-3">
-                                            <label class="form-label m-0" for="password-confirm">{{ __('Confirm Password') }}*</label>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label m-1" for="password-confirm">{{ __('Confirm Password') }}*</label>
                                             <input id="password-confirm" type="password" class="form-control"  name="password_confirmation" required autocomplete="new-password" autofocus />
                                             <div class="text-danger" id="confirm-password-error-message"></div>
                                             @error('password')
