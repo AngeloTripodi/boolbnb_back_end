@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container py-5">
+    <div class="container-fluid py-5">
 
         <!--Aggiungo un if session per conferma sponsorship-->
         @if (session('message'))

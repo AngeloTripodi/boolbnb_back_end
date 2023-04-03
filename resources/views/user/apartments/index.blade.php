@@ -11,7 +11,7 @@
         </div> --}}
 
     @include('user.apartments.partials.popup')
-    <div class="container pb-5">
+    <div class="container-fluid pb-5">
         <div class="row justify-content-between align-items-center py-4">
             <div class="col-12 col-md-6 mb-2 mb-md-0">
                 <h1 class="text-uppercase">
