@@ -25,7 +25,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="fs-6 nav-item top-menu-item">
+                            <li class="fs-6 nav-item top-menu-item" style="padding-top: 1.3rem;">
                                 <a class="nav-link {{ Route::current()->getName() == 'dashboard' ? 'active' : '' }}"
                                     href="{{ url('dashboard') }}">
                                     <i class="fa-solid fa-gauge fa-fw me-1"></i>
