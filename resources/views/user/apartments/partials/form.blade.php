@@ -165,15 +165,15 @@
             {{-- Aggiungo una checkbox per i servizi dell'appartamento --}}
             <div class="card shadow-none">
                 <p class="m-1">Services*</p>
-                <div class="d-flex flex-wrap border rounded-3 p-2">
+                <div class="row border rounded-3 p-2">
                     @foreach ($services as $service)
-                        <div>
+                        <div class="col-3">
                             <input id="{{ $service->id }}" type="checkbox" class="form-check-input"
                                 name="services[]" value="{{ $service->id }}"
                                 @if ($errors->any()) @checked(in_array($service->id, old('services', [])))
                                 @else
                                 @checked($apartment->services->contains($service->id)) @endif>
-                            <label class="form-check-label ms-1 me-5" for="services">{{ $service->name }}</label>
+                            <label class="form-check-label ms-1" for="services">{{ $service->name }}</label>
                         </div>
                     @endforeach
                 </div>
